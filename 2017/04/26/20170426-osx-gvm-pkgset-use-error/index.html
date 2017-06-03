@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="第一次安裝 gvm 就踩到奇怪的雷gvm 是 golang 的版本管理工具（跟 nvm 很像），但是竟然在 OSX 下踩到奇怪的雷，在 ~/.bash_profile 內的 export GREP_OPTIONS=&amp;#39;--color=always&amp;#39; 會造成 gvm use 或 gvm pkgset use 無法正常運作。 解決方式：12$ vim $HOME/.gvm/scripts">
+<meta name="description" content="第一次安裝 gvm 就踩到奇怪的雷gvm 是 golang 的版本管理工具（跟 nvm 很像），但是竟然在 OSX 下踩到奇怪的雷，在 ~/.bash_profile 內的 export GREP_OPTIONS=&amp;#39;--color=always&amp;#39; 會造成 gvm use 或 gvm pkgset use 無法正常運作。">
 <meta name="keywords" content="golang,gvm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OSX 執行 gvm pkgset use 發生錯誤">
 <meta property="og:url" content="http://blog.codefun.tw/2017/04/26/20170426-osx-gvm-pkgset-use-error/index.html">
 <meta property="og:site_name" content="Codefun">
-<meta property="og:description" content="第一次安裝 gvm 就踩到奇怪的雷gvm 是 golang 的版本管理工具（跟 nvm 很像），但是竟然在 OSX 下踩到奇怪的雷，在 ~/.bash_profile 內的 export GREP_OPTIONS=&amp;#39;--color=always&amp;#39; 會造成 gvm use 或 gvm pkgset use 無法正常運作。 解決方式：12$ vim $HOME/.gvm/scripts">
-<meta property="og:updated_time" content="2017-05-20T10:13:56.000Z">
+<meta property="og:description" content="第一次安裝 gvm 就踩到奇怪的雷gvm 是 golang 的版本管理工具（跟 nvm 很像），但是竟然在 OSX 下踩到奇怪的雷，在 ~/.bash_profile 內的 export GREP_OPTIONS=&amp;#39;--color=always&amp;#39; 會造成 gvm use 或 gvm pkgset use 無法正常運作。">
+<meta property="og:updated_time" content="2017-06-03T16:46:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OSX 執行 gvm pkgset use 發生錯誤">
-<meta name="twitter:description" content="第一次安裝 gvm 就踩到奇怪的雷gvm 是 golang 的版本管理工具（跟 nvm 很像），但是竟然在 OSX 下踩到奇怪的雷，在 ~/.bash_profile 內的 export GREP_OPTIONS=&amp;#39;--color=always&amp;#39; 會造成 gvm use 或 gvm pkgset use 無法正常運作。 解決方式：12$ vim $HOME/.gvm/scripts">
+<meta name="twitter:description" content="第一次安裝 gvm 就踩到奇怪的雷gvm 是 golang 的版本管理工具（跟 nvm 很像），但是竟然在 OSX 下踩到奇怪的雷，在 ~/.bash_profile 內的 export GREP_OPTIONS=&amp;#39;--color=always&amp;#39; 會造成 gvm use 或 gvm pkgset use 無法正常運作。">
 
 
 
@@ -426,6 +426,7 @@
 
       
         <h2 id="第一次安裝-gvm-就踩到奇怪的雷"><a href="#第一次安裝-gvm-就踩到奇怪的雷" class="headerlink" title="第一次安裝 gvm 就踩到奇怪的雷"></a>第一次安裝 gvm 就踩到奇怪的雷</h2><p><a href="https://github.com/moovweb/gvm" target="_blank" rel="external">gvm</a> 是 <a href="https://golang.org/" target="_blank" rel="external">golang</a> 的版本管理工具（跟 nvm 很像），但是竟然在 OSX 下踩到奇怪的雷，<br>在 <code>~/.bash_profile</code> 內的 <code>export GREP_OPTIONS=&#39;--color=always&#39;</code> 會造成 <code>gvm use</code> 或 <code>gvm pkgset use</code> 無法正常運作。</p>
+<a id="more"></a>
 <h2 id="解決方式："><a href="#解決方式：" class="headerlink" title="解決方式："></a>解決方式：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ vim $HOME/.gvm/scripts/env/pkgset-use</div><div class="line">$ vim $HOME/.gvm/scripts/env/use</div></pre></td></tr></table></figure>
 <p>在 <code>$GREP_PATH</code> 後面加上 <code>--color=never</code>，也就是修改成 <code>$GREP_PATH --color=never</code></p>
 

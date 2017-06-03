@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.codefun.tw/"/>
-  <updated>2017-06-03T06:18:08.000Z</updated>
+  <updated>2017-06-03T16:21:40.000Z</updated>
   <id>http://blog.codefun.tw/</id>
   
   <author>
@@ -20,24 +20,27 @@
     <link href="http://blog.codefun.tw/2017/06/02/20170602-nodejs-line-bot-p1/"/>
     <id>http://blog.codefun.tw/2017/06/02/20170602-nodejs-line-bot-p1/</id>
     <published>2017-06-02T07:07:27.000Z</published>
-    <updated>2017-06-03T06:18:08.000Z</updated>
+    <updated>2017-06-03T16:21:40.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="開發環境"><a href="#開發環境" class="headerlink" title="# 開發環境"></a># 開發環境</h2><ul>
-<li>macOS Sierra 10.12.5</li>
-<li>Nodejs 7.10.0</li>
+    <content type="html"><![CDATA[<p>Chat Bot 正夯，剛好公司的專案有 Line Bot 的應用，所以參考了 <a href="https://goo.gl/ePtTRw" target="_blank" rel="external">不必真的架站也能 5 分鐘實機體驗 LINE bot – 教學 ( by node.js &amp; ngrok )</a>、<a href="http://www.oxxostudio.tw/articles/201701/line-bot.html" target="_blank" rel="external">LINE BOT 實戰 ( 原理篇 )</a>、<a href="http://www.oxxostudio.tw/articles/201701/line-bot-2.html" target="_blank" rel="external">LINE BOT 實戰 ( 聊天篇 )</a> 等文章來進行 Nodejs 的 Line bot 開發實作練習。</p>
+<a id="more"></a>
+<h2 id="開發環境"><a href="#開發環境" class="headerlink" title="開發環境"></a>開發環境</h2><ul>
+<li>macOS Sierra： 10.12.5</li>
+<li>Nodejs： 7.10.0</li>
 <li>Packages：<ul>
 <li><a href="https://www.npmjs.com/package/express" target="_blank" rel="external">express</a></li>
 <li><a href="https://www.npmjs.com/package/linebot" target="_blank" rel="external">linebot</a></li>
 </ul>
 </li>
+<li>Github： <a href="https://github.com/jerry771230/node-line-bot-practice" target="_blank" rel="external">https://github.com/jerry771230/node-line-bot-practice</a></li>
 </ul>
-<h2 id="本次實作有以下階段："><a href="#本次實作有以下階段：" class="headerlink" title="# 本次實作有以下階段："></a># 本次實作有以下階段：</h2><ul>
+<h2 id="本次實作有以下階段："><a href="#本次實作有以下階段：" class="headerlink" title="本次實作有以下階段："></a>本次實作有以下階段：</h2><ul>
 <li><a href="#linebotaccount">申請 Line Bot 帳號</a></li>
 <li><a href="#usingngrok">ngrok 讓 localhost 也可以使用 HTTPS</a></li>
 <li><a href="#webhookservice">使用 Nodejs 在本地端部署 webhook service</a></li>
 <li><a href="#sendlinebot">使用 Line App 傳訊息給 Line Bot</a></li>
 </ul>
-<h2 id="申請-Line-Bot-帳號"><a href="#申請-Line-Bot-帳號" class="headerlink" title="# 申請 Line Bot 帳號"></a><a id="linebotaccount"></a># 申請 Line Bot 帳號</h2><ol>
+<h2 id="申請-Line-Bot-帳號"><a href="#申請-Line-Bot-帳號" class="headerlink" title="申請 Line Bot 帳號"></a><a id="linebotaccount"></a>申請 Line Bot 帳號</h2><ol>
 <li><p>到 <a href="https://business.line.me/zh-hant" target="_blank" rel="external">LINE Business Center</a> 申請商用帳號。點擊「帳號清單」，再點擊「建立商用帳號」<br><img src="https://lh3.googleusercontent.com/maPhifD7BVwbpWvElCZzWdhXqULQfbGYofmqazlAE8S0ArKXVb5kWk2r8JmAb-CBZvpH2WuQ_NubG63u-5rW0GYIpBE4-7ryoDbXmJn-YwnZWn9x2xaAuhm-0M0FsLEyBfoe=w715-h409-no" alt="申請商用帳戶"></p>
 </li>
 <li><p>找到 Messageing API，點擊「開始使用Developer Trial」<br><img src="https://lh3.googleusercontent.com/2s8QshZMPK-b4hRv3fkYZGzP0Pw_7iKf9vMnpOOyv6G6J0jtDrSrFm4NSdoGdxEC8khRDLpzsDsUKZDQ4UWQyx4JPvWYcPFh7-HRiy_g12Q5ON861Aj8oWStncau_0ZubOl5=w1022-h480-no" alt="開始使用Developer Trial"></p>
@@ -52,7 +55,7 @@
 <li><p>Bot Settings 的部份要留意 Usable APIs 是否有 <code>REPLY_MESSAGE</code> 及 <code>PUSH_MESSAGE</code>。如果沒有 <code>PUSH_MESSAGE</code> 是不能進行 Bot 主動發訊息給 Client App 的。<br><img src="https://lh3.googleusercontent.com/hZmeGk-OPkAUxrjMuIqYgYbfmWmv1jVEWxQA8KT-FpjncQ-KD34K3Ur-IqGZlYg1Gp1c_QPqmdvbhNC55nOmC-NG2Gzz1frSfUNWASVxHO-F4tcsS2clrtU0Hmm8lMYNfTIj6A=w871-h639-no" alt="Use webhooks"><br>Request Settings 裡的 Use webhooks 請勾選 「Allow」。<br>Details 的 Allow Bot to join group chats、Auto Reply Message 及 Greeting Message 都勾選 「Don’t Allow」。</p>
 </li>
 </ol>
-<h2 id="ngrok-讓-localhost-也可以使用-HTTPS"><a href="#ngrok-讓-localhost-也可以使用-HTTPS" class="headerlink" title="# ngrok 讓 localhost 也可以使用 HTTPS"></a><a id="usingngrok"></a># ngrok 讓 localhost 也可以使用 HTTPS</h2><p>Line Bot 需要有 HTTPS 的 webhook service 才能接受及轉發訊息，這時候後端開發必備神器 - <a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a>，可以讓 localhost 使用 HTTPS 的隨機網址，達成 webhook service 測試，省去了必須上傳到 Server 後才能得到測試結果的時間花費。</p>
+<h2 id="ngrok-讓-localhost-也可以使用-HTTPS"><a href="#ngrok-讓-localhost-也可以使用-HTTPS" class="headerlink" title="ngrok 讓 localhost 也可以使用 HTTPS"></a><a id="usingngrok"></a>ngrok 讓 localhost 也可以使用 HTTPS</h2><p>Line Bot 需要有 HTTPS 的 webhook service 才能接受及轉發訊息，這時候後端開發必備神器 - <a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a>，可以讓 localhost 使用 HTTPS 的隨機網址，達成 webhook service 測試，省去了必須上傳到 Server 後才能得到測試結果的時間花費。</p>
 <h3 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h3><p>Mac 的部份可以在 <a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a> 官網下載程式，解壓縮後就可以使用了。或者是丟到 <code>/usr/local/bin</code>，方便之後使用。</p>
 <p>Termial 指令</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> ngrok http 8080</div></pre></td></tr></table></figure>
@@ -72,7 +75,7 @@
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> ngrok http -host-header=myweb.dev myweb.dev:80</div></pre></td></tr></table></figure>
 <p>以上 ngrok 的基本使用是參考 <a href="https://coder.tw/?p=7211" target="_blank" rel="external">Ngrok – 讓本機也可以開發 webhook 免部署環境的神器</a></p>
-<h2 id="使用-Nodejs-在本地端部署-webhook-service"><a href="#使用-Nodejs-在本地端部署-webhook-service" class="headerlink" title="# 使用 Nodejs 在本地端部署 webhook service"></a><a id="webhookservice"></a># 使用 Nodejs 在本地端部署 webhook service</h2><h3 id="開始建立-Nodejs-專案"><a href="#開始建立-Nodejs-專案" class="headerlink" title="開始建立 Nodejs 專案"></a>開始建立 Nodejs 專案</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> mkdir node-line-bot</div><div class="line"><span class="meta">$</span> cd node-line-bot</div></pre></td></tr></table></figure>
+<h2 id="使用-Nodejs-在本地端部署-webhook-service"><a href="#使用-Nodejs-在本地端部署-webhook-service" class="headerlink" title="使用 Nodejs 在本地端部署 webhook service"></a><a id="webhookservice"></a>使用 Nodejs 在本地端部署 webhook service</h2><h3 id="開始建立-Nodejs-專案"><a href="#開始建立-Nodejs-專案" class="headerlink" title="開始建立 Nodejs 專案"></a>開始建立 Nodejs 專案</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> mkdir node-line-bot</div><div class="line"><span class="meta">$</span> cd node-line-bot</div></pre></td></tr></table></figure>
 <p>建立 <code>package.json</code> 檔案，並修改 “scripts”，增加 <code>&quot;start&quot;: &quot;node .&quot;</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> npm init</div><div class="line"></div><div class="line">&#123;</div><div class="line">  "name": "node-line-bot",</div><div class="line">  "version": "1.0.0",</div><div class="line">  "description": "",</div><div class="line">  "main": "index.js",</div><div class="line">  "scripts": &#123;</div><div class="line">    "start": "node ."</div><div class="line">  &#125;,</div><div class="line">  "author": "Jerry Huang",</div><div class="line">  "license": "MIT"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>安裝模組 <code>linebot</code> 及 <code>express</code></p>
@@ -89,7 +92,7 @@
 <p>再回 LINE develioers 的 “Basic information”，按下 Webhoo URL 右方的 “VERIFY” 以驗證是否正確。</p>
 <p>Terminal 畫面會有以下資訊</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&#123; replyToken: '00000000000000000000000000000000',</div><div class="line">  type: 'message',</div><div class="line">  timestamp: 1451617200000,</div><div class="line">  source:</div><div class="line">   &#123; type: 'user',</div><div class="line">     userId: 'UdeadbeefdeadbeefdeLINEBOTUSERID',</div><div class="line">     profile: [Function] &#125;,</div><div class="line">  message:</div><div class="line">   &#123; id: '100001',</div><div class="line">     type: 'text',</div><div class="line">     text: 'Hello,world',</div><div class="line">     content: [Function] &#125;,</div><div class="line">  reply: [Function] &#125;</div><div class="line">&#123; replyToken: 'ffffffffffffffffffffffffffffffff',</div><div class="line">  type: 'message',</div><div class="line">  timestamp: 1451617210000,</div><div class="line">  source:</div><div class="line">   &#123; type: 'user',</div><div class="line">     userId: 'UdeadbeefdeadbeefdeLINEBOTUSERID',</div><div class="line">     profile: [Function] &#125;,</div><div class="line">  message:</div><div class="line">   &#123; id: '100002',</div><div class="line">     type: 'sticker',</div><div class="line">     packageId: '1',</div><div class="line">     stickerId: '1',</div><div class="line">     content: [Function] &#125;,</div><div class="line">  reply: [Function] &#125;</div></pre></td></tr></table></figure>
-<h2 id="使用-Line-App-傳訊息給-Line-Bot"><a href="#使用-Line-App-傳訊息給-Line-Bot" class="headerlink" title="# 使用 Line App 傳訊息給 Line Bot"></a><a id="sendlinebot"></a># 使用 Line App 傳訊息給 Line Bot</h2><p>手機 Line App 掃描  LINE develioers 的 “Basic information” 畫面中的 QR Code 將 Line Bot 加入，然後輸入文字，測試 Line Bot 是否有正確接收到。<br> <img src="https://lh3.googleusercontent.com/M6x09wRnbeDagDnrCe0m7rQAPocOIOnhooSD6mOnLbBG-ygU2M-VRi7UWcYVQ6jHkkQyy9htxI54rehBjWBQFwzpw_EI5QQSTzIct5UtFO3aB0sgykQllqpd3ehUjeq4gNF7wA=w317-h181-no" alt=""></p>
+<h2 id="使用-Line-App-傳訊息給-Line-Bot"><a href="#使用-Line-App-傳訊息給-Line-Bot" class="headerlink" title="使用 Line App 傳訊息給 Line Bot"></a><a id="sendlinebot"></a>使用 Line App 傳訊息給 Line Bot</h2><p>手機 Line App 掃描  LINE develioers 的 “Basic information” 畫面中的 QR Code 將 Line Bot 加入，然後輸入文字，測試 Line Bot 是否有正確接收到。<br> <img src="https://lh3.googleusercontent.com/M6x09wRnbeDagDnrCe0m7rQAPocOIOnhooSD6mOnLbBG-ygU2M-VRi7UWcYVQ6jHkkQyy9htxI54rehBjWBQFwzpw_EI5QQSTzIct5UtFO3aB0sgykQllqpd3ehUjeq4gNF7wA=w317-h181-no" alt=""></p>
 <p>如果有正確收到訊息，則 Terminal 畫面會顯示以下資訊</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123; type: 'message',</div><div class="line">  replyToken: '98eb2ca92bdb468c9REPLYTOKEN',</div><div class="line">  source:</div><div class="line">   &#123; userId: 'U08cee31d0f3a94CLIENTAPPUSERID',</div><div class="line">     type: 'user',</div><div class="line">     profile: [Function] &#125;,</div><div class="line">  timestamp: 1496462418683,</div><div class="line">  message:</div><div class="line">   &#123; type: 'text',</div><div class="line">     id: '618217MSGID',</div><div class="line">     text: '開發測試Q Q',</div><div class="line">     content: [Function] &#125;,</div><div class="line">  reply: [Function] &#125;</div></pre></td></tr></table></figure>
 <h3 id="將收到的訊息，回覆給-Client-App"><a href="#將收到的訊息，回覆給-Client-App" class="headerlink" title="將收到的訊息，回覆給 Client App"></a>將收到的訊息，回覆給 Client App</h3><p>修改一下 on ‘message’ 的內容</p>
@@ -99,7 +102,7 @@
 <h3 id="主動發送訊息"><a href="#主動發送訊息" class="headerlink" title="主動發送訊息"></a>主動發送訊息</h3><p>讓 server 啟動後 3 秒，發送訊息給 Client App，請在 index.js 加入以下程式，。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 主動發送訊息給 Client App</span></div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> userId = <span class="string">'Client App User ID'</span>;</div><div class="line">    <span class="keyword">var</span> sendMsg = <span class="string">"push msg to one user"</span>;</div><div class="line">    bot.push(userId, [sendMsg]);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'userId: '</span> + userId);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'send: '</span> + sendMsg);</div><div class="line">&#125;, <span class="number">3000</span>);</div></pre></td></tr></table></figure>
 <p> <img src="https://lh3.googleusercontent.com/bq-9Ck0gZ8aS5gcP6TKdcSjUAsdSVBpF-EcJqSSmEWTyHxfLKDEBgxfBKCMG0P1267Apl_tcaxr24omYJiGqruOYbdpr4BxiUWQh_dOmIytlfAw3kfHdQppgwF8gd0y9JnWaZw=w320-h335-no" alt="主動發送訊息"></p>
-<h2 id="參考資料："><a href="#參考資料：" class="headerlink" title="# 參考資料："></a># 參考資料：</h2><ul>
+<h2 id="參考資料："><a href="#參考資料：" class="headerlink" title="參考資料："></a>參考資料：</h2><ul>
 <li><a href="http://www.oxxostudio.tw/articles/201701/line-bot.html" target="_blank" rel="external">LINE BOT 實戰 ( 原理篇 )</a></li>
 <li><a href="http://www.oxxostudio.tw/articles/201701/line-bot-2.html" target="_blank" rel="external">LINE BOT 實戰 ( 聊天篇 )</a></li>
 <li><a href="https://goo.gl/ePtTRw" target="_blank" rel="external">不必真的架站也能 5 分鐘實機體驗 LINE bot – 教學 ( by node.js &amp; ngrok )</a></li>
@@ -114,10 +117,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;開發環境&quot;&gt;&lt;a href=&quot;#開發環境&quot; class=&quot;headerlink&quot; title=&quot;# 開發環境&quot;&gt;&lt;/a&gt;# 開發環境&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;macOS Sierra 10.12.5&lt;/li&gt;
-&lt;li&gt;Nodejs 7.10.0&lt;/li&gt;
-&lt;li
+      &lt;p&gt;Chat Bot 正夯，剛好公司的專案有 Line Bot 的應用，所以參考了 &lt;a href=&quot;https://goo.gl/ePtTRw&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;不必真的架站也能 5 分鐘實機體驗 LINE bot – 教學 ( by node.js &amp;amp; ngrok )&lt;/a&gt;、&lt;a href=&quot;http://www.oxxostudio.tw/articles/201701/line-bot.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;LINE BOT 實戰 ( 原理篇 )&lt;/a&gt;、&lt;a href=&quot;http://www.oxxostudio.tw/articles/201701/line-bot-2.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;LINE BOT 實戰 ( 聊天篇 )&lt;/a&gt; 等文章來進行 Nodejs 的 Line bot 開發實作練習。&lt;/p&gt;
     
     </summary>
     
@@ -137,16 +137,17 @@
     <link href="http://blog.codefun.tw/2017/04/26/20170426-osx-gvm-pkgset-use-error/"/>
     <id>http://blog.codefun.tw/2017/04/26/20170426-osx-gvm-pkgset-use-error/</id>
     <published>2017-04-26T01:58:10.000Z</published>
-    <updated>2017-05-20T10:13:56.000Z</updated>
+    <updated>2017-06-03T16:46:50.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="第一次安裝-gvm-就踩到奇怪的雷"><a href="#第一次安裝-gvm-就踩到奇怪的雷" class="headerlink" title="第一次安裝 gvm 就踩到奇怪的雷"></a>第一次安裝 gvm 就踩到奇怪的雷</h2><p><a href="https://github.com/moovweb/gvm" target="_blank" rel="external">gvm</a> 是 <a href="https://golang.org/" target="_blank" rel="external">golang</a> 的版本管理工具（跟 nvm 很像），但是竟然在 OSX 下踩到奇怪的雷，<br>在 <code>~/.bash_profile</code> 內的 <code>export GREP_OPTIONS=&#39;--color=always&#39;</code> 會造成 <code>gvm use</code> 或 <code>gvm pkgset use</code> 無法正常運作。</p>
+<a id="more"></a>
 <h2 id="解決方式："><a href="#解決方式：" class="headerlink" title="解決方式："></a>解決方式：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ vim $HOME/.gvm/scripts/env/pkgset-use</div><div class="line">$ vim $HOME/.gvm/scripts/env/use</div></pre></td></tr></table></figure>
 <p>在 <code>$GREP_PATH</code> 後面加上 <code>--color=never</code>，也就是修改成 <code>$GREP_PATH --color=never</code></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;第一次安裝-gvm-就踩到奇怪的雷&quot;&gt;&lt;a href=&quot;#第一次安裝-gvm-就踩到奇怪的雷&quot; class=&quot;headerlink&quot; title=&quot;第一次安裝 gvm 就踩到奇怪的雷&quot;&gt;&lt;/a&gt;第一次安裝 gvm 就踩到奇怪的雷&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;h
+      &lt;h2 id=&quot;第一次安裝-gvm-就踩到奇怪的雷&quot;&gt;&lt;a href=&quot;#第一次安裝-gvm-就踩到奇怪的雷&quot; class=&quot;headerlink&quot; title=&quot;第一次安裝 gvm 就踩到奇怪的雷&quot;&gt;&lt;/a&gt;第一次安裝 gvm 就踩到奇怪的雷&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/moovweb/gvm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;gvm&lt;/a&gt; 是 &lt;a href=&quot;https://golang.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;golang&lt;/a&gt; 的版本管理工具（跟 nvm 很像），但是竟然在 OSX 下踩到奇怪的雷，&lt;br&gt;在 &lt;code&gt;~/.bash_profile&lt;/code&gt; 內的 &lt;code&gt;export GREP_OPTIONS=&amp;#39;--color=always&amp;#39;&lt;/code&gt; 會造成 &lt;code&gt;gvm use&lt;/code&gt; 或 &lt;code&gt;gvm pkgset use&lt;/code&gt; 無法正常運作。&lt;/p&gt;
     
     </summary>
     
@@ -164,9 +165,10 @@
     <link href="http://blog.codefun.tw/2016/10/08/hello-world/"/>
     <id>http://blog.codefun.tw/2016/10/08/hello-world/</id>
     <published>2016-10-08T08:53:11.000Z</published>
-    <updated>2016-10-08T08:53:11.000Z</updated>
+    <updated>2017-06-03T16:24:07.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<a id="more"></a>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -179,7 +181,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
     
     </summary>
     
