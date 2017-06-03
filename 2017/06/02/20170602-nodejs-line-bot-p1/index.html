@@ -1,0 +1,1422 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="9MjjjAfbFmUf6_Qyjtd54x0imSx4ZtB_BRes0m0A_FM" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="nodejs,line bot,ngrok," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Codefun" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="# 開發環境 macOS Sierra 10.12.5 Nodejs 7.10.0 Packages： express linebot    # 本次實作有以下階段： 申請 Line Bot 帳號 ngrok 讓 localhost 也可以使用 HTTPS 使用 Nodejs 在本地端部署 webhook service 使用 Line App 傳訊息給 Line Bot  # 申請 Line B">
+<meta name="keywords" content="nodejs,line bot,ngrok">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在本地端使用 Nodejs &amp; Ngrok 進行 Line Bot 開發測試">
+<meta property="og:url" content="http://blog.codefun.tw/2017/06/02/20170602-nodejs-line-bot-p1/index.html">
+<meta property="og:site_name" content="Codefun">
+<meta property="og:description" content="# 開發環境 macOS Sierra 10.12.5 Nodejs 7.10.0 Packages： express linebot    # 本次實作有以下階段： 申請 Line Bot 帳號 ngrok 讓 localhost 也可以使用 HTTPS 使用 Nodejs 在本地端部署 webhook service 使用 Line App 傳訊息給 Line Bot  # 申請 Line B">
+<meta property="og:image" content="https://lh3.googleusercontent.com/maPhifD7BVwbpWvElCZzWdhXqULQfbGYofmqazlAE8S0ArKXVb5kWk2r8JmAb-CBZvpH2WuQ_NubG63u-5rW0GYIpBE4-7ryoDbXmJn-YwnZWn9x2xaAuhm-0M0FsLEyBfoe=w715-h409-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/2s8QshZMPK-b4hRv3fkYZGzP0Pw_7iKf9vMnpOOyv6G6J0jtDrSrFm4NSdoGdxEC8khRDLpzsDsUKZDQ4UWQyx4JPvWYcPFh7-HRiy_g12Q5ON861Aj8oWStncau_0ZubOl5=w1022-h480-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/eKQOGxTfs3hb3rgwyQIQ9qnLWkI7pcWyHt9BOBmXEiDEOON6upYlcJMM50vahJvA03M5WKT_V5o_x-CZ68ttR8EMGh1RJSE-Hk6eMYFwpMQHlw6dCVXBBm4whOwCohEFXw4DyQ=w481-h639-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/YH-sM08j0AJpFLwzbU00WMYXlnskuQBaiq7qhwXZ0LT5qFeBx6re1L8CXsMT1pLUj3K3dxb0SHEMJXbMe5h--YlYOBe0-P2G5oL94srLxVCl-KRz4GUnE5ls2hIW4F0AdHlHPw=w529-h639-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/g0NzW_h7LR7bAlgPEwkdbxMolf5yW-MqNg2RahHGiFvuW__r2kbsh5mn7nayUb3gGC10BFX8uwBg2o4kAoIr8ukP1ksws83y6o5kfCy4MnD6Jn_y3qMOyFHbu13nJYyMTj5o4A=w957-h639-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/QSvYxtP7f-wSNrPryDskR7VjB6OtpYDU8WCA-37YuC3j_QfdXH3wrraumzypogezaX7kd6-A83kh7Kpsc1xK3l1_Jg9v90X2kdaRy-1g2J15sJrEq1X3NAu4_-8ld7JbvViZRw=w611-h393-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/hZmeGk-OPkAUxrjMuIqYgYbfmWmv1jVEWxQA8KT-FpjncQ-KD34K3Ur-IqGZlYg1Gp1c_QPqmdvbhNC55nOmC-NG2Gzz1frSfUNWASVxHO-F4tcsS2clrtU0Hmm8lMYNfTIj6A=w871-h639-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/ZRyTQA8tuz-QiC3bJh3MjzC6U2_AliofTUUfHdnieoQJ4vO3rYt80AqR7yNyXA2KBERCuS0KXIcaTbX0ay3G2-Msz9oEj6TylLSQOqY-uYOOMKm-1M1IC4as3lP6kMkRuGdWhQ=w742-h639-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/i2ZbXKUPnLO3EB-GpOH7CwbwLHB5xVFTI8J5ZSHm2GyGNmfIFmkpyjWLBoGA0Lo7J-xAS0OwC4C4jiqOG1SAKCksmeNr_LRmVB5pn0E5EZBg9C9Xx_rq0EyywNEWJZpkqDHriw=w738-h583-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/nhK_bbRrgxY-cCb0D_79yUV-e_ARnRydKBXgj9QpUaoQh0-Lv5AdU7MsNgbK1LmB8VUuFUbOkRRfbLbX1kj8ZNNfIMJq7yo2oz8eSPlvmZOB5_Ce7LW45X8e9fuNujyJHEdaJQ=w654-h639-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/HXbB5WOezmhLSsokuOp4TZEFOn1xC10jdNXsZj76RH3fI5-OvJYd4TGYR6VN6AYLGgFIeLJCfXPznvnaZadwbFI6nVnx9cVW1ybWFcu5lFDkt0dgkUA5vHGHaqlpe9j2_OK9Kw=w633-h639-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/ptb0MmQ-AwOc4Ze5EywsFwy94QzjbOlWkXLmQtisBig5qHSCxpgVhIpNbOC2iJHk9PrwJHcBfHO9aKvB5biE95TkuQ-pqIgX4yi0b8BNrJO3qeI9OcnBCYPP2qpvw71IaiPWCg=w600-h639-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/M6x09wRnbeDagDnrCe0m7rQAPocOIOnhooSD6mOnLbBG-ygU2M-VRi7UWcYVQ6jHkkQyy9htxI54rehBjWBQFwzpw_EI5QQSTzIct5UtFO3aB0sgykQllqpd3ehUjeq4gNF7wA=w317-h181-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/hx85cXamDUf7tD3pktZZtgP1w46UyMydyGa1PcO3bdVvSBJhCJbZuDBDeQCC4VFaEpV9fhGyJVB1sdnFEMjiMqo6zCaVSmI7wQHpSXX4Fb3xx2--T-x_wnNRh_i7z-5p2X3mvw=w319-h282-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/bq-9Ck0gZ8aS5gcP6TKdcSjUAsdSVBpF-EcJqSSmEWTyHxfLKDEBgxfBKCMG0P1267Apl_tcaxr24omYJiGqruOYbdpr4BxiUWQh_dOmIytlfAw3kfHdQppgwF8gd0y9JnWaZw=w320-h335-no">
+<meta property="og:updated_time" content="2017-06-03T04:57:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在本地端使用 Nodejs &amp; Ngrok 進行 Line Bot 開發測試">
+<meta name="twitter:description" content="# 開發環境 macOS Sierra 10.12.5 Nodejs 7.10.0 Packages： express linebot    # 本次實作有以下階段： 申請 Line Bot 帳號 ngrok 讓 localhost 也可以使用 HTTPS 使用 Nodejs 在本地端部署 webhook service 使用 Line App 傳訊息給 Line Bot  # 申請 Line B">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/maPhifD7BVwbpWvElCZzWdhXqULQfbGYofmqazlAE8S0ArKXVb5kWk2r8JmAb-CBZvpH2WuQ_NubG63u-5rW0GYIpBE4-7ryoDbXmJn-YwnZWn9x2xaAuhm-0M0FsLEyBfoe=w715-h409-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.codefun.tw/2017/06/02/20170602-nodejs-line-bot-p1/"/>
+
+
+
+
+
+  <title>在本地端使用 Nodejs & Ngrok 進行 Line Bot 開發測試 | Codefun</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-85444701-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Codefun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.codefun.tw/2017/06/02/20170602-nodejs-line-bot-p1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jerry Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Codefun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">在本地端使用 Nodejs & Ngrok 進行 Line Bot 開發測試</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-02T15:07:27+08:00">
+                2017-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nodejs/" itemprop="url" rel="index">
+                    <span itemprop="name">nodejs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/02/20170602-nodejs-line-bot-p1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://blog.codefun.tw/2017/06/02/20170602-nodejs-line-bot-p1/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="開發環境"><a href="#開發環境" class="headerlink" title="# 開發環境"></a># 開發環境</h2><ul>
+<li>macOS Sierra 10.12.5</li>
+<li>Nodejs 7.10.0</li>
+<li>Packages：<ul>
+<li><a href="https://www.npmjs.com/package/express" target="_blank" rel="external">express</a></li>
+<li><a href="https://www.npmjs.com/package/linebot" target="_blank" rel="external">linebot</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="本次實作有以下階段："><a href="#本次實作有以下階段：" class="headerlink" title="# 本次實作有以下階段："></a># 本次實作有以下階段：</h2><ul>
+<li><a href="#linebotaccount">申請 Line Bot 帳號</a></li>
+<li><a href="#usingngrok">ngrok 讓 localhost 也可以使用 HTTPS</a></li>
+<li><a href="#webhookservice">使用 Nodejs 在本地端部署 webhook service</a></li>
+<li><a href="#sendlinebot">使用 Line App 傳訊息給 Line Bot</a></li>
+</ul>
+<h2 id="申請-Line-Bot-帳號"><a href="#申請-Line-Bot-帳號" class="headerlink" title="# 申請 Line Bot 帳號"></a><a id="linebotaccount"></a># 申請 Line Bot 帳號</h2><ol>
+<li><p>到 <a href="https://business.line.me/zh-hant" target="_blank" rel="external">LINE Business Center</a> 申請商用帳號。點擊「帳號清單」，再點擊「建立商用帳號」<br><img src="https://lh3.googleusercontent.com/maPhifD7BVwbpWvElCZzWdhXqULQfbGYofmqazlAE8S0ArKXVb5kWk2r8JmAb-CBZvpH2WuQ_NubG63u-5rW0GYIpBE4-7ryoDbXmJn-YwnZWn9x2xaAuhm-0M0FsLEyBfoe=w715-h409-no" alt="申請商用帳戶"></p>
+</li>
+<li><p>找到 Messageing API，點擊「開始使用Developer Trial」<br><img src="https://lh3.googleusercontent.com/2s8QshZMPK-b4hRv3fkYZGzP0Pw_7iKf9vMnpOOyv6G6J0jtDrSrFm4NSdoGdxEC8khRDLpzsDsUKZDQ4UWQyx4JPvWYcPFh7-HRiy_g12Q5ON861Aj8oWStncau_0ZubOl5=w1022-h480-no" alt="開始使用Developer Trial"></p>
+</li>
+<li><p>輸入 Bot 的帳號名稱，更換圖片以及選擇業種，再按下確定就會建立機器人專用帳號<br><img src="https://lh3.googleusercontent.com/eKQOGxTfs3hb3rgwyQIQ9qnLWkI7pcWyHt9BOBmXEiDEOON6upYlcJMM50vahJvA03M5WKT_V5o_x-CZ68ttR8EMGh1RJSE-Hk6eMYFwpMQHlw6dCVXBBm4whOwCohEFXw4DyQ=w481-h639-no" alt="建立機器人專用帳號"></p>
+</li>
+<li><p>在申請完成的頁面下方點擊「前往LINE@MANAGER」<br><img src="https://lh3.googleusercontent.com/YH-sM08j0AJpFLwzbU00WMYXlnskuQBaiq7qhwXZ0LT5qFeBx6re1L8CXsMT1pLUj3K3dxb0SHEMJXbMe5h--YlYOBe0-P2G5oL94srLxVCl-KRz4GUnE5ls2hIW4F0AdHlHPw=w529-h639-no" alt=""></p>
+</li>
+<li><p>開始使用 API。進入 LINE@ MANAGER 後，在左邊選單 「Settings」-&gt; 點擊「Bot Settings」-&gt; 再按下「Enable API」<br><img src="https://lh3.googleusercontent.com/g0NzW_h7LR7bAlgPEwkdbxMolf5yW-MqNg2RahHGiFvuW__r2kbsh5mn7nayUb3gGC10BFX8uwBg2o4kAoIr8ukP1ksws83y6o5kfCy4MnD6Jn_y3qMOyFHbu13nJYyMTj5o4A=w957-h639-no" alt="Enable API"></p>
+<p><img src="https://lh3.googleusercontent.com/QSvYxtP7f-wSNrPryDskR7VjB6OtpYDU8WCA-37YuC3j_QfdXH3wrraumzypogezaX7kd6-A83kh7Kpsc1xK3l1_Jg9v90X2kdaRy-1g2J15sJrEq1X3NAu4_-8ld7JbvViZRw=w611-h393-no" alt="Enabling Confirm"><br>註：LINE@ MANAGER 的網址會是 <code>https://admin-official.line.me/</code> 開頭</p>
+</li>
+<li><p>Bot Settings 的部份要留意 Usable APIs 是否有 <code>REPLY_MESSAGE</code> 及 <code>PUSH_MESSAGE</code>。如果沒有 <code>PUSH_MESSAGE</code> 是不能進行 Bot 主動發訊息給 Client App 的。<br><img src="https://lh3.googleusercontent.com/hZmeGk-OPkAUxrjMuIqYgYbfmWmv1jVEWxQA8KT-FpjncQ-KD34K3Ur-IqGZlYg1Gp1c_QPqmdvbhNC55nOmC-NG2Gzz1frSfUNWASVxHO-F4tcsS2clrtU0Hmm8lMYNfTIj6A=w871-h639-no" alt="Use webhooks"><br>Request Settings 裡的 Use webhooks 請勾選 「Allow」。<br>Details 的 Allow Bot to join group chats、Auto Reply Message 及 Greeting Message 都勾選 「Don’t Allow」。</p>
+</li>
+</ol>
+<h2 id="ngrok-讓-localhost-也可以使用-HTTPS"><a href="#ngrok-讓-localhost-也可以使用-HTTPS" class="headerlink" title="# ngrok 讓 localhost 也可以使用 HTTPS"></a><a id="usingngrok"></a># ngrok 讓 localhost 也可以使用 HTTPS</h2><p>Line Bot 需要有 HTTPS 的 webhook service 才能接受及轉發訊息，這時候後端開發必備神器 - <a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a>，可以讓 localhost 使用 HTTPS 的隨機網址，達成 webhook service 測試，省去了必須上傳到 Server 後才能得到測試結果的時間花費。</p>
+<h3 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h3><p>Mac 的部份可以在 <a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a> 官網下載程式，解壓縮後就可以使用了。或者是丟到 <code>/usr/local/bin</code>，方便之後使用。</p>
+<p>Termial 指令</p>
+<pre><code>$ ngrok http 8080
+</code></pre><p>代表把外界的流量導到 localhost 的 8080 port。執行後會有以下畫面：</p>
+<pre><code>ngrok by @inconshreveable                                                                               (Ctrl+C to quit)
+
+Session Status                online
+Account                       YOUR_ACCOUNT (Plan: Free)
+Version                       2.2.4
+Region                        United States (us)
+Web Interface                 http://127.0.0.1:4040
+Forwarding                    http://85ceccf9.ngrok.io -&gt; localhost:8080
+
+Connections                   ttl     opn     rt1     rt5     p50     p90
+                              0       0       0.00    0.00    0.00    0.00
+</code></pre><p>按下 <code>Ctrl + C</code> 跳出並停止運作。</p>
+<h3 id="申請-HTTPS-protocol"><a href="#申請-HTTPS-protocol" class="headerlink" title="申請 HTTPS protocol"></a>申請 HTTPS protocol</h3><p>到 <a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a> 官網註冊，可以使用 Github 或 Google 登入。<br>登入的畫面如下：<br><img src="https://lh3.googleusercontent.com/ZRyTQA8tuz-QiC3bJh3MjzC6U2_AliofTUUfHdnieoQJ4vO3rYt80AqR7yNyXA2KBERCuS0KXIcaTbX0ay3G2-Msz9oEj6TylLSQOqY-uYOOMKm-1M1IC4as3lP6kMkRuGdWhQ=w742-h639-no" alt="ngrok Dashborad"></p>
+<p>在 Terminal 下執行指令，這樣就可以使用 https 的網址</p>
+<pre><code>$ ngrok authtoken {token}
+$ ngrok http 8080
+
+ngrok by @inconshreveable                                                                               (Ctrl+C to quit)
+
+Session Status                online
+Account                       YOUR_ACCOUNT (Plan: Free)
+Version                       2.2.4
+Region                        United States (us)
+Web Interface                 http://127.0.0.1:4040
+Forwarding                    http://ec041dbf.ngrok.io -&gt; localhost:8080
+Forwarding                    https://ec041dbf.ngrok.io -&gt; localhost:8080
+
+Connections                   ttl     opn     rt1     rt5     p50     p90
+                              0       0       0.00    0.00    0.00    0.00
+</code></pre><p>其他指令參考</p>
+<ul>
+<li><p>HTTP Auth</p>
+<pre><code>$ ngrok http -auth &quot;user:passwd&quot; 80
+</code></pre></li>
+<li><p>轉址到 local domain（修改 /etc/hosts）</p>
+<pre><code>$ ngrok http -host-header=myweb.dev myweb.dev:80
+</code></pre></li>
+</ul>
+<p>以上 ngrok 的基本使用是參考 <a href="https://coder.tw/?p=7211" target="_blank" rel="external">Ngrok – 讓本機也可以開發 webhook 免部署環境的神器</a></p>
+<h2 id="使用-Nodejs-在本地端部署-webhook-service"><a href="#使用-Nodejs-在本地端部署-webhook-service" class="headerlink" title="# 使用 Nodejs 在本地端部署 webhook service"></a><a id="webhookservice"></a># 使用 Nodejs 在本地端部署 webhook service</h2><h3 id="開始建立-Nodejs-專案"><a href="#開始建立-Nodejs-專案" class="headerlink" title="開始建立 Nodejs 專案"></a>開始建立 Nodejs 專案</h3><pre><code>$ mkdir node-line-bot
+$ cd node-line-bot
+</code></pre><p>建立 <code>package.json</code> 檔案，並修改 “scripts”，增加 <code>&quot;start&quot;: &quot;node .&quot;</code></p>
+<pre><code>$ npm init
+
+{
+  &quot;name&quot;: &quot;node-line-bot&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;node .&quot;
+  },
+  &quot;author&quot;: &quot;Jerry Huang&quot;,
+  &quot;license&quot;: &quot;MIT&quot;
+}
+</code></pre><p>安裝模組 <code>linebot</code> 及 <code>express</code></p>
+<pre><code>$ npm install linebot express --save
+
+node-line-bot@1.0.0 /Users/jerryhuang/workspace/practice/nodejs/node-line-bot
+├─┬ express@4.15.3
+│ ├─┬ accepts@1.3.3
+│ │ ├─┬ mime-types@2.1.15
+│ │ │ └── mime-db@1.27.0
+│ │ └── negotiator@0.6.1
+│ ├── array-flatten@1.1.1
+│ ├── content-disposition@0.5.2
+│ ├── content-type@1.0.2
+│ ├── cookie@0.3.1
+│ ├── cookie-signature@1.0.6
+│ ├─┬ debug@2.6.7
+│ │ └── ms@2.0.0
+│ ├── depd@1.1.0
+│ ├── encodeurl@1.0.1
+│ ├── escape-html@1.0.3
+│ ├── etag@1.8.0
+│ ├─┬ finalhandler@1.0.3
+│ │ └── unpipe@1.0.0
+│ ├── fresh@0.5.0
+│ ├── merge-descriptors@1.0.1
+│ ├── methods@1.1.2
+│ ├─┬ on-finished@2.3.0
+│ │ └── ee-first@1.1.1
+│ ├── parseurl@1.3.1
+│ ├── path-to-regexp@0.1.7
+│ ├─┬ proxy-addr@1.1.4
+│ │ ├── forwarded@0.1.0
+│ │ └── ipaddr.js@1.3.0
+│ ├── qs@6.4.0
+│ ├── range-parser@1.2.0
+│ ├─┬ send@0.15.3
+│ │ ├── destroy@1.0.4
+│ │ ├─┬ http-errors@1.6.1
+│ │ │ └── inherits@2.0.3
+│ │ └── mime@1.3.4
+│ ├── serve-static@1.12.3
+│ ├── setprototypeof@1.0.3
+│ ├── statuses@1.3.1
+│ ├─┬ type-is@1.6.15
+│ │ └── media-typer@0.3.0
+│ ├── utils-merge@1.0.0
+│ └── vary@1.1.1
+└─┬ linebot@1.3.0
+  ├─┬ body-parser@1.17.2
+  │ ├── bytes@2.4.0
+  │ ├── iconv-lite@0.4.15
+  │ └── raw-body@2.2.0
+  └─┬ node-fetch@1.7.0
+    ├── encoding@0.1.12
+    └── is-stream@1.1.0
+
+npm WARN node-line-bot@1.0.0 No description
+npm WARN node-line-bot@1.0.0 No repository field.
+</code></pre><p>建立 <code>index.js</code> 檔案的內容如下</p>
+<pre><code>let linebot = require(&apos;linebot&apos;),
+    express = require(&apos;express&apos;);
+
+const config = require(&apos;./config.json&apos;),
+    util = require(&apos;util&apos;);
+
+let bot = linebot({
+    channelId: &apos;Line Bot Channel ID&apos;,
+    channelSecret: &apos;Line Bot Channel Secret&apos;,
+    channelAccessToken: &apos;Line Bot Access Token&apos;
+});
+
+const linebotParser = bot.parser(),
+    app = express();
+
+bot.on(&apos;message&apos;, function(event) {
+    // 把收到訊息的 event 印出來
+    console.log(event);
+});
+
+app.post(&apos;/webhook&apos;, linebotParser);
+
+// 在 localhost 走 8080 port
+let server = app.listen(process.env.PORT || 8080, function() {
+    let port = server.address().port;
+    console.log(&quot;My Line bot App running on port&quot;, port);
+});
+</code></pre><h3 id="如何取得-Line-Bot-的-Channel-ID-及設定-Webhook"><a href="#如何取得-Line-Bot-的-Channel-ID-及設定-Webhook" class="headerlink" title="如何取得 Line Bot 的 Channel ID 及設定 Webhook"></a>如何取得 Line Bot 的 Channel ID 及設定 Webhook</h3><p>Channel ID、Channel Secret 及 Channel Access Token 可以從 LINE Business Center 進入後取得</p>
+<h4 id="取得-Channel-ID、Channel-Secret-及-Channel-Access-Token"><a href="#取得-Channel-ID、Channel-Secret-及-Channel-Access-Token" class="headerlink" title="取得 Channel ID、Channel Secret 及 Channel Access Token"></a>取得 Channel ID、Channel Secret 及 Channel Access Token</h4><p>回到 LINE Business Center 按下 Messaging API 右邊的「LINE Developers」<br> <img src="https://lh3.googleusercontent.com/i2ZbXKUPnLO3EB-GpOH7CwbwLHB5xVFTI8J5ZSHm2GyGNmfIFmkpyjWLBoGA0Lo7J-xAS0OwC4C4jiqOG1SAKCksmeNr_LRmVB5pn0E5EZBg9C9Xx_rq0EyywNEWJZpkqDHriw=w738-h583-no" alt="前往 LINE Developers"></p>
+<p>在 LINE develioers 下的 “Basic information”，將 “Channel ID”、”Channel Secret”（點選 SHOW 會出現）、 “Channel Access Token” 複製貼到 index.js 裡對應的程式中<br> <img src="https://lh3.googleusercontent.com/nhK_bbRrgxY-cCb0D_79yUV-e_ARnRydKBXgj9QpUaoQh0-Lv5AdU7MsNgbK1LmB8VUuFUbOkRRfbLbX1kj8ZNNfIMJq7yo2oz8eSPlvmZOB5_Ce7LW45X8e9fuNujyJHEdaJQ=w654-h639-no" alt="取得 Channel ID"></p>
+<p>點選 ISSUE 會產生 “Channel Access Token”<br> <img src="https://lh3.googleusercontent.com/HXbB5WOezmhLSsokuOp4TZEFOn1xC10jdNXsZj76RH3fI5-OvJYd4TGYR6VN6AYLGgFIeLJCfXPznvnaZadwbFI6nVnx9cVW1ybWFcu5lFDkt0dgkUA5vHGHaqlpe9j2_OK9Kw=w633-h639-no" alt="取得 Channel Access Token"></p>
+<h4 id="設定-Webhook-URL"><a href="#設定-Webhook-URL" class="headerlink" title="設定 Webhook URL"></a>設定 Webhook URL</h4><p>同樣在 “Basic information” 下，按下右下角的 “EDIT”，然後將 ngrok 產生的網址以及 index.js 內監聽 post mehtod 的路徑組合 <code>https://ec041dbf.ngrok.io/webhook</code> 貼到 “Webhook URL” 中<br> <img src="https://lh3.googleusercontent.com/ptb0MmQ-AwOc4Ze5EywsFwy94QzjbOlWkXLmQtisBig5qHSCxpgVhIpNbOC2iJHk9PrwJHcBfHO9aKvB5biE95TkuQ-pqIgX4yi0b8BNrJO3qeI9OcnBCYPP2qpvw71IaiPWCg=w600-h639-no" alt="設定 Webhook URL"></p>
+<p>回到 Terminal 畫面，啟動 webhook service</p>
+<pre><code>$ node index.js
+</code></pre><p>再回 LINE develioers 的 “Basic information”，按下 Webhoo URL 右方的 “VERIFY” 以驗證是否正確。</p>
+<p>Terminal 畫面會有以下資訊</p>
+<pre><code>{ replyToken: &apos;00000000000000000000000000000000&apos;,
+  type: &apos;message&apos;,
+  timestamp: 1451617200000,
+  source:
+   { type: &apos;user&apos;,
+     userId: &apos;UdeadbeefdeadbeefdeLINEBOTUSERID&apos;,
+     profile: [Function] },
+  message:
+   { id: &apos;100001&apos;,
+     type: &apos;text&apos;,
+     text: &apos;Hello,world&apos;,
+     content: [Function] },
+  reply: [Function] }
+{ replyToken: &apos;ffffffffffffffffffffffffffffffff&apos;,
+  type: &apos;message&apos;,
+  timestamp: 1451617210000,
+  source:
+   { type: &apos;user&apos;,
+     userId: &apos;UdeadbeefdeadbeefdeLINEBOTUSERID&apos;,
+     profile: [Function] },
+  message:
+   { id: &apos;100002&apos;,
+     type: &apos;sticker&apos;,
+     packageId: &apos;1&apos;,
+     stickerId: &apos;1&apos;,
+     content: [Function] },
+  reply: [Function] }
+</code></pre><h2 id="使用-Line-App-傳訊息給-Line-Bot"><a href="#使用-Line-App-傳訊息給-Line-Bot" class="headerlink" title="# 使用 Line App 傳訊息給 Line Bot"></a><a id="sendlinebot"></a># 使用 Line App 傳訊息給 Line Bot</h2><p>手機 Line App 掃描  LINE develioers 的 “Basic information” 畫面中的 QR Code 將 Line Bot 加入，然後輸入文字，測試 Line Bot 是否有正確接收到。<br> <img src="https://lh3.googleusercontent.com/M6x09wRnbeDagDnrCe0m7rQAPocOIOnhooSD6mOnLbBG-ygU2M-VRi7UWcYVQ6jHkkQyy9htxI54rehBjWBQFwzpw_EI5QQSTzIct5UtFO3aB0sgykQllqpd3ehUjeq4gNF7wA=w317-h181-no" alt=""></p>
+<p>如果有正確收到訊息，則 Terminal 畫面會顯示以下資訊</p>
+<pre><code>{ type: &apos;message&apos;,
+  replyToken: &apos;98eb2ca92bdb468c9REPLYTOKEN&apos;,
+  source:
+   { userId: &apos;U08cee31d0f3a94CLIENTAPPUSERID&apos;,
+     type: &apos;user&apos;,
+     profile: [Function] },
+  timestamp: 1496462418683,
+  message:
+   { type: &apos;text&apos;,
+     id: &apos;618217MSGID&apos;,
+     text: &apos;開發測試Q Q&apos;,
+     content: [Function] },
+  reply: [Function] }
+</code></pre><h3 id="將收到的訊息，回覆給-Client-App"><a href="#將收到的訊息，回覆給-Client-App" class="headerlink" title="將收到的訊息，回覆給 Client App"></a>將收到的訊息，回覆給 Client App</h3><p>修改一下 on ‘message’ 的內容</p>
+<pre><code>bot.on(&apos;message&apos;, function(event) {
+    // 把收到訊息的 event 印出來
+    //console.log(event);
+
+    // 重複 client 輸入的內容
+    if (event.message.type = &apos;text&apos;) {
+        var msg = event.message.text;
+        event.reply(msg).then(function(data) {
+            // success
+            console.log(msg);
+        }).catch(function(error) {
+            // error
+            console.log(&apos;error&apos;);
+        });
+    }
+});
+</code></pre><p>記得要重啟 nodejs server 喔 :)</p>
+<p> <img src="https://lh3.googleusercontent.com/hx85cXamDUf7tD3pktZZtgP1w46UyMydyGa1PcO3bdVvSBJhCJbZuDBDeQCC4VFaEpV9fhGyJVB1sdnFEMjiMqo6zCaVSmI7wQHpSXX4Fb3xx2--T-x_wnNRh_i7z-5p2X3mvw=w319-h282-no" alt="重複 client 輸入的內容"></p>
+<h3 id="主動發送訊息"><a href="#主動發送訊息" class="headerlink" title="主動發送訊息"></a>主動發送訊息</h3><p>讓 server 啟動後 3 秒，發送訊息給 Client App，請在 index.js 加入以下程式，。</p>
+<pre><code>// 主動發送訊息給 Client App
+setTimeout(function() {
+    var userId = &apos;Client App User ID&apos;;
+    var sendMsg = &quot;push msg to one user&quot;;
+    bot.push(userId, [sendMsg]);
+    console.log(&apos;userId: &apos; + userId);
+    console.log(&apos;send: &apos; + sendMsg);
+}, 3000);
+</code></pre><p> <img src="https://lh3.googleusercontent.com/bq-9Ck0gZ8aS5gcP6TKdcSjUAsdSVBpF-EcJqSSmEWTyHxfLKDEBgxfBKCMG0P1267Apl_tcaxr24omYJiGqruOYbdpr4BxiUWQh_dOmIytlfAw3kfHdQppgwF8gd0y9JnWaZw=w320-h335-no" alt="主動發送訊息"></p>
+<h2 id="參考資料："><a href="#參考資料：" class="headerlink" title="# 參考資料："></a># 參考資料：</h2><ul>
+<li><a href="http://www.oxxostudio.tw/articles/201701/line-bot.html" target="_blank" rel="external">LINE BOT 實戰 ( 原理篇 )</a></li>
+<li><a href="http://www.oxxostudio.tw/articles/201701/line-bot-2.html" target="_blank" rel="external">LINE BOT 實戰 ( 聊天篇 )</a></li>
+<li><a href="https://goo.gl/ePtTRw" target="_blank" rel="external">不必真的架站也能 5 分鐘實機體驗 LINE bot – 教學 ( by node.js &amp; ngrok )</a></li>
+<li><a href="https://coder.tw/?p=7211" target="_blank" rel="external">Ngrok – 讓本機也可以開發 webhook 免部署環境的神器</a></li>
+<li><a href="https://ngrok.com/" target="_blank" rel="external">ngrok.com</a></li>
+</ul>
+<h3 id="Line-Bot-的圖片來源"><a href="#Line-Bot-的圖片來源" class="headerlink" title="Line Bot 的圖片來源"></a>Line Bot 的圖片來源</h3><ul>
+<li><a href="https://tgram.ru/bots/topics_bot" target="_blank" rel="external">tgram.ru</a></li>
+<li><a href="https://tgram.ru/wiki/bots/image/topics_bot.jpg" target="_blank" rel="external">https://tgram.ru/wiki/bots/image/topics_bot.jpg</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nodejs/" rel="tag"># nodejs</a>
+          
+            <a href="/tags/line-bot/" rel="tag"># line bot</a>
+          
+            <a href="/tags/ngrok/" rel="tag"># ngrok</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/26/20170426-osx-gvm-pkgset-use-error/" rel="next" title="OSX 執行 gvm pkgset use 發生錯誤">
+                <i class="fa fa-chevron-left"></i> OSX 執行 gvm pkgset use 發生錯誤
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59202e2d25ce1195" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="fb-comments"
+           data-href="http://blog.codefun.tw/2017/06/02/20170602-nodejs-line-bot-p1/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Jerry Huang" />
+          <p class="site-author-name" itemprop="name">Jerry Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description">知識不是力量 分享知識才是力量</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/jerry771230" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#開發環境"><span class="nav-number">1.</span> <span class="nav-text"># 開發環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本次實作有以下階段："><span class="nav-number">2.</span> <span class="nav-text"># 本次實作有以下階段：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#申請-Line-Bot-帳號"><span class="nav-number">3.</span> <span class="nav-text"># 申請 Line Bot 帳號</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ngrok-讓-localhost-也可以使用-HTTPS"><span class="nav-number">4.</span> <span class="nav-text"># ngrok 讓 localhost 也可以使用 HTTPS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝"><span class="nav-number">4.1.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#申請-HTTPS-protocol"><span class="nav-number">4.2.</span> <span class="nav-text">申請 HTTPS protocol</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-Nodejs-在本地端部署-webhook-service"><span class="nav-number">5.</span> <span class="nav-text"># 使用 Nodejs 在本地端部署 webhook service</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#開始建立-Nodejs-專案"><span class="nav-number">5.1.</span> <span class="nav-text">開始建立 Nodejs 專案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何取得-Line-Bot-的-Channel-ID-及設定-Webhook"><span class="nav-number">5.2.</span> <span class="nav-text">如何取得 Line Bot 的 Channel ID 及設定 Webhook</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#取得-Channel-ID、Channel-Secret-及-Channel-Access-Token"><span class="nav-number">5.2.1.</span> <span class="nav-text">取得 Channel ID、Channel Secret 及 Channel Access Token</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#設定-Webhook-URL"><span class="nav-number">5.2.2.</span> <span class="nav-text">設定 Webhook URL</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-Line-App-傳訊息給-Line-Bot"><span class="nav-number">6.</span> <span class="nav-text"># 使用 Line App 傳訊息給 Line Bot</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#將收到的訊息，回覆給-Client-App"><span class="nav-number">6.1.</span> <span class="nav-text">將收到的訊息，回覆給 Client App</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主動發送訊息"><span class="nav-number">6.2.</span> <span class="nav-text">主動發送訊息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料："><span class="nav-number">7.</span> <span class="nav-text"># 參考資料：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Line-Bot-的圖片來源"><span class="nav-number">7.1.</span> <span class="nav-text">Line Bot 的圖片來源</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jerry Huang</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
