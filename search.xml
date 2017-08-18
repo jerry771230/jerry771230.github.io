@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[使用 wget 砍站]]></title>
+    <url>%2F2017%2F08%2F18%2F2018081804-wget-download-web-pages%2F</url>
+    <content type="text"><![CDATA[wget 是 linux 中除了 curl 外另一個檔案下載的好用工具，也可以使用它來“砍站”。但是無法正確抓去使用 vue-router 等 js 撰寫的動態呈現網頁的內容。 用法 1$ wget -m -k -E -p -F --restrict-file-names=windows -nH --header=&quot;Accept: text/html&quot; --user-agent=&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:21.0) Gecko/20100101 Firefox/21.0&quot; 127.0.0.1 指令說明 12345678910111213-m, --mirror 相等於 -N -r -l inf --no-remove-listing 選項-k, --convert-links 將原本網站內所有站內的連結全都改為 Local 連結，這樣下載網站後才可以離線使用。-E, --adjust-extension save HTML/CSS documents with proper extensions.-p, --page-requisites 下載所有顯示網頁所需的檔案，例如圖片等-F, --force-html 以 HTML 方式處理輸入檔-N, --timestamping 除非遠端檔案比較新，否則不下載遠端檔案-r, --recursive 遞迴下載-l, --level=數字 最大搜尋深度 (inf 或 0 表示無限)--no-remove-listing 不刪除 ‘.listing’ 檔案--restrict-file-names=OS 只使用作業系統能夠接受的字元作為檔案字元-nH, --no-host-directories 不建立含有遠端主機名稱的目錄--header=字串 在連線資料標頭中加入指定字串-U, --user-agent=AGENT 宣稱為 AGENT 而不是 Wget/VERSION 參考資料 GNU Wget 1.18 Manual wget 指令用法與教學 How to Use the wget Linux Command to Download Web Pages and Files]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>wget</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[開發廣告系統（DSP）不能不知道的關鍵字！]]></title>
     <url>%2F2017%2F08%2F18%2F2017081803-cpc-cpa-ad-keywords%2F</url>
     <content type="text"><![CDATA[關鍵字 DSP: Demand Side Platform 網路廣告中的需求方平台，可以讓廣告主進行跨媒體的自動化廣告投放。J: 買廣告版位 SSP: Supply Side Platform 是網路媒體中的供應方平台。SSP 平台幫助網路媒體託管其廣告位和廣告交易，與網路交易平台對接，從而將他們的流量變現。J: 賣廣告版位 DMP: Data-Management Platform 是專門為廣告主、媒體等開發的廣告數據管理平台，主要分析、儲存用戶行為數據，並管理相關資料，為廣告主提供精準的用戶行為分析。 RTB: Real Time Billing CPC: Cost Per Click 每次點擊計價 CPM: Cost Per Mille，或者Cost Per Thousand;Cost Per Impressions，每千次展示計價 CPA: Cost Per Action 以實際行動效果來計算成本 CPS: Cost Per Sales 每次有效銷售定價 CPV: Cost Per View 每次觀看成本 AD Exchange: 網路廣告交易平台，功能就是聯繫廣告的賣方（媒體、網站主）和買方（廣告主）。Ad Exchange 平台交易的公司包括有 Yahoo、Google、The Rubicon Project、OpenX、AppNexus 等 AD Network: 聯播網 ROI: Return On Investment 每投資一塊錢所得到回饋的百分比 ROAS: Return On AD Spending 廣告沒投入一塊錢可獲得的營收 DSP 優點 精確的受眾定向 簡單好用的使用者界面 強大的 RTB 技術 購買流程更快更簡單 整合多種服務，持續精進一站化 實現跨平台統一管理 參考文章 關於RTB, DSP, DMP的一些小事及簡單認知 行銷人必知！ DSP廣告平台迷思求解7大守則 【硬塞科技字典】什麼是 DSP 需求方平台/ SSP 供應方平台/ DMP 數據管理平台？ 【硬塞科技字典】什麼是 Ad Exchange？ 什麼是 RTB 實時競價廣告？他將是未來趨勢！ 常見的網路廣告平台運作原理淺析 APP廣告、網路媒體常說到所謂的CPM、CPC、CPA、CPI到底是甚麼意思?]]></content>
@@ -19,6 +30,10 @@
       <categories>
         <category>notes</category>
       </categories>
+      <tags>
+        <tag>IM</tag>
+        <tag>Google Hangouts</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hexo 安裝筆記]]></title>
@@ -27,6 +42,10 @@
       <categories>
         <category>notes</category>
       </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[在本地端使用 Nodejs & Ngrok 進行 Line Bot 開發測試]]></title>
