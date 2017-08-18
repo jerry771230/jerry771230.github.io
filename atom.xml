@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.codefun.tw/"/>
-  <updated>2017-08-18T04:08:13.000Z</updated>
+  <updated>2017-08-18T04:22:10.000Z</updated>
   <id>http://blog.codefun.tw/</id>
   
   <author>
@@ -14,6 +14,79 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>開發廣告系統（DSP）不能不知道的關鍵字！</title>
+    <link href="http://blog.codefun.tw/2017/08/18/2017081803-cpc-coa-ad-keywords/"/>
+    <id>http://blog.codefun.tw/2017/08/18/2017081803-cpc-coa-ad-keywords/</id>
+    <published>2017-08-18T04:20:55.000Z</published>
+    <updated>2017-08-18T04:22:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="關鍵字"><a href="#關鍵字" class="headerlink" title="關鍵字"></a>關鍵字</h2><ul>
+<li>DSP: Demand Side Platform 網路廣告中的需求方平台，可以讓廣告主進行跨媒體的自動化廣告投放。J: 買廣告版位</li>
+<li>SSP: Supply Side Platform 是網路媒體中的供應方平台。SSP 平台幫助網路媒體託管其廣告位和廣告交易，與網路交易平台對接，從而將他們的流量變現。J: 賣廣告版位</li>
+<li>DMP: Data-Management Platform 是專門為廣告主、媒體等開發的廣告數據管理平台，主要分析、儲存用戶行為數據，並管理相關資料，為廣告主提供精準的用戶行為分析。</li>
+<li>RTB: Real Time Billing</li>
+<li>CPC: Cost Per Click 每次點擊計價</li>
+<li>CPM: Cost Per Mille，或者Cost Per Thousand;Cost Per Impressions，每千次展示計價</li>
+<li>CPA: Cost Per Action 以實際行動效果來計算成本</li>
+<li>CPS: Cost Per Sales 每次有效銷售定價</li>
+<li>CPV: Cost Per View 每次觀看成本</li>
+<li>AD Exchange: 網路廣告交易平台，功能就是聯繫廣告的賣方（媒體、網站主）和買方（廣告主）。Ad Exchange 平台交易的公司包括有 Yahoo、Google、The Rubicon Project、OpenX、AppNexus 等</li>
+<li>AD Network: 聯播網</li>
+<li>ROI: Return On Investment 每投資一塊錢所得到回饋的百分比</li>
+<li>ROAS: Return On AD Spending 廣告沒投入一塊錢可獲得的營收</li>
+</ul>
+<a id="more"></a>
+<hr>
+<h2 id="DSP-優點"><a href="#DSP-優點" class="headerlink" title="DSP 優點"></a>DSP 優點</h2><ul>
+<li>精確的受眾定向</li>
+<li>簡單好用的使用者界面</li>
+<li>強大的 RTB 技術</li>
+<li>購買流程更快更簡單</li>
+<li>整合多種服務，持續精進一站化</li>
+<li>實現跨平台統一管理</li>
+</ul>
+<hr>
+<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><ul>
+<li><a href="https://goo.gl/BFs31A" target="_blank" rel="external">關於RTB, DSP, DMP的一些小事及簡單認知</a></li>
+<li><a href="https://www.bnext.com.tw/ext_rss/view/id/651447" target="_blank" rel="external">行銷人必知！ DSP廣告平台迷思求解7大守則</a></li>
+<li><a href="https://www.inside.com.tw/2016/07/01/what-is-dsp-ssp-dmp" target="_blank" rel="external">【硬塞科技字典】什麼是 DSP 需求方平台/ SSP 供應方平台/ DMP 數據管理平台？</a></li>
+<li><a href="https://www.inside.com.tw/2016/07/01/what-is-ad-exchange" target="_blank" rel="external">【硬塞科技字典】什麼是 Ad Exchange？</a></li>
+<li><a href="https://www.inside.com.tw/2014/05/30/every-local-advertiser-needs-rtb" target="_blank" rel="external">什麼是 RTB 實時競價廣告？他將是未來趨勢！</a></li>
+<li><a href="https://goo.gl/eG52L7" target="_blank" rel="external">常見的網路廣告平台運作原理淺析</a></li>
+<li><a href="https://goo.gl/FwuOx8" target="_blank" rel="external">APP廣告、網路媒體常說到所謂的CPM、CPC、CPA、CPI到底是甚麼意思?</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;關鍵字&quot;&gt;&lt;a href=&quot;#關鍵字&quot; class=&quot;headerlink&quot; title=&quot;關鍵字&quot;&gt;&lt;/a&gt;關鍵字&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;DSP: Demand Side Platform 網路廣告中的需求方平台，可以讓廣告主進行跨媒體的自動化廣告投放。J: 買廣告版位&lt;/li&gt;
+&lt;li&gt;SSP: Supply Side Platform 是網路媒體中的供應方平台。SSP 平台幫助網路媒體託管其廣告位和廣告交易，與網路交易平台對接，從而將他們的流量變現。J: 賣廣告版位&lt;/li&gt;
+&lt;li&gt;DMP: Data-Management Platform 是專門為廣告主、媒體等開發的廣告數據管理平台，主要分析、儲存用戶行為數據，並管理相關資料，為廣告主提供精準的用戶行為分析。&lt;/li&gt;
+&lt;li&gt;RTB: Real Time Billing&lt;/li&gt;
+&lt;li&gt;CPC: Cost Per Click 每次點擊計價&lt;/li&gt;
+&lt;li&gt;CPM: Cost Per Mille，或者Cost Per Thousand;Cost Per Impressions，每千次展示計價&lt;/li&gt;
+&lt;li&gt;CPA: Cost Per Action 以實際行動效果來計算成本&lt;/li&gt;
+&lt;li&gt;CPS: Cost Per Sales 每次有效銷售定價&lt;/li&gt;
+&lt;li&gt;CPV: Cost Per View 每次觀看成本&lt;/li&gt;
+&lt;li&gt;AD Exchange: 網路廣告交易平台，功能就是聯繫廣告的賣方（媒體、網站主）和買方（廣告主）。Ad Exchange 平台交易的公司包括有 Yahoo、Google、The Rubicon Project、OpenX、AppNexus 等&lt;/li&gt;
+&lt;li&gt;AD Network: 聯播網&lt;/li&gt;
+&lt;li&gt;ROI: Return On Investment 每投資一塊錢所得到回饋的百分比&lt;/li&gt;
+&lt;li&gt;ROAS: Return On AD Spending 廣告沒投入一塊錢可獲得的營收&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="marketing" scheme="http://blog.codefun.tw/categories/marketing/"/>
+    
+    
+      <category term="marketing" scheme="http://blog.codefun.tw/tags/marketing/"/>
+    
+      <category term="ad keyword" scheme="http://blog.codefun.tw/tags/ad-keyword/"/>
+    
+  </entry>
   
   <entry>
     <title>如何使用 Google Hangouts 進行遠端多人會議</title>
