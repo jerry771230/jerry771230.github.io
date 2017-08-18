@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.codefun.tw/"/>
-  <updated>2017-06-03T16:59:45.000Z</updated>
+  <updated>2017-08-18T04:08:13.000Z</updated>
   <id>http://blog.codefun.tw/</id>
   
   <author>
@@ -14,6 +14,81 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何使用 Google Hangouts 進行遠端多人會議</title>
+    <link href="http://blog.codefun.tw/2017/08/18/2017081802-google-hangouts-multi-person-meeting/"/>
+    <id>http://blog.codefun.tw/2017/08/18/2017081802-google-hangouts-multi-person-meeting/</id>
+    <published>2017-08-18T03:11:20.000Z</published>
+    <updated>2017-08-18T04:08:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li>開啟 Google Chrome 瀏覽器並且登入 Google 帳號，然後在網址列搜尋 <code>Google Hangouts</code> 或直接開啟連結 <a href="https://hangouts.google.com/?hl=zh-TW" target="_blank" rel="external">https://hangouts.google.com/?hl=zh-TW</a> 。<br><img src="https://lh3.googleusercontent.com/HvfYRZAccPR9UUKnDHlRd1zZWqIPwi2R_rsLdtdT0B9qaGRhnPWgmQqhv-h-shh4H4mrD9eJ4b_QWK-JrpnPfVxGqQGyySQnmNM3i0_I6Wj8_n9RIyA63IN-q1kW3wXMeaX8Zx034g=w816-h569-no" alt="Google Search &quot;google hangouts&quot;"></li>
+</ol>
+<a id="more"></a>
+<ol>
+<li><p>進入 <a href="https://hangouts.google.com/?hl=zh-TW" target="_blank" rel="external">https://hangouts.google.com/?hl=zh-TW</a> 頁面後點擊 <code>視訊通話</code>。<br><img src="https://lh3.googleusercontent.com/AlFUgzsOF6r7JUqpzjdfq5D1af5WpFffSDOuWE94uCZQjUDvay_gIb7Ab_01fsDXcuyLeiT7IT-Iohm0bFuN5rilRxYpbxvzKEm9jCXHsb9g8Qldxfc022gsid-IXbTBpyb-Fg285g=w1015-h598-no" alt="開啟視訊通話"></p>
+</li>
+<li><p>同意 Google Hangouts 取用攝影機及麥克風的權限，即可正式開啟會議。<br><img src="https://lh3.googleusercontent.com/komj3VnPhw7yi-KjjhBGMzh_FWEjp_rHLrB-fuF1cD2thBBGST1xnm0K_HwKmLAzsIqCS66qkK9D6oiM-QpggSjEmR0IppLB6NqsjcnpDXMK61iOx7OQ-6ob0Cev-AFrCX-Icc-b4A=w1026-h717-no" alt="同意取用攝影機及麥克風"></p>
+</li>
+<li><p>邀請進入會議的方式有二，一是透過 email 邀請，二是分享連結。<br><img src="https://lh3.googleusercontent.com/7funsf3-O_S6Pn7PDDOy8ufZfE4yLcnFdYshes6aVDhyyTzwMdA-F6JHoG4agLqYxWIwVVMx_IrhZXerDaFkWGac-sPETDDnxktLK8zuRZKziQfLJLtzvlIPlejRiaehZNs2zmt--w=w1097-h802-no" alt="邀請進入會議的方式"></p>
+</li>
+<li><p>要分享報告的內容給其他人時，可以點擊右上角。<br><img src="https://lh3.googleusercontent.com/2dApM7z6B2B4J5OUJmLsqeV0aDH4DgVAAleQJHWxga_6LaF_Cd_gK5o_TR3cgQfPwSK0Va6eS_AS_G88Pi7AW5_9eMiGBBAhniwnv3KG8KqANnZoXa_BaxnJ_Kz0Mx1WsmRB4AMbQA=w933-h705-no" alt="開啟螢幕分享"></p>
+</li>
+<li><p>然後點擊 <code>分享螢幕畫面</code><br><img src="https://lh3.googleusercontent.com/aj9yUUt70f5zdQ5X-InP-J_CJTD2SDb8EkTYU9B-6jf-Io7rsxAyZp1BzmPDvMO3VIykYCJ-rUxZQ7LLltmNkVtcXDJYy-84wgdFusiNJsvNt60fVrV_zJ4INBpZseRjxRtudYPvTQ=w1097-h802-no" alt="分享螢幕畫面"></p>
+</li>
+<li><p>再選擇要分享螢幕（Your Entire Screen）還是應用程式（Application Window）。<br><img src="https://lh3.googleusercontent.com/4l7x9qHKu-th4PQqFmaxzIB2Ri5tqYaIJNB0s_Ku3FgrhQcC43ch7E7JlMhT2AihQ3GY4bfYmem1zi3sqZeK1n0zFtxqZjvEsRN2cIN0MRQtM1xGQbQ0z4l6npF64mfzrIm4Dos12A=w617-h523-no" alt="分享整個螢幕畫面"><br><img src="https://lh3.googleusercontent.com/9EmKhj4VscJAmj9nL3GUGgOiYqoPs8iKlpEkzCH5gPECBEuvz9TSrvUlTamRs3u5Z4zza9UqLJMT0D6mgQxwcToRTdfin2pL6d2zdxnPKonmVIBQg_pNnaiHEvzWcoC7UJEDk51-XQ=w619-h523-no" alt="分享應用程式"></p>
+</li>
+<li><p>再點擊 <code>Share</code>，此時你的 Google Hangouts 畫面就會是要分享的內容。</p>
+</li>
+<li>要看其他人分享的螢幕，點擊主視窗下方的其他人的小視窗就可以進行切換。<br><img src="https://lh3.googleusercontent.com/sedtAm7wrJNBXCEaVVhg5PBIinaNEtYXNzzZL4rYf39v2-p6d3hDeYFzoXZk6s5ZOpGs_5I0R9LVDkQrBkXp_e59ZF6D6cWxqQuF-Bpp9xFV7r-AJPGdhKp73NeNy58SlMdXHy52ag=w1182-h673-no" alt="切換到他人分享的螢幕"></li>
+</ol>
+<p>以上截圖內容是在 MAC OS 下操作的畫面，其他 OS 可能會有出入。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;開啟 Google Chrome 瀏覽器並且登入 Google 帳號，然後在網址列搜尋 &lt;code&gt;Google Hangouts&lt;/code&gt; 或直接開啟連結 &lt;a href=&quot;https://hangouts.google.com/?hl=zh-TW&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hangouts.google.com/?hl=zh-TW&lt;/a&gt; 。&lt;br&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/HvfYRZAccPR9UUKnDHlRd1zZWqIPwi2R_rsLdtdT0B9qaGRhnPWgmQqhv-h-shh4H4mrD9eJ4b_QWK-JrpnPfVxGqQGyySQnmNM3i0_I6Wj8_n9RIyA63IN-q1kW3wXMeaX8Zx034g=w816-h569-no&quot; alt=&quot;Google Search &amp;quot;google hangouts&amp;quot;&quot;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="notes" scheme="http://blog.codefun.tw/categories/notes/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 安裝筆記</title>
+    <link href="http://blog.codefun.tw/2017/08/18/2017081801-hexo-install-notes/"/>
+    <id>http://blog.codefun.tw/2017/08/18/2017081801-hexo-install-notes/</id>
+    <published>2017-08-18T02:51:11.000Z</published>
+    <updated>2017-08-18T03:09:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/GITPAGEUSERNAME/GITPAGEUSERNAME.github.io.git .deploy/GITPAGEUSERNAME.github.io</div></pre></td></tr></table></figure>
+<h2 id="Shell-Script"><a href="#Shell-Script" class="headerlink" title="Shell Script"></a>Shell Script</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">hexo generate</div><div class="line">cp -R public/* .deploy/codefuntw.github.io</div><div class="line">cd .deploy/codefuntw.github.io</div><div class="line">git add .</div><div class="line">git commit -m “update”</div><div class="line">git push origin master</div></pre></td></tr></table></figure>
+<h2 id="Custom-Domain-Setting-Reference"><a href="#Custom-Domain-Setting-Reference" class="headerlink" title="Custom Domain Setting Reference"></a>Custom Domain Setting Reference</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">https://help.github.com/articles/setting-up-an-apex-domain/</div><div class="line">https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider</div><div class="line">https://help.github.com/articles/adding-or-removing-a-custom-domain-for-your-github-pages-site/</div></pre></td></tr></table></figure>
+<h3 id="Custom-Domain-對應到-GitHub-page"><a href="#Custom-Domain-對應到-GitHub-page" class="headerlink" title="Custom Domain 對應到 GitHub page"></a>Custom Domain 對應到 GitHub page</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ dig blog.codefun.tw +nostats +nocomments +nocmd</div><div class="line"></div><div class="line">; &lt;&lt;&gt;&gt; DiG 9.8.3-P1 &lt;&lt;&gt;&gt; blog.codefun.tw +nostats +nocomments +nocmd</div><div class="line">;; global options: +cmd</div><div class="line">;blog.codefun.tw.       IN  A</div><div class="line">blog.codefun.tw.    3599    IN  CNAME   GITPAGEUSERNAME.github.io.</div><div class="line">GITPAGEUSERNAME.github.io.  3599    IN  CNAME   github.map.fastly.net.</div><div class="line">github.map.fastly.net.  2865    IN  CNAME   prod.github.map.fastlylb.net.</div><div class="line">prod.github.map.fastlylb.net. 13 IN A   151.101.100.133</div></pre></td></tr></table></figure>
+<h2 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h2><h3 id="常用基本指令"><a href="#常用基本指令" class="headerlink" title="常用基本指令"></a>常用基本指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ hexo g  # 或者 hexo generate</div><div class="line">$ hexo s  # 或者 hexo server，可以在 http://localhost:4000/ 查看</div><div class="line">$ hexo deploy (hexo d)  # 部署到遠端</div><div class="line">$ hexo new &quot;postName&quot;  # 新建文章</div><div class="line">$ hexo new page &quot;pageName&quot;  # 新建頁面</div></pre></td></tr></table></figure>
+<h3 id="常用簡寫"><a href="#常用簡寫" class="headerlink" title="常用簡寫"></a>常用簡寫</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo n == hexo new</div><div class="line">$ hexo g == hexo generate</div><div class="line">$ hexo s == hexo server</div><div class="line">$ hexo d == hexo deploy</div></pre></td></tr></table></figure>
+<h3 id="常用組合"><a href="#常用組合" class="headerlink" title="常用組合"></a>常用組合</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo d -g  # 生成部署</div><div class="line">$ hexo s -g  # 生成預覽</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-feed</div><div class="line">$ npm install hexo-generator-sitemap</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Install-Hexo&quot;&gt;&lt;a href=&quot;#Install-Hexo&quot; class=&quot;headerlink&quot; title=&quot;Install Hexo&quot;&gt;&lt;/a&gt;Install Hexo&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ npm install -g hexo-cli&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="notes" scheme="http://blog.codefun.tw/categories/notes/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>在本地端使用 Nodejs &amp; Ngrok 進行 Line Bot 開發測試</title>
