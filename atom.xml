@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://blog.codefun.tw/"/>
+  <link href="http://codefun.tw/"/>
   <updated>2017-08-18T04:22:10.000Z</updated>
-  <id>http://blog.codefun.tw/</id>
+  <id>http://codefun.tw/</id>
   
   <author>
     <name>Jerry Huang</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>開發廣告系統（DSP）不能不知道的關鍵字！</title>
-    <link href="http://blog.codefun.tw/2017/08/18/2017081803-cpc-cpa-ad-keywords/"/>
-    <id>http://blog.codefun.tw/2017/08/18/2017081803-cpc-cpa-ad-keywords/</id>
+    <link href="http://codefun.tw/2017/08/18/2017081803-cpc-cpa-ad-keywords/"/>
+    <id>http://codefun.tw/2017/08/18/2017081803-cpc-cpa-ad-keywords/</id>
     <published>2017-08-18T04:20:55.000Z</published>
     <updated>2017-08-18T04:22:10.000Z</updated>
     
@@ -79,19 +79,19 @@
     
     </summary>
     
-      <category term="marketing" scheme="http://blog.codefun.tw/categories/marketing/"/>
+      <category term="marketing" scheme="http://codefun.tw/categories/marketing/"/>
     
     
-      <category term="marketing" scheme="http://blog.codefun.tw/tags/marketing/"/>
+      <category term="marketing" scheme="http://codefun.tw/tags/marketing/"/>
     
-      <category term="ad keyword" scheme="http://blog.codefun.tw/tags/ad-keyword/"/>
+      <category term="ad keyword" scheme="http://codefun.tw/tags/ad-keyword/"/>
     
   </entry>
   
   <entry>
     <title>如何使用 Google Hangouts 進行遠端多人會議</title>
-    <link href="http://blog.codefun.tw/2017/08/18/2017081802-google-hangouts-multi-person-meeting/"/>
-    <id>http://blog.codefun.tw/2017/08/18/2017081802-google-hangouts-multi-person-meeting/</id>
+    <link href="http://codefun.tw/2017/08/18/2017081802-google-hangouts-multi-person-meeting/"/>
+    <id>http://codefun.tw/2017/08/18/2017081802-google-hangouts-multi-person-meeting/</id>
     <published>2017-08-18T03:11:20.000Z</published>
     <updated>2017-08-18T04:08:13.000Z</updated>
     
@@ -127,15 +127,15 @@
     
     </summary>
     
-      <category term="notes" scheme="http://blog.codefun.tw/categories/notes/"/>
+      <category term="notes" scheme="http://codefun.tw/categories/notes/"/>
     
     
   </entry>
   
   <entry>
     <title>Hexo 安裝筆記</title>
-    <link href="http://blog.codefun.tw/2017/08/18/2017081801-hexo-install-notes/"/>
-    <id>http://blog.codefun.tw/2017/08/18/2017081801-hexo-install-notes/</id>
+    <link href="http://codefun.tw/2017/08/18/2017081801-hexo-install-notes/"/>
+    <id>http://codefun.tw/2017/08/18/2017081801-hexo-install-notes/</id>
     <published>2017-08-18T02:51:11.000Z</published>
     <updated>2017-08-18T03:09:23.000Z</updated>
     
@@ -158,15 +158,15 @@
     
     </summary>
     
-      <category term="notes" scheme="http://blog.codefun.tw/categories/notes/"/>
+      <category term="notes" scheme="http://codefun.tw/categories/notes/"/>
     
     
   </entry>
   
   <entry>
     <title>在本地端使用 Nodejs &amp; Ngrok 進行 Line Bot 開發測試</title>
-    <link href="http://blog.codefun.tw/2017/06/02/20170602-nodejs-line-bot-p1/"/>
-    <id>http://blog.codefun.tw/2017/06/02/20170602-nodejs-line-bot-p1/</id>
+    <link href="http://codefun.tw/2017/06/02/20170602-nodejs-line-bot-p1/"/>
+    <id>http://codefun.tw/2017/06/02/20170602-nodejs-line-bot-p1/</id>
     <published>2017-06-02T07:07:27.000Z</published>
     <updated>2017-06-03T16:59:45.000Z</updated>
     
@@ -269,21 +269,21 @@
     
     </summary>
     
-      <category term="nodejs" scheme="http://blog.codefun.tw/categories/nodejs/"/>
+      <category term="nodejs" scheme="http://codefun.tw/categories/nodejs/"/>
     
     
-      <category term="nodejs" scheme="http://blog.codefun.tw/tags/nodejs/"/>
+      <category term="nodejs" scheme="http://codefun.tw/tags/nodejs/"/>
     
-      <category term="line bot" scheme="http://blog.codefun.tw/tags/line-bot/"/>
+      <category term="line bot" scheme="http://codefun.tw/tags/line-bot/"/>
     
-      <category term="ngrok" scheme="http://blog.codefun.tw/tags/ngrok/"/>
+      <category term="ngrok" scheme="http://codefun.tw/tags/ngrok/"/>
     
   </entry>
   
   <entry>
     <title>OSX 執行 gvm pkgset use 發生錯誤</title>
-    <link href="http://blog.codefun.tw/2017/04/26/20170426-osx-gvm-pkgset-use-error/"/>
-    <id>http://blog.codefun.tw/2017/04/26/20170426-osx-gvm-pkgset-use-error/</id>
+    <link href="http://codefun.tw/2017/04/26/20170426-osx-gvm-pkgset-use-error/"/>
+    <id>http://codefun.tw/2017/04/26/20170426-osx-gvm-pkgset-use-error/</id>
     <published>2017-04-26T01:58:10.000Z</published>
     <updated>2017-06-03T16:46:50.000Z</updated>
     
@@ -299,19 +299,19 @@
     
     </summary>
     
-      <category term="golang" scheme="http://blog.codefun.tw/categories/golang/"/>
+      <category term="golang" scheme="http://codefun.tw/categories/golang/"/>
     
     
-      <category term="golang" scheme="http://blog.codefun.tw/tags/golang/"/>
+      <category term="golang" scheme="http://codefun.tw/tags/golang/"/>
     
-      <category term="gvm" scheme="http://blog.codefun.tw/tags/gvm/"/>
+      <category term="gvm" scheme="http://codefun.tw/tags/gvm/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://blog.codefun.tw/2016/10/08/hello-world/"/>
-    <id>http://blog.codefun.tw/2016/10/08/hello-world/</id>
+    <link href="http://codefun.tw/2016/10/08/hello-world/"/>
+    <id>http://codefun.tw/2016/10/08/hello-world/</id>
     <published>2016-10-08T08:53:11.000Z</published>
     <updated>2017-06-03T16:24:07.000Z</updated>
     
