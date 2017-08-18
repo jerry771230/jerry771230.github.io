@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://codefun.tw/"/>
-  <updated>2017-08-18T04:22:10.000Z</updated>
+  <updated>2017-08-18T06:11:17.000Z</updated>
   <id>http://codefun.tw/</id>
   
   <author>
@@ -20,12 +20,15 @@
     <link href="http://codefun.tw/2017/08/18/2017081803-cpc-cpa-ad-keywords/"/>
     <id>http://codefun.tw/2017/08/18/2017081803-cpc-cpa-ad-keywords/</id>
     <published>2017-08-18T04:20:55.000Z</published>
-    <updated>2017-08-18T04:22:10.000Z</updated>
+    <updated>2017-08-18T06:11:17.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="關鍵字"><a href="#關鍵字" class="headerlink" title="關鍵字"></a>關鍵字</h2><ul>
 <li>DSP: Demand Side Platform 網路廣告中的需求方平台，可以讓廣告主進行跨媒體的自動化廣告投放。J: 買廣告版位</li>
 <li>SSP: Supply Side Platform 是網路媒體中的供應方平台。SSP 平台幫助網路媒體託管其廣告位和廣告交易，與網路交易平台對接，從而將他們的流量變現。J: 賣廣告版位</li>
 <li>DMP: Data-Management Platform 是專門為廣告主、媒體等開發的廣告數據管理平台，主要分析、儲存用戶行為數據，並管理相關資料，為廣告主提供精準的用戶行為分析。</li>
+</ul>
+<a id="more"></a>
+<ul>
 <li>RTB: Real Time Billing</li>
 <li>CPC: Cost Per Click 每次點擊計價</li>
 <li>CPM: Cost Per Mille，或者Cost Per Thousand;Cost Per Impressions，每千次展示計價</li>
@@ -37,7 +40,6 @@
 <li>ROI: Return On Investment 每投資一塊錢所得到回饋的百分比</li>
 <li>ROAS: Return On AD Spending 廣告沒投入一塊錢可獲得的營收</li>
 </ul>
-<a id="more"></a>
 <hr>
 <h2 id="DSP-優點"><a href="#DSP-優點" class="headerlink" title="DSP 優點"></a>DSP 優點</h2><ul>
 <li>精確的受眾定向</li>
@@ -65,16 +67,6 @@
 &lt;li&gt;DSP: Demand Side Platform 網路廣告中的需求方平台，可以讓廣告主進行跨媒體的自動化廣告投放。J: 買廣告版位&lt;/li&gt;
 &lt;li&gt;SSP: Supply Side Platform 是網路媒體中的供應方平台。SSP 平台幫助網路媒體託管其廣告位和廣告交易，與網路交易平台對接，從而將他們的流量變現。J: 賣廣告版位&lt;/li&gt;
 &lt;li&gt;DMP: Data-Management Platform 是專門為廣告主、媒體等開發的廣告數據管理平台，主要分析、儲存用戶行為數據，並管理相關資料，為廣告主提供精準的用戶行為分析。&lt;/li&gt;
-&lt;li&gt;RTB: Real Time Billing&lt;/li&gt;
-&lt;li&gt;CPC: Cost Per Click 每次點擊計價&lt;/li&gt;
-&lt;li&gt;CPM: Cost Per Mille，或者Cost Per Thousand;Cost Per Impressions，每千次展示計價&lt;/li&gt;
-&lt;li&gt;CPA: Cost Per Action 以實際行動效果來計算成本&lt;/li&gt;
-&lt;li&gt;CPS: Cost Per Sales 每次有效銷售定價&lt;/li&gt;
-&lt;li&gt;CPV: Cost Per View 每次觀看成本&lt;/li&gt;
-&lt;li&gt;AD Exchange: 網路廣告交易平台，功能就是聯繫廣告的賣方（媒體、網站主）和買方（廣告主）。Ad Exchange 平台交易的公司包括有 Yahoo、Google、The Rubicon Project、OpenX、AppNexus 等&lt;/li&gt;
-&lt;li&gt;AD Network: 聯播網&lt;/li&gt;
-&lt;li&gt;ROI: Return On Investment 每投資一塊錢所得到回饋的百分比&lt;/li&gt;
-&lt;li&gt;ROAS: Return On AD Spending 廣告沒投入一塊錢可獲得的營收&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -93,13 +85,12 @@
     <link href="http://codefun.tw/2017/08/18/2017081802-google-hangouts-multi-person-meeting/"/>
     <id>http://codefun.tw/2017/08/18/2017081802-google-hangouts-multi-person-meeting/</id>
     <published>2017-08-18T03:11:20.000Z</published>
-    <updated>2017-08-18T04:08:13.000Z</updated>
+    <updated>2017-08-18T06:13:37.000Z</updated>
     
     <content type="html"><![CDATA[<ol>
-<li>開啟 Google Chrome 瀏覽器並且登入 Google 帳號，然後在網址列搜尋 <code>Google Hangouts</code> 或直接開啟連結 <a href="https://hangouts.google.com/?hl=zh-TW" target="_blank" rel="external">https://hangouts.google.com/?hl=zh-TW</a> 。<br><img src="https://lh3.googleusercontent.com/HvfYRZAccPR9UUKnDHlRd1zZWqIPwi2R_rsLdtdT0B9qaGRhnPWgmQqhv-h-shh4H4mrD9eJ4b_QWK-JrpnPfVxGqQGyySQnmNM3i0_I6Wj8_n9RIyA63IN-q1kW3wXMeaX8Zx034g=w816-h569-no" alt="Google Search &quot;google hangouts&quot;"></li>
-</ol>
+<li><p>開啟 Google Chrome 瀏覽器並且登入 Google 帳號，然後在網址列搜尋 <code>Google Hangouts</code> 或直接開啟連結 <a href="https://hangouts.google.com/?hl=zh-TW" target="_blank" rel="external">https://hangouts.google.com/?hl=zh-TW</a> 。<br><img src="https://lh3.googleusercontent.com/HvfYRZAccPR9UUKnDHlRd1zZWqIPwi2R_rsLdtdT0B9qaGRhnPWgmQqhv-h-shh4H4mrD9eJ4b_QWK-JrpnPfVxGqQGyySQnmNM3i0_I6Wj8_n9RIyA63IN-q1kW3wXMeaX8Zx034g=w816-h569-no" alt="Google Search &quot;google hangouts&quot;"></p>
 <a id="more"></a>
-<ol>
+</li>
 <li><p>進入 <a href="https://hangouts.google.com/?hl=zh-TW" target="_blank" rel="external">https://hangouts.google.com/?hl=zh-TW</a> 頁面後點擊 <code>視訊通話</code>。<br><img src="https://lh3.googleusercontent.com/AlFUgzsOF6r7JUqpzjdfq5D1af5WpFffSDOuWE94uCZQjUDvay_gIb7Ab_01fsDXcuyLeiT7IT-Iohm0bFuN5rilRxYpbxvzKEm9jCXHsb9g8Qldxfc022gsid-IXbTBpyb-Fg285g=w1015-h598-no" alt="開啟視訊通話"></p>
 </li>
 <li><p>同意 Google Hangouts 取用攝影機及麥克風的權限，即可正式開啟會議。<br><img src="https://lh3.googleusercontent.com/komj3VnPhw7yi-KjjhBGMzh_FWEjp_rHLrB-fuF1cD2thBBGST1xnm0K_HwKmLAzsIqCS66qkK9D6oiM-QpggSjEmR0IppLB6NqsjcnpDXMK61iOx7OQ-6ob0Cev-AFrCX-Icc-b4A=w1026-h717-no" alt="同意取用攝影機及麥克風"></p>
@@ -122,8 +113,7 @@
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;開啟 Google Chrome 瀏覽器並且登入 Google 帳號，然後在網址列搜尋 &lt;code&gt;Google Hangouts&lt;/code&gt; 或直接開啟連結 &lt;a href=&quot;https://hangouts.google.com/?hl=zh-TW&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hangouts.google.com/?hl=zh-TW&lt;/a&gt; 。&lt;br&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/HvfYRZAccPR9UUKnDHlRd1zZWqIPwi2R_rsLdtdT0B9qaGRhnPWgmQqhv-h-shh4H4mrD9eJ4b_QWK-JrpnPfVxGqQGyySQnmNM3i0_I6Wj8_n9RIyA63IN-q1kW3wXMeaX8Zx034g=w816-h569-no&quot; alt=&quot;Google Search &amp;quot;google hangouts&amp;quot;&quot;&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;開啟 Google Chrome 瀏覽器並且登入 Google 帳號，然後在網址列搜尋 &lt;code&gt;Google Hangouts&lt;/code&gt; 或直接開啟連結 &lt;a href=&quot;https://hangouts.google.com/?hl=zh-TW&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hangouts.google.com/?hl=zh-TW&lt;/a&gt; 。&lt;br&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/HvfYRZAccPR9UUKnDHlRd1zZWqIPwi2R_rsLdtdT0B9qaGRhnPWgmQqhv-h-shh4H4mrD9eJ4b_QWK-JrpnPfVxGqQGyySQnmNM3i0_I6Wj8_n9RIyA63IN-q1kW3wXMeaX8Zx034g=w816-h569-no&quot; alt=&quot;Google Search &amp;quot;google hangouts&amp;quot;&quot;&gt;&lt;/p&gt;
     
     </summary>
     
