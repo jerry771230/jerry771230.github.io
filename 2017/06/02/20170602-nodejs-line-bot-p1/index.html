@@ -94,13 +94,13 @@
 
 
 
-<meta name="description" content="# 開發環境 macOS Sierra 10.12.5 Nodejs 7.10.0 Packages： express linebot    # 本次實作有以下階段： 申請 Line Bot 帳號 ngrok 讓 localhost 也可以使用 HTTPS 使用 Nodejs 在本地端部署 webhook service 使用 Line App 傳訊息給 Line Bot  # 申請 Line B">
+<meta name="description" content="Chat Bot 正夯，剛好公司的專案有 Line Bot 的應用，所以參考了 不必真的架站也能 5 分鐘實機體驗 LINE bot – 教學 ( by node.js &amp;amp; ngrok )、LINE BOT 實戰 ( 原理篇 )、LINE BOT 實戰 ( 聊天篇 ) 等文章來進行 Nodejs 的 Line bot 開發實作練習。">
 <meta name="keywords" content="nodejs,line bot,ngrok">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在本地端使用 Nodejs &amp; Ngrok 進行 Line Bot 開發測試">
 <meta property="og:url" content="http://blog.codefun.tw/2017/06/02/20170602-nodejs-line-bot-p1/index.html">
 <meta property="og:site_name" content="Codefun">
-<meta property="og:description" content="# 開發環境 macOS Sierra 10.12.5 Nodejs 7.10.0 Packages： express linebot    # 本次實作有以下階段： 申請 Line Bot 帳號 ngrok 讓 localhost 也可以使用 HTTPS 使用 Nodejs 在本地端部署 webhook service 使用 Line App 傳訊息給 Line Bot  # 申請 Line B">
+<meta property="og:description" content="Chat Bot 正夯，剛好公司的專案有 Line Bot 的應用，所以參考了 不必真的架站也能 5 分鐘實機體驗 LINE bot – 教學 ( by node.js &amp;amp; ngrok )、LINE BOT 實戰 ( 原理篇 )、LINE BOT 實戰 ( 聊天篇 ) 等文章來進行 Nodejs 的 Line bot 開發實作練習。">
 <meta property="og:image" content="https://lh3.googleusercontent.com/maPhifD7BVwbpWvElCZzWdhXqULQfbGYofmqazlAE8S0ArKXVb5kWk2r8JmAb-CBZvpH2WuQ_NubG63u-5rW0GYIpBE4-7ryoDbXmJn-YwnZWn9x2xaAuhm-0M0FsLEyBfoe=w715-h409-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/2s8QshZMPK-b4hRv3fkYZGzP0Pw_7iKf9vMnpOOyv6G6J0jtDrSrFm4NSdoGdxEC8khRDLpzsDsUKZDQ4UWQyx4JPvWYcPFh7-HRiy_g12Q5ON861Aj8oWStncau_0ZubOl5=w1022-h480-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/eKQOGxTfs3hb3rgwyQIQ9qnLWkI7pcWyHt9BOBmXEiDEOON6upYlcJMM50vahJvA03M5WKT_V5o_x-CZ68ttR8EMGh1RJSE-Hk6eMYFwpMQHlw6dCVXBBm4whOwCohEFXw4DyQ=w481-h639-no">
@@ -116,10 +116,10 @@
 <meta property="og:image" content="https://lh3.googleusercontent.com/M6x09wRnbeDagDnrCe0m7rQAPocOIOnhooSD6mOnLbBG-ygU2M-VRi7UWcYVQ6jHkkQyy9htxI54rehBjWBQFwzpw_EI5QQSTzIct5UtFO3aB0sgykQllqpd3ehUjeq4gNF7wA=w317-h181-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/hx85cXamDUf7tD3pktZZtgP1w46UyMydyGa1PcO3bdVvSBJhCJbZuDBDeQCC4VFaEpV9fhGyJVB1sdnFEMjiMqo6zCaVSmI7wQHpSXX4Fb3xx2--T-x_wnNRh_i7z-5p2X3mvw=w319-h282-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/bq-9Ck0gZ8aS5gcP6TKdcSjUAsdSVBpF-EcJqSSmEWTyHxfLKDEBgxfBKCMG0P1267Apl_tcaxr24omYJiGqruOYbdpr4BxiUWQh_dOmIytlfAw3kfHdQppgwF8gd0y9JnWaZw=w320-h335-no">
-<meta property="og:updated_time" content="2017-06-03T04:57:47.000Z">
+<meta property="og:updated_time" content="2017-06-03T16:59:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在本地端使用 Nodejs &amp; Ngrok 進行 Line Bot 開發測試">
-<meta name="twitter:description" content="# 開發環境 macOS Sierra 10.12.5 Nodejs 7.10.0 Packages： express linebot    # 本次實作有以下階段： 申請 Line Bot 帳號 ngrok 讓 localhost 也可以使用 HTTPS 使用 Nodejs 在本地端部署 webhook service 使用 Line App 傳訊息給 Line Bot  # 申請 Line B">
+<meta name="twitter:description" content="Chat Bot 正夯，剛好公司的專案有 Line Bot 的應用，所以參考了 不必真的架站也能 5 分鐘實機體驗 LINE bot – 教學 ( by node.js &amp;amp; ngrok )、LINE BOT 實戰 ( 原理篇 )、LINE BOT 實戰 ( 聊天篇 ) 等文章來進行 Nodejs 的 Line bot 開發實作練習。">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/maPhifD7BVwbpWvElCZzWdhXqULQfbGYofmqazlAE8S0ArKXVb5kWk2r8JmAb-CBZvpH2WuQ_NubG63u-5rW0GYIpBE4-7ryoDbXmJn-YwnZWn9x2xaAuhm-0M0FsLEyBfoe=w715-h409-no">
 
 
@@ -441,22 +441,25 @@
       
 
       
-        <h2 id="開發環境"><a href="#開發環境" class="headerlink" title="# 開發環境"></a># 開發環境</h2><ul>
-<li>macOS Sierra 10.12.5</li>
-<li>Nodejs 7.10.0</li>
+        <p>Chat Bot 正夯，剛好公司的專案有 Line Bot 的應用，所以參考了 <a href="https://goo.gl/ePtTRw" target="_blank" rel="external">不必真的架站也能 5 分鐘實機體驗 LINE bot – 教學 ( by node.js &amp; ngrok )</a>、<a href="http://www.oxxostudio.tw/articles/201701/line-bot.html" target="_blank" rel="external">LINE BOT 實戰 ( 原理篇 )</a>、<a href="http://www.oxxostudio.tw/articles/201701/line-bot-2.html" target="_blank" rel="external">LINE BOT 實戰 ( 聊天篇 )</a> 等文章來進行 Nodejs 的 Line bot 開發實作練習。</p>
+<a id="more"></a>
+<h2 id="開發環境"><a href="#開發環境" class="headerlink" title="開發環境"></a>開發環境</h2><ul>
+<li>macOS Sierra： 10.12.5</li>
+<li>Nodejs： 7.10.0</li>
 <li>Packages：<ul>
 <li><a href="https://www.npmjs.com/package/express" target="_blank" rel="external">express</a></li>
 <li><a href="https://www.npmjs.com/package/linebot" target="_blank" rel="external">linebot</a></li>
 </ul>
 </li>
+<li>Github： <a href="https://github.com/jerry771230/node-line-bot-practice" target="_blank" rel="external">https://github.com/jerry771230/node-line-bot-practice</a></li>
 </ul>
-<h2 id="本次實作有以下階段："><a href="#本次實作有以下階段：" class="headerlink" title="# 本次實作有以下階段："></a># 本次實作有以下階段：</h2><ul>
+<h2 id="本次實作有以下階段："><a href="#本次實作有以下階段：" class="headerlink" title="本次實作有以下階段："></a>本次實作有以下階段：</h2><ul>
 <li><a href="#linebotaccount">申請 Line Bot 帳號</a></li>
 <li><a href="#usingngrok">ngrok 讓 localhost 也可以使用 HTTPS</a></li>
 <li><a href="#webhookservice">使用 Nodejs 在本地端部署 webhook service</a></li>
 <li><a href="#sendlinebot">使用 Line App 傳訊息給 Line Bot</a></li>
 </ul>
-<h2 id="申請-Line-Bot-帳號"><a href="#申請-Line-Bot-帳號" class="headerlink" title="# 申請 Line Bot 帳號"></a><a id="linebotaccount"></a># 申請 Line Bot 帳號</h2><ol>
+<h2 id="申請-Line-Bot-帳號"><a href="#申請-Line-Bot-帳號" class="headerlink" title="申請 Line Bot 帳號"></a><a id="linebotaccount"></a>申請 Line Bot 帳號</h2><ol>
 <li><p>到 <a href="https://business.line.me/zh-hant" target="_blank" rel="external">LINE Business Center</a> 申請商用帳號。點擊「帳號清單」，再點擊「建立商用帳號」<br><img src="https://lh3.googleusercontent.com/maPhifD7BVwbpWvElCZzWdhXqULQfbGYofmqazlAE8S0ArKXVb5kWk2r8JmAb-CBZvpH2WuQ_NubG63u-5rW0GYIpBE4-7ryoDbXmJn-YwnZWn9x2xaAuhm-0M0FsLEyBfoe=w715-h409-no" alt="申請商用帳戶"></p>
 </li>
 <li><p>找到 Messageing API，點擊「開始使用Developer Trial」<br><img src="https://lh3.googleusercontent.com/2s8QshZMPK-b4hRv3fkYZGzP0Pw_7iKf9vMnpOOyv6G6J0jtDrSrFm4NSdoGdxEC8khRDLpzsDsUKZDQ4UWQyx4JPvWYcPFh7-HRiy_g12Q5ON861Aj8oWStncau_0ZubOl5=w1022-h480-no" alt="開始使用Developer Trial"></p>
@@ -471,232 +474,54 @@
 <li><p>Bot Settings 的部份要留意 Usable APIs 是否有 <code>REPLY_MESSAGE</code> 及 <code>PUSH_MESSAGE</code>。如果沒有 <code>PUSH_MESSAGE</code> 是不能進行 Bot 主動發訊息給 Client App 的。<br><img src="https://lh3.googleusercontent.com/hZmeGk-OPkAUxrjMuIqYgYbfmWmv1jVEWxQA8KT-FpjncQ-KD34K3Ur-IqGZlYg1Gp1c_QPqmdvbhNC55nOmC-NG2Gzz1frSfUNWASVxHO-F4tcsS2clrtU0Hmm8lMYNfTIj6A=w871-h639-no" alt="Use webhooks"><br>Request Settings 裡的 Use webhooks 請勾選 「Allow」。<br>Details 的 Allow Bot to join group chats、Auto Reply Message 及 Greeting Message 都勾選 「Don’t Allow」。</p>
 </li>
 </ol>
-<h2 id="ngrok-讓-localhost-也可以使用-HTTPS"><a href="#ngrok-讓-localhost-也可以使用-HTTPS" class="headerlink" title="# ngrok 讓 localhost 也可以使用 HTTPS"></a><a id="usingngrok"></a># ngrok 讓 localhost 也可以使用 HTTPS</h2><p>Line Bot 需要有 HTTPS 的 webhook service 才能接受及轉發訊息，這時候後端開發必備神器 - <a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a>，可以讓 localhost 使用 HTTPS 的隨機網址，達成 webhook service 測試，省去了必須上傳到 Server 後才能得到測試結果的時間花費。</p>
+<h2 id="ngrok-讓-localhost-也可以使用-HTTPS"><a href="#ngrok-讓-localhost-也可以使用-HTTPS" class="headerlink" title="ngrok 讓 localhost 也可以使用 HTTPS"></a><a id="usingngrok"></a>ngrok 讓 localhost 也可以使用 HTTPS</h2><p>Line Bot 需要有 HTTPS 的 webhook service 才能接受及轉發訊息，這時候後端開發必備神器 - <a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a>，可以讓 localhost 使用 HTTPS 的隨機網址，達成 webhook service 測試，省去了必須上傳到 Server 後才能得到測試結果的時間花費。</p>
 <h3 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h3><p>Mac 的部份可以在 <a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a> 官網下載程式，解壓縮後就可以使用了。或者是丟到 <code>/usr/local/bin</code>，方便之後使用。</p>
 <p>Termial 指令</p>
-<pre><code>$ ngrok http 8080
-</code></pre><p>代表把外界的流量導到 localhost 的 8080 port。執行後會有以下畫面：</p>
-<pre><code>ngrok by @inconshreveable                                                                               (Ctrl+C to quit)
-
-Session Status                online
-Account                       YOUR_ACCOUNT (Plan: Free)
-Version                       2.2.4
-Region                        United States (us)
-Web Interface                 http://127.0.0.1:4040
-Forwarding                    http://85ceccf9.ngrok.io -&gt; localhost:8080
-
-Connections                   ttl     opn     rt1     rt5     p50     p90
-                              0       0       0.00    0.00    0.00    0.00
-</code></pre><p>按下 <code>Ctrl + C</code> 跳出並停止運作。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> ngrok http 8080</div></pre></td></tr></table></figure>
+<p>代表把外界的流量導到 localhost 的 8080 port。執行後會有以下畫面：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ngrok by @inconshreveable          (Ctrl+C to quit)</div><div class="line"></div><div class="line">Session Status                online</div><div class="line">Account                       YOUR_ACCOUNT (Plan: Free)</div><div class="line">Version                       2.2.4</div><div class="line">Region                        United States (us)</div><div class="line">Web Interface                 http://127.0.0.1:4040</div><div class="line">Forwarding                    http://85ceccf9.ngrok.io -&gt; localhost:8080</div><div class="line"></div><div class="line">Connections                   ttl     opn     rt1     rt5     p50     p90</div><div class="line">                              0       0       0.00    0.00    0.00    0.00</div></pre></td></tr></table></figure>
+<p>按下 <code>Ctrl + C</code> 跳出並停止運作。</p>
 <h3 id="申請-HTTPS-protocol"><a href="#申請-HTTPS-protocol" class="headerlink" title="申請 HTTPS protocol"></a>申請 HTTPS protocol</h3><p>到 <a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a> 官網註冊，可以使用 Github 或 Google 登入。<br>登入的畫面如下：<br><img src="https://lh3.googleusercontent.com/ZRyTQA8tuz-QiC3bJh3MjzC6U2_AliofTUUfHdnieoQJ4vO3rYt80AqR7yNyXA2KBERCuS0KXIcaTbX0ay3G2-Msz9oEj6TylLSQOqY-uYOOMKm-1M1IC4as3lP6kMkRuGdWhQ=w742-h639-no" alt="ngrok Dashborad"></p>
 <p>在 Terminal 下執行指令，這樣就可以使用 https 的網址</p>
-<pre><code>$ ngrok authtoken {token}
-$ ngrok http 8080
-
-ngrok by @inconshreveable                                                                               (Ctrl+C to quit)
-
-Session Status                online
-Account                       YOUR_ACCOUNT (Plan: Free)
-Version                       2.2.4
-Region                        United States (us)
-Web Interface                 http://127.0.0.1:4040
-Forwarding                    http://ec041dbf.ngrok.io -&gt; localhost:8080
-Forwarding                    https://ec041dbf.ngrok.io -&gt; localhost:8080
-
-Connections                   ttl     opn     rt1     rt5     p50     p90
-                              0       0       0.00    0.00    0.00    0.00
-</code></pre><p>其他指令參考</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$ ngrok authtoken &#123;token&#125;</div><div class="line">$ ngrok http 8080</div><div class="line"></div><div class="line">ngrok by @inconshreveable           (Ctrl+C to quit)</div><div class="line"></div><div class="line">Session Status                online</div><div class="line">Account                       YOUR_ACCOUNT (Plan: Free)</div><div class="line">Version                       2.2.4</div><div class="line">Region                        United States (us)</div><div class="line">Web Interface                 http://127.0.0.1:4040</div><div class="line">Forwarding                    http://ec041dbf.ngrok.io -&gt; localhost:8080</div><div class="line">Forwarding                    https://ec041dbf.ngrok.io -&gt; localhost:8080</div><div class="line"></div><div class="line">Connections                   ttl     opn     rt1     rt5     p50     p90</div><div class="line">                              0       0       0.00    0.00    0.00    0.00</div></pre></td></tr></table></figure>
+<p>其他指令參考</p>
 <ul>
-<li><p>HTTP Auth</p>
-<pre><code>$ ngrok http -auth &quot;user:passwd&quot; 80
-</code></pre></li>
-<li><p>轉址到 local domain（修改 /etc/hosts）</p>
-<pre><code>$ ngrok http -host-header=myweb.dev myweb.dev:80
-</code></pre></li>
+<li>HTTP Auth</li>
 </ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> ngrok http -auth "user:passwd" 80</div></pre></td></tr></table></figure>
+<ul>
+<li>轉址到 local domain（修改 /etc/hosts）</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> ngrok http -host-header=myweb.dev myweb.dev:80</div></pre></td></tr></table></figure>
 <p>以上 ngrok 的基本使用是參考 <a href="https://coder.tw/?p=7211" target="_blank" rel="external">Ngrok – 讓本機也可以開發 webhook 免部署環境的神器</a></p>
-<h2 id="使用-Nodejs-在本地端部署-webhook-service"><a href="#使用-Nodejs-在本地端部署-webhook-service" class="headerlink" title="# 使用 Nodejs 在本地端部署 webhook service"></a><a id="webhookservice"></a># 使用 Nodejs 在本地端部署 webhook service</h2><h3 id="開始建立-Nodejs-專案"><a href="#開始建立-Nodejs-專案" class="headerlink" title="開始建立 Nodejs 專案"></a>開始建立 Nodejs 專案</h3><pre><code>$ mkdir node-line-bot
-$ cd node-line-bot
-</code></pre><p>建立 <code>package.json</code> 檔案，並修改 “scripts”，增加 <code>&quot;start&quot;: &quot;node .&quot;</code></p>
-<pre><code>$ npm init
-
-{
-  &quot;name&quot;: &quot;node-line-bot&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;description&quot;: &quot;&quot;,
-  &quot;main&quot;: &quot;index.js&quot;,
-  &quot;scripts&quot;: {
-    &quot;start&quot;: &quot;node .&quot;
-  },
-  &quot;author&quot;: &quot;Jerry Huang&quot;,
-  &quot;license&quot;: &quot;MIT&quot;
-}
-</code></pre><p>安裝模組 <code>linebot</code> 及 <code>express</code></p>
-<pre><code>$ npm install linebot express --save
-
-node-line-bot@1.0.0 /Users/jerryhuang/workspace/practice/nodejs/node-line-bot
-├─┬ express@4.15.3
-│ ├─┬ accepts@1.3.3
-│ │ ├─┬ mime-types@2.1.15
-│ │ │ └── mime-db@1.27.0
-│ │ └── negotiator@0.6.1
-│ ├── array-flatten@1.1.1
-│ ├── content-disposition@0.5.2
-│ ├── content-type@1.0.2
-│ ├── cookie@0.3.1
-│ ├── cookie-signature@1.0.6
-│ ├─┬ debug@2.6.7
-│ │ └── ms@2.0.0
-│ ├── depd@1.1.0
-│ ├── encodeurl@1.0.1
-│ ├── escape-html@1.0.3
-│ ├── etag@1.8.0
-│ ├─┬ finalhandler@1.0.3
-│ │ └── unpipe@1.0.0
-│ ├── fresh@0.5.0
-│ ├── merge-descriptors@1.0.1
-│ ├── methods@1.1.2
-│ ├─┬ on-finished@2.3.0
-│ │ └── ee-first@1.1.1
-│ ├── parseurl@1.3.1
-│ ├── path-to-regexp@0.1.7
-│ ├─┬ proxy-addr@1.1.4
-│ │ ├── forwarded@0.1.0
-│ │ └── ipaddr.js@1.3.0
-│ ├── qs@6.4.0
-│ ├── range-parser@1.2.0
-│ ├─┬ send@0.15.3
-│ │ ├── destroy@1.0.4
-│ │ ├─┬ http-errors@1.6.1
-│ │ │ └── inherits@2.0.3
-│ │ └── mime@1.3.4
-│ ├── serve-static@1.12.3
-│ ├── setprototypeof@1.0.3
-│ ├── statuses@1.3.1
-│ ├─┬ type-is@1.6.15
-│ │ └── media-typer@0.3.0
-│ ├── utils-merge@1.0.0
-│ └── vary@1.1.1
-└─┬ linebot@1.3.0
-  ├─┬ body-parser@1.17.2
-  │ ├── bytes@2.4.0
-  │ ├── iconv-lite@0.4.15
-  │ └── raw-body@2.2.0
-  └─┬ node-fetch@1.7.0
-    ├── encoding@0.1.12
-    └── is-stream@1.1.0
-
-npm WARN node-line-bot@1.0.0 No description
-npm WARN node-line-bot@1.0.0 No repository field.
-</code></pre><p>建立 <code>index.js</code> 檔案的內容如下</p>
-<pre><code>let linebot = require(&apos;linebot&apos;),
-    express = require(&apos;express&apos;);
-
-const config = require(&apos;./config.json&apos;),
-    util = require(&apos;util&apos;);
-
-let bot = linebot({
-    channelId: &apos;Line Bot Channel ID&apos;,
-    channelSecret: &apos;Line Bot Channel Secret&apos;,
-    channelAccessToken: &apos;Line Bot Access Token&apos;
-});
-
-const linebotParser = bot.parser(),
-    app = express();
-
-bot.on(&apos;message&apos;, function(event) {
-    // 把收到訊息的 event 印出來
-    console.log(event);
-});
-
-app.post(&apos;/webhook&apos;, linebotParser);
-
-// 在 localhost 走 8080 port
-let server = app.listen(process.env.PORT || 8080, function() {
-    let port = server.address().port;
-    console.log(&quot;My Line bot App running on port&quot;, port);
-});
-</code></pre><h3 id="如何取得-Line-Bot-的-Channel-ID-及設定-Webhook"><a href="#如何取得-Line-Bot-的-Channel-ID-及設定-Webhook" class="headerlink" title="如何取得 Line Bot 的 Channel ID 及設定 Webhook"></a>如何取得 Line Bot 的 Channel ID 及設定 Webhook</h3><p>Channel ID、Channel Secret 及 Channel Access Token 可以從 LINE Business Center 進入後取得</p>
+<h2 id="使用-Nodejs-在本地端部署-webhook-service"><a href="#使用-Nodejs-在本地端部署-webhook-service" class="headerlink" title="使用 Nodejs 在本地端部署 webhook service"></a><a id="webhookservice"></a>使用 Nodejs 在本地端部署 webhook service</h2><h3 id="開始建立-Nodejs-專案"><a href="#開始建立-Nodejs-專案" class="headerlink" title="開始建立 Nodejs 專案"></a>開始建立 Nodejs 專案</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> mkdir node-line-bot</div><div class="line"><span class="meta">$</span> cd node-line-bot</div></pre></td></tr></table></figure>
+<p>建立 <code>package.json</code> 檔案，並修改 “scripts”，增加 <code>&quot;start&quot;: &quot;node .&quot;</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> npm init</div><div class="line"></div><div class="line">&#123;</div><div class="line">  "name": "node-line-bot",</div><div class="line">  "version": "1.0.0",</div><div class="line">  "description": "",</div><div class="line">  "main": "index.js",</div><div class="line">  "scripts": &#123;</div><div class="line">    "start": "node ."</div><div class="line">  &#125;,</div><div class="line">  "author": "Jerry Huang",</div><div class="line">  "license": "MIT"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>安裝模組 <code>linebot</code> 及 <code>express</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> npm install linebot express --save</div><div class="line"></div><div class="line">node-line-bot@1.0.0 /Users/jerryhuang/workspace/practice/nodejs/node-line-bot</div><div class="line">├─┬ express@4.15.3</div><div class="line">│ ├─┬ accepts@1.3.3</div><div class="line">│ │ ├─┬ mime-types@2.1.15</div><div class="line">│ │ │ └── mime-db@1.27.0</div><div class="line">│ │ └── negotiator@0.6.1</div><div class="line">│ ├── array-flatten@1.1.1</div><div class="line">│ ├── content-disposition@0.5.2</div><div class="line">│ ├── content-type@1.0.2</div><div class="line">│ ├── cookie@0.3.1</div><div class="line">│ ├── cookie-signature@1.0.6</div><div class="line">│ ├─┬ debug@2.6.7</div><div class="line">│ │ └── ms@2.0.0</div><div class="line">│ ├── depd@1.1.0</div><div class="line">│ ├── encodeurl@1.0.1</div><div class="line">│ ├── escape-html@1.0.3</div><div class="line">│ ├── etag@1.8.0</div><div class="line">│ ├─┬ finalhandler@1.0.3</div><div class="line">│ │ └── unpipe@1.0.0</div><div class="line">│ ├── fresh@0.5.0</div><div class="line">│ ├── merge-descriptors@1.0.1</div><div class="line">│ ├── methods@1.1.2</div><div class="line">│ ├─┬ on-finished@2.3.0</div><div class="line">│ │ └── ee-first@1.1.1</div><div class="line">│ ├── parseurl@1.3.1</div><div class="line">│ ├── path-to-regexp@0.1.7</div><div class="line">│ ├─┬ proxy-addr@1.1.4</div><div class="line">│ │ ├── forwarded@0.1.0</div><div class="line">│ │ └── ipaddr.js@1.3.0</div><div class="line">│ ├── qs@6.4.0</div><div class="line">│ ├── range-parser@1.2.0</div><div class="line">│ ├─┬ send@0.15.3</div><div class="line">│ │ ├── destroy@1.0.4</div><div class="line">│ │ ├─┬ http-errors@1.6.1</div><div class="line">│ │ │ └── inherits@2.0.3</div><div class="line">│ │ └── mime@1.3.4</div><div class="line">│ ├── serve-static@1.12.3</div><div class="line">│ ├── setprototypeof@1.0.3</div><div class="line">│ ├── statuses@1.3.1</div><div class="line">│ ├─┬ type-is@1.6.15</div><div class="line">│ │ └── media-typer@0.3.0</div><div class="line">│ ├── utils-merge@1.0.0</div><div class="line">│ └── vary@1.1.1</div><div class="line">└─┬ linebot@1.3.0</div><div class="line">  ├─┬ body-parser@1.17.2</div><div class="line">  │ ├── bytes@2.4.0</div><div class="line">  │ ├── iconv-lite@0.4.15</div><div class="line">  │ └── raw-body@2.2.0</div><div class="line">  └─┬ node-fetch@1.7.0</div><div class="line">    ├── encoding@0.1.12</div><div class="line">    └── is-stream@1.1.0</div><div class="line"></div><div class="line">npm WARN node-line-bot@1.0.0 No description</div><div class="line">npm WARN node-line-bot@1.0.0 No repository field.</div></pre></td></tr></table></figure>
+<p>建立 <code>index.js</code> 檔案的內容如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> linebot = <span class="built_in">require</span>(<span class="string">'linebot'</span>),</div><div class="line">    express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> config = <span class="built_in">require</span>(<span class="string">'./config.json'</span>),</div><div class="line">    util = <span class="built_in">require</span>(<span class="string">'util'</span>);</div><div class="line"></div><div class="line"><span class="keyword">let</span> bot = linebot(&#123;</div><div class="line">    <span class="attr">channelId</span>: <span class="string">'Line Bot Channel ID'</span>,</div><div class="line">    <span class="attr">channelSecret</span>: <span class="string">'Line Bot Channel Secret'</span>,</div><div class="line">    <span class="attr">channelAccessToken</span>: <span class="string">'Line Bot Access Token'</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">const</span> linebotParser = bot.parser(),</div><div class="line">    app = express();</div><div class="line"></div><div class="line">bot.on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="comment">// 把收到訊息的 event 印出來</span></div><div class="line">    <span class="built_in">console</span>.log(event);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.post(<span class="string">'/webhook'</span>, linebotParser);</div><div class="line"></div><div class="line"><span class="comment">// 在 localhost 走 8080 port</span></div><div class="line"><span class="keyword">let</span> server = app.listen(process.env.PORT || <span class="number">8080</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> port = server.address().port;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"My Line bot App running on port"</span>, port);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="如何取得-Line-Bot-的-Channel-ID-及設定-Webhook"><a href="#如何取得-Line-Bot-的-Channel-ID-及設定-Webhook" class="headerlink" title="如何取得 Line Bot 的 Channel ID 及設定 Webhook"></a>如何取得 Line Bot 的 Channel ID 及設定 Webhook</h3><p>Channel ID、Channel Secret 及 Channel Access Token 可以從 LINE Business Center 進入後取得</p>
 <h4 id="取得-Channel-ID、Channel-Secret-及-Channel-Access-Token"><a href="#取得-Channel-ID、Channel-Secret-及-Channel-Access-Token" class="headerlink" title="取得 Channel ID、Channel Secret 及 Channel Access Token"></a>取得 Channel ID、Channel Secret 及 Channel Access Token</h4><p>回到 LINE Business Center 按下 Messaging API 右邊的「LINE Developers」<br> <img src="https://lh3.googleusercontent.com/i2ZbXKUPnLO3EB-GpOH7CwbwLHB5xVFTI8J5ZSHm2GyGNmfIFmkpyjWLBoGA0Lo7J-xAS0OwC4C4jiqOG1SAKCksmeNr_LRmVB5pn0E5EZBg9C9Xx_rq0EyywNEWJZpkqDHriw=w738-h583-no" alt="前往 LINE Developers"></p>
-<p>在 LINE develioers 下的 “Basic information”，將 “Channel ID”、”Channel Secret”（點選 SHOW 會出現）、 “Channel Access Token” 複製貼到 index.js 裡對應的程式中<br> <img src="https://lh3.googleusercontent.com/nhK_bbRrgxY-cCb0D_79yUV-e_ARnRydKBXgj9QpUaoQh0-Lv5AdU7MsNgbK1LmB8VUuFUbOkRRfbLbX1kj8ZNNfIMJq7yo2oz8eSPlvmZOB5_Ce7LW45X8e9fuNujyJHEdaJQ=w654-h639-no" alt="取得 Channel ID"></p>
+<p>在 LINE developers 下的 “Basic information”，將 “Channel ID”、”Channel Secret”（點選 SHOW 會出現）、 “Channel Access Token” 複製貼到 index.js 裡對應的程式中<br> <img src="https://lh3.googleusercontent.com/nhK_bbRrgxY-cCb0D_79yUV-e_ARnRydKBXgj9QpUaoQh0-Lv5AdU7MsNgbK1LmB8VUuFUbOkRRfbLbX1kj8ZNNfIMJq7yo2oz8eSPlvmZOB5_Ce7LW45X8e9fuNujyJHEdaJQ=w654-h639-no" alt="取得 Channel ID"></p>
 <p>點選 ISSUE 會產生 “Channel Access Token”<br> <img src="https://lh3.googleusercontent.com/HXbB5WOezmhLSsokuOp4TZEFOn1xC10jdNXsZj76RH3fI5-OvJYd4TGYR6VN6AYLGgFIeLJCfXPznvnaZadwbFI6nVnx9cVW1ybWFcu5lFDkt0dgkUA5vHGHaqlpe9j2_OK9Kw=w633-h639-no" alt="取得 Channel Access Token"></p>
 <h4 id="設定-Webhook-URL"><a href="#設定-Webhook-URL" class="headerlink" title="設定 Webhook URL"></a>設定 Webhook URL</h4><p>同樣在 “Basic information” 下，按下右下角的 “EDIT”，然後將 ngrok 產生的網址以及 index.js 內監聽 post mehtod 的路徑組合 <code>https://ec041dbf.ngrok.io/webhook</code> 貼到 “Webhook URL” 中<br> <img src="https://lh3.googleusercontent.com/ptb0MmQ-AwOc4Ze5EywsFwy94QzjbOlWkXLmQtisBig5qHSCxpgVhIpNbOC2iJHk9PrwJHcBfHO9aKvB5biE95TkuQ-pqIgX4yi0b8BNrJO3qeI9OcnBCYPP2qpvw71IaiPWCg=w600-h639-no" alt="設定 Webhook URL"></p>
 <p>回到 Terminal 畫面，啟動 webhook service</p>
-<pre><code>$ node index.js
-</code></pre><p>再回 LINE develioers 的 “Basic information”，按下 Webhoo URL 右方的 “VERIFY” 以驗證是否正確。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> node index.js</div></pre></td></tr></table></figure>
+<p>再回 LINE developers 的 “Basic information”，按下 Webhoo URL 右方的 “VERIFY” 以驗證是否正確。</p>
 <p>Terminal 畫面會有以下資訊</p>
-<pre><code>{ replyToken: &apos;00000000000000000000000000000000&apos;,
-  type: &apos;message&apos;,
-  timestamp: 1451617200000,
-  source:
-   { type: &apos;user&apos;,
-     userId: &apos;UdeadbeefdeadbeefdeLINEBOTUSERID&apos;,
-     profile: [Function] },
-  message:
-   { id: &apos;100001&apos;,
-     type: &apos;text&apos;,
-     text: &apos;Hello,world&apos;,
-     content: [Function] },
-  reply: [Function] }
-{ replyToken: &apos;ffffffffffffffffffffffffffffffff&apos;,
-  type: &apos;message&apos;,
-  timestamp: 1451617210000,
-  source:
-   { type: &apos;user&apos;,
-     userId: &apos;UdeadbeefdeadbeefdeLINEBOTUSERID&apos;,
-     profile: [Function] },
-  message:
-   { id: &apos;100002&apos;,
-     type: &apos;sticker&apos;,
-     packageId: &apos;1&apos;,
-     stickerId: &apos;1&apos;,
-     content: [Function] },
-  reply: [Function] }
-</code></pre><h2 id="使用-Line-App-傳訊息給-Line-Bot"><a href="#使用-Line-App-傳訊息給-Line-Bot" class="headerlink" title="# 使用 Line App 傳訊息給 Line Bot"></a><a id="sendlinebot"></a># 使用 Line App 傳訊息給 Line Bot</h2><p>手機 Line App 掃描  LINE develioers 的 “Basic information” 畫面中的 QR Code 將 Line Bot 加入，然後輸入文字，測試 Line Bot 是否有正確接收到。<br> <img src="https://lh3.googleusercontent.com/M6x09wRnbeDagDnrCe0m7rQAPocOIOnhooSD6mOnLbBG-ygU2M-VRi7UWcYVQ6jHkkQyy9htxI54rehBjWBQFwzpw_EI5QQSTzIct5UtFO3aB0sgykQllqpd3ehUjeq4gNF7wA=w317-h181-no" alt=""></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&#123; replyToken: '00000000000000000000000000000000',</div><div class="line">  type: 'message',</div><div class="line">  timestamp: 1451617200000,</div><div class="line">  source:</div><div class="line">   &#123; type: 'user',</div><div class="line">     userId: 'UdeadbeefdeadbeefdeLINEBOTUSERID',</div><div class="line">     profile: [Function] &#125;,</div><div class="line">  message:</div><div class="line">   &#123; id: '100001',</div><div class="line">     type: 'text',</div><div class="line">     text: 'Hello,world',</div><div class="line">     content: [Function] &#125;,</div><div class="line">  reply: [Function] &#125;</div><div class="line">&#123; replyToken: 'ffffffffffffffffffffffffffffffff',</div><div class="line">  type: 'message',</div><div class="line">  timestamp: 1451617210000,</div><div class="line">  source:</div><div class="line">   &#123; type: 'user',</div><div class="line">     userId: 'UdeadbeefdeadbeefdeLINEBOTUSERID',</div><div class="line">     profile: [Function] &#125;,</div><div class="line">  message:</div><div class="line">   &#123; id: '100002',</div><div class="line">     type: 'sticker',</div><div class="line">     packageId: '1',</div><div class="line">     stickerId: '1',</div><div class="line">     content: [Function] &#125;,</div><div class="line">  reply: [Function] &#125;</div></pre></td></tr></table></figure>
+<h2 id="使用-Line-App-傳訊息給-Line-Bot"><a href="#使用-Line-App-傳訊息給-Line-Bot" class="headerlink" title="使用 Line App 傳訊息給 Line Bot"></a><a id="sendlinebot"></a>使用 Line App 傳訊息給 Line Bot</h2><p>手機 Line App 掃描  LINE developers 的 “Basic information” 畫面中的 QR Code 將 Line Bot 加入，然後輸入文字，測試 Line Bot 是否有正確接收到。<br> <img src="https://lh3.googleusercontent.com/M6x09wRnbeDagDnrCe0m7rQAPocOIOnhooSD6mOnLbBG-ygU2M-VRi7UWcYVQ6jHkkQyy9htxI54rehBjWBQFwzpw_EI5QQSTzIct5UtFO3aB0sgykQllqpd3ehUjeq4gNF7wA=w317-h181-no" alt=""></p>
 <p>如果有正確收到訊息，則 Terminal 畫面會顯示以下資訊</p>
-<pre><code>{ type: &apos;message&apos;,
-  replyToken: &apos;98eb2ca92bdb468c9REPLYTOKEN&apos;,
-  source:
-   { userId: &apos;U08cee31d0f3a94CLIENTAPPUSERID&apos;,
-     type: &apos;user&apos;,
-     profile: [Function] },
-  timestamp: 1496462418683,
-  message:
-   { type: &apos;text&apos;,
-     id: &apos;618217MSGID&apos;,
-     text: &apos;開發測試Q Q&apos;,
-     content: [Function] },
-  reply: [Function] }
-</code></pre><h3 id="將收到的訊息，回覆給-Client-App"><a href="#將收到的訊息，回覆給-Client-App" class="headerlink" title="將收到的訊息，回覆給 Client App"></a>將收到的訊息，回覆給 Client App</h3><p>修改一下 on ‘message’ 的內容</p>
-<pre><code>bot.on(&apos;message&apos;, function(event) {
-    // 把收到訊息的 event 印出來
-    //console.log(event);
-
-    // 重複 client 輸入的內容
-    if (event.message.type = &apos;text&apos;) {
-        var msg = event.message.text;
-        event.reply(msg).then(function(data) {
-            // success
-            console.log(msg);
-        }).catch(function(error) {
-            // error
-            console.log(&apos;error&apos;);
-        });
-    }
-});
-</code></pre><p>記得要重啟 nodejs server 喔 :)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123; type: 'message',</div><div class="line">  replyToken: '98eb2ca92bdb468c9REPLYTOKEN',</div><div class="line">  source:</div><div class="line">   &#123; userId: 'U08cee31d0f3a94CLIENTAPPUSERID',</div><div class="line">     type: 'user',</div><div class="line">     profile: [Function] &#125;,</div><div class="line">  timestamp: 1496462418683,</div><div class="line">  message:</div><div class="line">   &#123; type: 'text',</div><div class="line">     id: '618217MSGID',</div><div class="line">     text: '開發測試Q Q',</div><div class="line">     content: [Function] &#125;,</div><div class="line">  reply: [Function] &#125;</div></pre></td></tr></table></figure>
+<h3 id="將收到的訊息，回覆給-Client-App"><a href="#將收到的訊息，回覆給-Client-App" class="headerlink" title="將收到的訊息，回覆給 Client App"></a>將收到的訊息，回覆給 Client App</h3><p>修改一下 on ‘message’ 的內容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">bot.on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="comment">// 把收到訊息的 event 印出來</span></div><div class="line">    <span class="comment">//console.log(event);</span></div><div class="line"></div><div class="line">    <span class="comment">// 重複 client 輸入的內容</span></div><div class="line">    <span class="keyword">if</span> (event.message.type = <span class="string">'text'</span>) &#123;</div><div class="line">        <span class="keyword">var</span> msg = event.message.text;</div><div class="line">        event.reply(msg).then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">            <span class="comment">// success</span></div><div class="line">            <span class="built_in">console</span>.log(msg);</div><div class="line">        &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</div><div class="line">            <span class="comment">// error</span></div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'error'</span>);</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>記得要重啟 nodejs server 喔 :)</p>
 <p> <img src="https://lh3.googleusercontent.com/hx85cXamDUf7tD3pktZZtgP1w46UyMydyGa1PcO3bdVvSBJhCJbZuDBDeQCC4VFaEpV9fhGyJVB1sdnFEMjiMqo6zCaVSmI7wQHpSXX4Fb3xx2--T-x_wnNRh_i7z-5p2X3mvw=w319-h282-no" alt="重複 client 輸入的內容"></p>
 <h3 id="主動發送訊息"><a href="#主動發送訊息" class="headerlink" title="主動發送訊息"></a>主動發送訊息</h3><p>讓 server 啟動後 3 秒，發送訊息給 Client App，請在 index.js 加入以下程式，。</p>
-<pre><code>// 主動發送訊息給 Client App
-setTimeout(function() {
-    var userId = &apos;Client App User ID&apos;;
-    var sendMsg = &quot;push msg to one user&quot;;
-    bot.push(userId, [sendMsg]);
-    console.log(&apos;userId: &apos; + userId);
-    console.log(&apos;send: &apos; + sendMsg);
-}, 3000);
-</code></pre><p> <img src="https://lh3.googleusercontent.com/bq-9Ck0gZ8aS5gcP6TKdcSjUAsdSVBpF-EcJqSSmEWTyHxfLKDEBgxfBKCMG0P1267Apl_tcaxr24omYJiGqruOYbdpr4BxiUWQh_dOmIytlfAw3kfHdQppgwF8gd0y9JnWaZw=w320-h335-no" alt="主動發送訊息"></p>
-<h2 id="參考資料："><a href="#參考資料：" class="headerlink" title="# 參考資料："></a># 參考資料：</h2><ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 主動發送訊息給 Client App</span></div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> userId = <span class="string">'Client App User ID'</span>;</div><div class="line">    <span class="keyword">var</span> sendMsg = <span class="string">"push msg to one user"</span>;</div><div class="line">    bot.push(userId, [sendMsg]);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'userId: '</span> + userId);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'send: '</span> + sendMsg);</div><div class="line">&#125;, <span class="number">3000</span>);</div></pre></td></tr></table></figure>
+<p> <img src="https://lh3.googleusercontent.com/bq-9Ck0gZ8aS5gcP6TKdcSjUAsdSVBpF-EcJqSSmEWTyHxfLKDEBgxfBKCMG0P1267Apl_tcaxr24omYJiGqruOYbdpr4BxiUWQh_dOmIytlfAw3kfHdQppgwF8gd0y9JnWaZw=w320-h335-no" alt="主動發送訊息"></p>
+<h2 id="參考資料："><a href="#參考資料：" class="headerlink" title="參考資料："></a>參考資料：</h2><ul>
 <li><a href="http://www.oxxostudio.tw/articles/201701/line-bot.html" target="_blank" rel="external">LINE BOT 實戰 ( 原理篇 )</a></li>
 <li><a href="http://www.oxxostudio.tw/articles/201701/line-bot-2.html" target="_blank" rel="external">LINE BOT 實戰 ( 聊天篇 )</a></li>
 <li><a href="https://goo.gl/ePtTRw" target="_blank" rel="external">不必真的架站也能 5 分鐘實機體驗 LINE bot – 教學 ( by node.js &amp; ngrok )</a></li>
@@ -762,6 +587,10 @@ setTimeout(function() {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/18/2017081801-hexo-install-notes/" rel="prev" title="Hexo 安裝筆記">
+                Hexo 安裝筆記 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -846,7 +675,7 @@ setTimeout(function() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -857,7 +686,7 @@ setTimeout(function() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -868,7 +697,7 @@ setTimeout(function() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -921,7 +750,7 @@ setTimeout(function() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#開發環境"><span class="nav-number">1.</span> <span class="nav-text"># 開發環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本次實作有以下階段："><span class="nav-number">2.</span> <span class="nav-text"># 本次實作有以下階段：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#申請-Line-Bot-帳號"><span class="nav-number">3.</span> <span class="nav-text"># 申請 Line Bot 帳號</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ngrok-讓-localhost-也可以使用-HTTPS"><span class="nav-number">4.</span> <span class="nav-text"># ngrok 讓 localhost 也可以使用 HTTPS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝"><span class="nav-number">4.1.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#申請-HTTPS-protocol"><span class="nav-number">4.2.</span> <span class="nav-text">申請 HTTPS protocol</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-Nodejs-在本地端部署-webhook-service"><span class="nav-number">5.</span> <span class="nav-text"># 使用 Nodejs 在本地端部署 webhook service</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#開始建立-Nodejs-專案"><span class="nav-number">5.1.</span> <span class="nav-text">開始建立 Nodejs 專案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何取得-Line-Bot-的-Channel-ID-及設定-Webhook"><span class="nav-number">5.2.</span> <span class="nav-text">如何取得 Line Bot 的 Channel ID 及設定 Webhook</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#取得-Channel-ID、Channel-Secret-及-Channel-Access-Token"><span class="nav-number">5.2.1.</span> <span class="nav-text">取得 Channel ID、Channel Secret 及 Channel Access Token</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#設定-Webhook-URL"><span class="nav-number">5.2.2.</span> <span class="nav-text">設定 Webhook URL</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-Line-App-傳訊息給-Line-Bot"><span class="nav-number">6.</span> <span class="nav-text"># 使用 Line App 傳訊息給 Line Bot</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#將收到的訊息，回覆給-Client-App"><span class="nav-number">6.1.</span> <span class="nav-text">將收到的訊息，回覆給 Client App</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主動發送訊息"><span class="nav-number">6.2.</span> <span class="nav-text">主動發送訊息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料："><span class="nav-number">7.</span> <span class="nav-text"># 參考資料：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Line-Bot-的圖片來源"><span class="nav-number">7.1.</span> <span class="nav-text">Line Bot 的圖片來源</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#開發環境"><span class="nav-number">1.</span> <span class="nav-text">開發環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本次實作有以下階段："><span class="nav-number">2.</span> <span class="nav-text">本次實作有以下階段：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#申請-Line-Bot-帳號"><span class="nav-number">3.</span> <span class="nav-text">申請 Line Bot 帳號</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ngrok-讓-localhost-也可以使用-HTTPS"><span class="nav-number">4.</span> <span class="nav-text">ngrok 讓 localhost 也可以使用 HTTPS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝"><span class="nav-number">4.1.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#申請-HTTPS-protocol"><span class="nav-number">4.2.</span> <span class="nav-text">申請 HTTPS protocol</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-Nodejs-在本地端部署-webhook-service"><span class="nav-number">5.</span> <span class="nav-text">使用 Nodejs 在本地端部署 webhook service</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#開始建立-Nodejs-專案"><span class="nav-number">5.1.</span> <span class="nav-text">開始建立 Nodejs 專案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何取得-Line-Bot-的-Channel-ID-及設定-Webhook"><span class="nav-number">5.2.</span> <span class="nav-text">如何取得 Line Bot 的 Channel ID 及設定 Webhook</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#取得-Channel-ID、Channel-Secret-及-Channel-Access-Token"><span class="nav-number">5.2.1.</span> <span class="nav-text">取得 Channel ID、Channel Secret 及 Channel Access Token</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#設定-Webhook-URL"><span class="nav-number">5.2.2.</span> <span class="nav-text">設定 Webhook URL</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-Line-App-傳訊息給-Line-Bot"><span class="nav-number">6.</span> <span class="nav-text">使用 Line App 傳訊息給 Line Bot</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#將收到的訊息，回覆給-Client-App"><span class="nav-number">6.1.</span> <span class="nav-text">將收到的訊息，回覆給 Client App</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主動發送訊息"><span class="nav-number">6.2.</span> <span class="nav-text">主動發送訊息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料："><span class="nav-number">7.</span> <span class="nav-text">參考資料：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Line-Bot-的圖片來源"><span class="nav-number">7.1.</span> <span class="nav-text">Line Bot 的圖片來源</span></a></li></ol></li></ol></div>
             
 
           </div>
