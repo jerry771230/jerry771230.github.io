@@ -1,45 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-<<<<<<< HEAD
-        <loc>http://blog.codefun.tw</loc>
-=======
         <loc>http://codefun.tw</loc>
->>>>>>> 6d685ac8fc85648cc5c47420387e8e256d4b9b6a
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-<<<<<<< HEAD
-        <loc>http://blog.codefun.tw/2017/08/18/2017081802-google-hangouts-multi-person-meeting/</loc>
-        <lastmod>2017-08-18T04:08:13.000Z</lastmod>
-=======
         <loc>http://codefun.tw/2017/10/23/2017102302-vscode-extension-php-cs-fixer/</loc>
         <lastmod>2017-10-23T06:47:02.000Z</lastmod>
->>>>>>> 6d685ac8fc85648cc5c47420387e8e256d4b9b6a
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-<<<<<<< HEAD
-        <loc>http://blog.codefun.tw/2017/08/18/2017081801-hexo-install-notes/</loc>
-        <lastmod>2017-08-18T03:09:23.000Z</lastmod>
-=======
         <loc>http://codefun.tw/2017/10/23/2017102301-vscode-workspace-recommended-extensions/</loc>
         <lastmod>2017-10-23T06:18:26.000Z</lastmod>
->>>>>>> 6d685ac8fc85648cc5c47420387e8e256d4b9b6a
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-<<<<<<< HEAD
-        <loc>http://blog.codefun.tw/2017/06/02/20170602-nodejs-line-bot-p1/</loc>
-=======
         <loc>http://codefun.tw/2017/08/18/2017081801-hexo-install-notes/</loc>
         <lastmod>2017-10-23T04:04:11.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -89,7 +72,6 @@
 
     <url>
         <loc>http://codefun.tw/2017/06/02/20170602-nodejs-line-bot-p1/</loc>
->>>>>>> 6d685ac8fc85648cc5c47420387e8e256d4b9b6a
         <lastmod>2017-06-03T16:59:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -97,11 +79,7 @@
     </url>
 
     <url>
-<<<<<<< HEAD
-        <loc>http://blog.codefun.tw/2017/04/26/20170426-osx-gvm-pkgset-use-error/</loc>
-=======
         <loc>http://codefun.tw/2017/04/26/20170426-osx-gvm-pkgset-use-error/</loc>
->>>>>>> 6d685ac8fc85648cc5c47420387e8e256d4b9b6a
         <lastmod>2017-06-03T16:46:50.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -109,11 +87,7 @@
     </url>
 
     <url>
-<<<<<<< HEAD
-        <loc>http://blog.codefun.tw/2016/10/08/hello-world/</loc>
-=======
         <loc>http://codefun.tw/2016/10/08/hello-world/</loc>
->>>>>>> 6d685ac8fc85648cc5c47420387e8e256d4b9b6a
         <lastmod>2017-06-03T16:24:07.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
