@@ -2,37 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://codefun.tw/2017/08/29/2018082901-editorconfig-settings/</loc>
+    <loc>http://codefun.tw/2017/08/18/2017081801-hexo-install-notes/</loc>
     
-    <lastmod>2017-08-29T01:38:38.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://codefun.tw/2017/08/27/2018082701-brew-install-nginx-php71-fpm/</loc>
-    
-    <lastmod>2017-08-28T01:49:03.000Z</lastmod>
+    <lastmod>2017-10-23T04:04:11.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://codefun.tw/2017/08/18/2018081804-wget-download-web-pages/</loc>
+    <loc>http://codefun.tw/2017/08/27/2017082701-brew-install-nginx-php71-fpm/</loc>
     
-    <lastmod>2017-08-18T07:11:45.000Z</lastmod>
+    <lastmod>2017-10-23T04:04:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://codefun.tw/2017/08/29/2017082901-editorconfig-settings/</loc>
+    
+    <lastmod>2017-10-23T04:04:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://codefun.tw/2017/10/23/2017102301-vscode-workspace-recommended-extensions/</loc>
+    
+    <lastmod>2017-10-23T04:04:06.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://codefun.tw/2017/08/18/2017081802-google-hangouts-multi-person-meeting/</loc>
     
-    <lastmod>2017-08-18T06:52:38.000Z</lastmod>
+    <lastmod>2017-10-23T03:26:14.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://codefun.tw/2017/08/18/2017081801-hexo-install-notes/</loc>
+    <loc>http://codefun.tw/2017/08/18/2017081804-wget-download-web-pages/</loc>
     
-    <lastmod>2017-08-18T06:51:51.000Z</lastmod>
+    <lastmod>2017-10-23T03:25:11.000Z</lastmod>
     
   </url>
   

@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="wget," />
 
 
 
@@ -94,16 +94,18 @@
 
 
 
-<meta name="description" content="知識不是力量 分享知識才是力量">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Codefun">
-<meta property="og:url" content="http://codefun.tw/tags/golang/index.html">
+<meta name="description" content="wget 是 linux 中除了 curl 外另一個檔案下載的好用工具，也可以使用它來“砍站”。但是無法正確抓去使用 vue-router 等 js 撰寫的動態呈現網頁的內容。">
+<meta name="keywords" content="wget">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 wget 砍站">
+<meta property="og:url" content="http://codefun.tw/2017/08/18/2017081804-wget-download-web-pages/index.html">
 <meta property="og:site_name" content="Codefun">
-<meta property="og:description" content="知識不是力量 分享知識才是力量">
+<meta property="og:description" content="wget 是 linux 中除了 curl 外另一個檔案下載的好用工具，也可以使用它來“砍站”。但是無法正確抓去使用 vue-router 等 js 撰寫的動態呈現網頁的內容。">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-23T03:25:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codefun">
-<meta name="twitter:description" content="知識不是力量 分享知識才是力量">
+<meta name="twitter:title" content="使用 wget 砍站">
+<meta name="twitter:description" content="wget 是 linux 中除了 curl 外另一個檔案下載的好用工具，也可以使用它來“砍站”。但是無法正確抓去使用 vue-router 等 js 撰寫的動態呈現網頁的內容。">
 
 
 
@@ -131,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://codefun.tw/tags/golang/"/>
+  <link rel="canonical" href="http://codefun.tw/2017/08/18/2017081804-wget-download-web-pages/"/>
 
 
 
 
 
-  <title>Tag: golang | Codefun</title>
+  <title>使用 wget 砍站 | Codefun</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -190,7 +192,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -318,44 +320,201 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>golang<small>Tag</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://codefun.tw/2017/08/18/2017081804-wget-download-web-pages/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jerry Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Codefun">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用 wget 砍站</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-18T14:48:57+08:00">
+                2017-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/18/2017081804-wget-download-web-pages/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://codefun.tw/2017/08/18/2017081804-wget-download-web-pages/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>wget 是 linux 中除了 curl 外另一個檔案下載的好用工具，也可以使用它來“砍站”。<br>但是無法正確抓去使用 <code>vue-router</code> 等 js 撰寫的動態呈現網頁的內容。</p>
+<a id="more"></a>
+<p>用法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget -m -k -E -p -F --restrict-file-names=windows -nH --header=&quot;Accept: text/html&quot; --user-agent=&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:21.0) Gecko/20100101 Firefox/21.0&quot; 127.0.0.1</div></pre></td></tr></table></figure>
+<p>指令說明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">-m,  --mirror                相等於 -N -r -l inf --no-remove-listing 選項</div><div class="line">-k,  --convert-links         將原本網站內所有站內的連結全都改為 Local 連結，這樣下載網站後才可以離線使用。</div><div class="line">-E,  --adjust-extension      save HTML/CSS documents with proper extensions.</div><div class="line">-p,  --page-requisites       下載所有顯示網頁所需的檔案，例如圖片等</div><div class="line">-F,  --force-html            以 HTML 方式處理輸入檔</div><div class="line">-N,  --timestamping          除非遠端檔案比較新，否則不下載遠端檔案</div><div class="line">-r,  --recursive             遞迴下載</div><div class="line">-l,  --level=數字             最大搜尋深度 (inf 或 0 表示無限)</div><div class="line">--no-remove-listing          不刪除 ‘.listing’ 檔案</div><div class="line">--restrict-file-names=OS     只使用作業系統能夠接受的字元作為檔案字元</div><div class="line">-nH, --no-host-directories   不建立含有遠端主機名稱的目錄</div><div class="line">--header=字串                 在連線資料標頭中加入指定字串</div><div class="line">-U,  --user-agent=AGENT      宣稱為 AGENT 而不是 Wget/VERSION</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://www.gnu.org/software/wget/manual/wget.html" target="_blank" rel="external">GNU Wget 1.18 Manual</a></li>
+<li><a href="https://john24318.wordpress.com/2013/08/18/wget-%E6%8C%87%E4%BB%A4%E7%94%A8%E6%B3%95%E8%88%87%E6%95%99%E5%AD%B8/" target="_blank" rel="external">wget 指令用法與教學</a></li>
+<li><a href="https://www.lifewire.com/uses-of-command-wget-2201085" target="_blank" rel="external">How to Use the wget Linux Command to Download Web Pages and Files</a></li>
+</ul>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/04/26/20170426-osx-gvm-pkgset-use-error/" itemprop="url">
-              
-                <span itemprop="name">OSX 執行 gvm pkgset use 發生錯誤</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-26T09:58:10+08:00"
-              content="2017-04-26" >
-          04-26
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/wget/" rel="tag"># wget</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/18/2017081803-cpc-cpa-ad-keywords/" rel="next" title="開發廣告系統（DSP）不能不知道的關鍵字！">
+                <i class="fa fa-chevron-left"></i> 開發廣告系統（DSP）不能不知道的關鍵字！
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/27/2017082701-brew-install-nginx-php71-fpm/" rel="prev" title="Homebrew 安裝 Nginx、PHP71 筆記">
+                Homebrew 安裝 Nginx、PHP71 筆記 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59202e2d25ce1195" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -363,6 +522,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="fb-comments"
+           data-href="http://codefun.tw/2017/08/18/2017081804-wget-download-web-pages/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -382,8 +552,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -463,6 +642,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">1.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -576,6 +771,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
