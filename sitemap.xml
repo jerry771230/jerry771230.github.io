@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://codefun.tw/2017/10/23/2017102302-vscode-extension-php-cs-fixer/</loc>
+    
+    <lastmod>2017-10-23T06:34:16.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://codefun.tw/2017/10/23/2017102301-vscode-workspace-recommended-extensions/</loc>
+    
+    <lastmod>2017-10-23T06:18:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://codefun.tw/2017/08/18/2017081801-hexo-install-notes/</loc>
     
     <lastmod>2017-10-23T04:04:11.000Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>http://codefun.tw/2017/08/29/2017082901-editorconfig-settings/</loc>
     
     <lastmod>2017-10-23T04:04:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://codefun.tw/2017/10/23/2017102301-vscode-workspace-recommended-extensions/</loc>
-    
-    <lastmod>2017-10-23T04:04:06.000Z</lastmod>
     
   </url>
   
