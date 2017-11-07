@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Codefun">
 <meta property="og:description" content="前言團隊使用 docker-compose 建立開發環境，方便前端工程師在不安裝 PHP 及 MySQL 的情況下也可以進行基於 Laravel framework 的專案開發。但問題剛好發生在使用 Laravel File Storage 存放的圖片檔，無法通過 Browser 瀏覽。查到的原因是 storage 這個 symbolic link 的指向錯誤了。目前找到的解法是手動進入到 doc">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-07T07:29:27.000Z">
+<meta property="og:updated_time" content="2017-11-07T07:45:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker-compose 開發環境，如何建立 storage 的 symbolic link？">
 <meta name="twitter:description" content="前言團隊使用 docker-compose 建立開發環境，方便前端工程師在不安裝 PHP 及 MySQL 的情況下也可以進行基於 Laravel framework 的專案開發。但問題剛好發生在使用 Laravel File Storage 存放的圖片檔，無法通過 Browser 瀏覽。查到的原因是 storage 這個 symbolic link 的指向錯誤了。目前找到的解法是手動進入到 doc">
@@ -429,6 +429,8 @@
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>團隊使用 <code>docker-compose</code> 建立開發環境，方便前端工程師在不安裝 PHP 及 MySQL 的情況下也可以進行基於 Laravel framework 的專案開發。<br>但問題剛好發生在使用 <a href="https://laravel.com/docs/5.5/filesystem" target="_blank" rel="external">Laravel File Storage</a> 存放的圖片檔，無法通過 Browser 瀏覽。查到的原因是 <a href="https://laravel.com/docs/5.5/filesystem#configuration" target="_blank" rel="external"><code>storage</code></a> 這個 symbolic link 的指向錯誤了。<br>目前找到的解法是手動進入到 docker 的 nginx container 後再建立。而<strong>不是</strong>直接使用 <code>$ php artisan storage:link</code></p>
  <a id="more"></a>
 <h2 id="實際操作步驟"><a href="#實際操作步驟" class="headerlink" title="實際操作步驟"></a>實際操作步驟</h2><ol>
+<li><p>移除工作目錄下的 <code>public/storage</code> 這個 symbolic link</p>
+</li>
 <li><p>找到 docker 的 nginx 容器 CONTAINER ID</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ docker ps</div><div class="line">CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS              PORTS                    NAMES</div><div class="line">baba480659ee        nginx:latest                    &quot;nginx -g &apos;daemon ...&quot;   16 minutes ago      Up 16 minutes       0.0.0.0:80-&gt;80/tcp       hpclaravelpaganinipluscom_web_1</div></pre></td></tr></table></figure>
 </li>
