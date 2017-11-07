@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="docker,laravel," />
 
 
 
@@ -94,16 +94,18 @@
 
 
 
-<meta name="description" content="知識不是力量 分享知識才是力量">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Codefun">
-<meta property="og:url" content="http://codefun.tw/tags/marketing/index.html">
+<meta name="description" content="前言團隊使用 docker-compose 建立開發環境，方便前端工程師在不安裝 PHP 及 MySQL 的情況下也可以進行基於 Laravel framework 的專案開發。但問題剛好發生在使用 Laravel File Storage 存放的圖片檔，無法通過 Browser 瀏覽。查到的原因是 storage 這個 symbolic link 的指向錯誤了。目前找到的解法是手動進入到 doc">
+<meta name="keywords" content="docker,laravel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker-compose 開發環境，如何建立 storage 的 symbolic link？">
+<meta property="og:url" content="http://codefun.tw/2017/11/07/2017110701-create-laravel-storage-symbolic-link-docker/index.html">
 <meta property="og:site_name" content="Codefun">
-<meta property="og:description" content="知識不是力量 分享知識才是力量">
+<meta property="og:description" content="前言團隊使用 docker-compose 建立開發環境，方便前端工程師在不安裝 PHP 及 MySQL 的情況下也可以進行基於 Laravel framework 的專案開發。但問題剛好發生在使用 Laravel File Storage 存放的圖片檔，無法通過 Browser 瀏覽。查到的原因是 storage 這個 symbolic link 的指向錯誤了。目前找到的解法是手動進入到 doc">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-11-07T07:29:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codefun">
-<meta name="twitter:description" content="知識不是力量 分享知識才是力量">
+<meta name="twitter:title" content="docker-compose 開發環境，如何建立 storage 的 symbolic link？">
+<meta name="twitter:description" content="前言團隊使用 docker-compose 建立開發環境，方便前端工程師在不安裝 PHP 及 MySQL 的情況下也可以進行基於 Laravel framework 的專案開發。但問題剛好發生在使用 Laravel File Storage 存放的圖片檔，無法通過 Browser 瀏覽。查到的原因是 storage 這個 symbolic link 的指向錯誤了。目前找到的解法是手動進入到 doc">
 
 
 
@@ -131,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://codefun.tw/tags/marketing/"/>
+  <link rel="canonical" href="http://codefun.tw/2017/11/07/2017110701-create-laravel-storage-symbolic-link-docker/"/>
 
 
 
 
 
-  <title>Tag: marketing | Codefun</title>
+  <title>docker-compose 開發環境，如何建立 storage 的 symbolic link？ | Codefun</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -190,7 +192,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -318,44 +320,206 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>marketing<small>Tag</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://codefun.tw/2017/11/07/2017110701-create-laravel-storage-symbolic-link-docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jerry Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Codefun">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">docker-compose 開發環境，如何建立 storage 的 symbolic link？</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-07T15:10:08+08:00">
+                2017-11-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/07/2017110701-create-laravel-storage-symbolic-link-docker/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://codefun.tw/2017/11/07/2017110701-create-laravel-storage-symbolic-link-docker/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>團隊使用 <code>docker-compose</code> 建立開發環境，方便前端工程師在不安裝 PHP 及 MySQL 的情況下也可以進行基於 Laravel framework 的專案開發。<br>但問題剛好發生在使用 <a href="https://laravel.com/docs/5.5/filesystem" target="_blank" rel="external">Laravel File Storage</a> 存放的圖片檔，無法通過 Browser 瀏覽。查到的原因是 <a href="https://laravel.com/docs/5.5/filesystem#configuration" target="_blank" rel="external"><code>storage</code></a> 這個 symbolic link 的指向錯誤了。<br>目前找到的解法是手動進入到 docker 的 nginx container 後再建立。而<strong>不是</strong>直接使用 <code>$ php artisan storage:link</code></p>
+ <a id="more"></a>
+<h2 id="實際操作步驟"><a href="#實際操作步驟" class="headerlink" title="實際操作步驟"></a>實際操作步驟</h2><ol>
+<li><p>找到 docker 的 nginx 容器 CONTAINER ID</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ docker ps</div><div class="line">CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS              PORTS                    NAMES</div><div class="line">baba480659ee        nginx:latest                    &quot;nginx -g &apos;daemon ...&quot;   16 minutes ago      Up 16 minutes       0.0.0.0:80-&gt;80/tcp       hpclaravelpaganinipluscom_web_1</div></pre></td></tr></table></figure>
+</li>
+<li><p>進入 docker 的 nginx 容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo docker exec -ti &#123;CONTAINER ID&#125; bash</div></pre></td></tr></table></figure>
+</li>
+<li><p>在 docker 的 nginx 容器執行 symbolic link 的建立</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ln -s /code/storage/app/public /code/public/storage</div></pre></td></tr></table></figure>
+</li>
+<li><p>檢查建立的結果是否正確</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ ls -l</div><div class="line">drwxr-xr-x 13 root root  442 Nov  7 06:28 assets</div><div class="line">drwxr-xr-x 24 root root  816 Oct 26 04:08 css</div><div class="line">-rw-r--r--  1 root root 5430 Oct 26 04:08 favicon.ico</div><div class="line">drwxr-xr-x 13 root root  442 Nov  7 04:49 images</div><div class="line">-rw-r--r--  1 root root 1823 Sep 19 04:07 index.php</div><div class="line">drwxr-xr-x  6 root root  204 Oct 26 04:08 js</div><div class="line">-rw-r--r--  1 root root   24 Sep 19 04:07 robots.txt</div><div class="line">lrwxrwxrwx  1 root root   24 Nov  7 06:31 storage -&gt; /code/storage/app/public</div><div class="line">drwxr-xr-x 10 root root  340 Oct 26 04:08 vendor</div><div class="line">-rw-r--r--  1 root root  914 Sep 19 04:07 web.config</div><div class="line">drwxr-xr-x  5 root root  170 Nov  7 01:32 yaml</div></pre></td></tr></table></figure>
+</li>
+<li><p>Browser 開啟圖片網站，例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://localhost/storage/4BWGjwW0p6iENjseaHZphhorGBUJTPkd888oiMNh.jpeg</div></pre></td></tr></table></figure>
+</li>
+</ol>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/08/18/2017081803-cpc-cpa-ad-keywords/" itemprop="url">
-              
-                <span itemprop="name">開發廣告系統（DSP）不能不知道的關鍵字！</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-18T12:20:55+08:00"
-              content="2017-08-18" >
-          08-18
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/docker/" rel="tag"># docker</a>
+          
+            <a href="/tags/laravel/" rel="tag"># laravel</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/23/2017102302-vscode-extension-php-cs-fixer/" rel="next" title="在 vs code 使用 php cs fixer 進行 coding style 的格式修正">
+                <i class="fa fa-chevron-left"></i> 在 vs code 使用 php cs fixer 進行 coding style 的格式修正
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59202e2d25ce1195" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -363,6 +527,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="fb-comments"
+           data-href="http://codefun.tw/2017/11/07/2017110701-create-laravel-storage-symbolic-link-docker/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -576,6 +751,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
