@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>http://codefun.tw/2017/11/07/2017110701-create-laravel-storage-symbolic-link-docker/</loc>
+        <lastmod>2017-11-07T08:36:40.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://codefun.tw/2017/10/23/2017102302-vscode-extension-php-cs-fixer/</loc>
-        <lastmod>2017-10-23T06:47:02.000Z</lastmod>
+        <lastmod>2017-11-07T07:25:28.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

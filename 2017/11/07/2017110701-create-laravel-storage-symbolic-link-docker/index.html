@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Codefun">
 <meta property="og:description" content="前言團隊使用 docker-compose 建立開發環境，方便前端工程師在不安裝 PHP 及 MySQL 的情況下也可以進行基於 Laravel framework 的專案開發。但問題剛好發生在使用 Laravel File Storage 存放的圖片檔，無法通過 Browser 瀏覽。查到的原因是 storage 這個 symbolic link 的指向錯誤了。目前找到的解法是手動進入到 doc">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-07T07:46:03.000Z">
+<meta property="og:updated_time" content="2017-11-07T08:36:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker-compose 開發環境，如何建立 storage 的 symbolic link？">
 <meta name="twitter:description" content="前言團隊使用 docker-compose 建立開發環境，方便前端工程師在不安裝 PHP 及 MySQL 的情況下也可以進行基於 Laravel framework 的專案開發。但問題剛好發生在使用 Laravel File Storage 存放的圖片檔，無法通過 Browser 瀏覽。查到的原因是 storage 這個 symbolic link 的指向錯誤了。目前找到的解法是手動進入到 doc">
@@ -447,6 +447,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://localhost/storage/4BWGjwW0p6iENjseaHZphhorGBUJTPkd888oiMNh.jpeg</div></pre></td></tr></table></figure>
 </li>
 </ol>
+<h2 id="參考資料-References"><a href="#參考資料-References" class="headerlink" title="參考資料  References"></a>參考資料  References</h2><ul>
+<li><a href="https://laravel.com/docs/5.5/filesystem" target="_blank" rel="external">Laravel File Storage</a></li>
+<li><a href="https://philipzheng.gitbooks.io/docker_practice/content/container/enter.html" target="_blank" rel="external">《Docker —— 從入門到實踐》正體中文版 - 進入容器</a></li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/exec/#run-docker-exec-on-a-running-container" target="_blank" rel="external">docker docs - Run docker exec on a running container</a></li>
+</ul>
 
       
     </div>
