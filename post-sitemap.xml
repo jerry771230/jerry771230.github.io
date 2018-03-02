@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://codefun.tw/2018/03/02/2018030201-macos-correct-case-sentitive/</loc>
+        <lastmod>2018-03-02T02:18:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://codefun.tw/2017/11/07/2017110701-create-laravel-storage-symbolic-link-docker/</loc>
         <lastmod>2017-11-07T08:36:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -79,7 +87,7 @@
     </url>
 
     <url>
-        <loc>http://codefun.tw/2017/06/02/20170602-nodejs-line-bot-p1/</loc>
+        <loc>http://codefun.tw/2017/06/02/2017060201-nodejs-line-bot-p1/</loc>
         <lastmod>2017-06-03T16:59:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -87,7 +95,7 @@
     </url>
 
     <url>
-        <loc>http://codefun.tw/2017/04/26/20170426-osx-gvm-pkgset-use-error/</loc>
+        <loc>http://codefun.tw/2017/04/26/2017042601-osx-gvm-pkgset-use-error/</loc>
         <lastmod>2017-06-03T16:46:50.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
