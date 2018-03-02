@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[20180302-macos-correct-case-sentitive]]></title>
+    <title><![CDATA[使用 git mv 解決 macOS 預設對檔案不分大小寫問題]]></title>
     <url>%2F2018%2F03%2F02%2F2018030201-macos-correct-case-sentitive%2F</url>
     <content type="text"><![CDATA[前言macOS 的 Disk 預設對檔案是不分大小寫的，當程式部署到 linux 下，才會知道有大小寫錯誤問題。 使用 git mv 指令進行修正12345678# way 1$ git mv --force filename Filename$ git commit -m &quot;Set correct case for filename&quot;# way 2$ git mv filename tmp_filename$ git mv tmp_filename Filename$ git commit -m &quot;Set correct case for filename&quot; Reference Case-sensitive git in Mac OS X like a Pro - 文章有提到，外接一個 disk，並且格式化成 “Mac OS Extended (Case-sensitive, Journaled)”，就不會有這樣的困擾。]]></content>
       <categories>

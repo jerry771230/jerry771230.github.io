@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://codefun.tw/"/>
-  <updated>2018-03-02T02:18:11.000Z</updated>
+  <updated>2018-03-02T02:26:07.000Z</updated>
   <id>http://codefun.tw/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>20180302-macos-correct-case-sentitive</title>
+    <title>使用 git mv 解決 macOS 預設對檔案不分大小寫問題</title>
     <link href="http://codefun.tw/2018/03/02/2018030201-macos-correct-case-sentitive/"/>
     <id>http://codefun.tw/2018/03/02/2018030201-macos-correct-case-sentitive/</id>
     <published>2018-03-02T02:14:53.000Z</published>
-    <updated>2018-03-02T02:18:11.000Z</updated>
+    <updated>2018-03-02T02:26:07.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>macOS 的 Disk 預設對檔案是不分大小寫的，當程式部署到 linux 下，才會知道有大小寫錯誤問題。</p> <a id="more"></a><h2 id="使用-git-mv-指令進行修正"><a href="#使用-git-mv-指令進行修正" class="headerlink" title="使用 git mv 指令進行修正"></a>使用 <code>git mv</code> 指令進行修正</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># way 1</div><div class="line">$ git mv --force filename Filename</div><div class="line">$ git commit -m &quot;Set correct case for filename&quot;</div><div class="line"></div><div class="line"># way 2</div><div class="line">$ git mv filename tmp_filename</div><div class="line">$ git mv tmp_filename Filename</div><div class="line">$ git commit -m &quot;Set correct case for filename&quot;</div></pre></td></tr></table></figure><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul><li><a href="https://coderwall.com/p/mgi8ja/case-sensitive-git-in-mac-os-x-like-a-pro" target="_blank" rel="external">Case-sensitive git in Mac OS X like a Pro</a> - 文章有提到，外接一個 disk，並且格式化成 “Mac OS Extended (Case-sensitive, Journaled)”，就不會有這樣的困擾。</li></ul>]]></content>
     
