@@ -114,34 +114,6 @@
     </url>
 
     <url>
-        <loc>http://codefun.tw/tags/coding-style/</loc>
-        <lastmod>2017-11-07T07:25:28.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://codefun.tw/tags/vscode/</loc>
-        <lastmod>2017-11-07T07:25:28.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://codefun.tw/tags/extensions/</loc>
-        <lastmod>2017-11-07T07:25:28.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://codefun.tw/tags/php-cs-fixer/</loc>
-        <lastmod>2017-11-07T07:25:28.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://codefun.tw/tags/docker/</loc>
         <lastmod>2017-11-07T08:36:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -157,14 +129,42 @@
 
     <url>
         <loc>http://codefun.tw/tags/git/</loc>
-        <lastmod>2018-03-02T02:18:11.000Z</lastmod>
+        <lastmod>2018-03-02T02:26:07.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://codefun.tw/tags/macos/</loc>
-        <lastmod>2018-03-02T02:18:11.000Z</lastmod>
+        <lastmod>2018-03-02T02:26:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://codefun.tw/tags/coding-style/</loc>
+        <lastmod>2018-07-27T01:25:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://codefun.tw/tags/vscode/</loc>
+        <lastmod>2018-07-27T01:25:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://codefun.tw/tags/extensions/</loc>
+        <lastmod>2018-07-27T01:25:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://codefun.tw/tags/php-cs-fixer/</loc>
+        <lastmod>2018-07-27T01:25:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

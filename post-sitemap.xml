@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>http://codefun.tw/2017/10/23/2017102302-vscode-extension-php-cs-fixer/</loc>
+        <lastmod>2018-07-27T01:25:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://codefun.tw/2018/03/02/2018030201-macos-correct-case-sentitive/</loc>
-        <lastmod>2018-03-02T02:18:11.000Z</lastmod>
+        <lastmod>2018-03-02T02:26:07.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,14 +25,6 @@
     <url>
         <loc>http://codefun.tw/2017/11/07/2017110701-create-laravel-storage-symbolic-link-docker/</loc>
         <lastmod>2017-11-07T08:36:40.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://codefun.tw/2017/10/23/2017102302-vscode-extension-php-cs-fixer/</loc>
-        <lastmod>2017-11-07T07:25:28.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

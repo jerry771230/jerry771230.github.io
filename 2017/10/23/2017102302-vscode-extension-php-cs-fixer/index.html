@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Codefun">
 <meta property="og:description" content="在 vs code 中，使用 PSR1、PSR2 及 Symfony 的 Coding Style 進行格式修正。 安裝 在 command line 使用 homebrew 安裝 php cs fixer 1$ brew install php-cs-fixer">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-07T07:25:28.000Z">
+<meta property="og:updated_time" content="2018-07-27T01:25:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 vs code 使用 php cs fixer 進行 coding style 的格式修正">
 <meta name="twitter:description" content="在 vs code 中，使用 PSR1、PSR2 及 Symfony 的 Coding Style 進行格式修正。 安裝 在 command line 使用 homebrew 安裝 php cs fixer 1$ brew install php-cs-fixer">
@@ -432,15 +432,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install php-cs-fixer</div></pre></td></tr></table></figure>
 <a id="more"></a>
 </li>
-<li><p>在 vs code 安裝 extension - 由 junstyle 開發的 php cs fixer<br><a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer#installation" target="_blank" rel="external">Install guide</a></p>
+<li><p>在 vs code 安裝 extension - 由 junstyle 開發的 php cs fixer，extension_id <code>junstyle.php-cs-fixer</code> </p>
 </li>
+<li>其他安裝方式可參考 <a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer#installation" target="_blank" rel="external">Install guide</a></li>
 </ol>
 <h2 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h2><ol>
 <li><p>快速鍵 <code>cmd + shift + p</code> 後輸入 <code>workspace settings</code> 貼上</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;php.executablePath&quot;: &quot;/usr/local/bin/php&quot;,</div><div class="line">    &quot;php-cs-fixer.executablePath&quot;: &quot;php-cs-fixer&quot;,</div><div class="line">    &quot;php-cs-fixer.executablePathWindows&quot;: &quot;&quot;,   //eg: php-cs-fixer.bat</div><div class="line">    &quot;php-cs-fixer.onsave&quot;: true,</div><div class="line">    &quot;php-cs-fixer.rules&quot;: &quot;&quot;,</div><div class="line">    &quot;php-cs-fixer.config&quot;: &quot;.php_cs&quot;,</div><div class="line">    &quot;php-cs-fixer.autoFixByBracket&quot;: true,</div><div class="line">    &quot;php-cs-fixer.autoFixBySemicolon&quot;: false,</div><div class="line">    &quot;php-cs-fixer.formatHtml&quot;: false,</div><div class="line">    &quot;php-cs-fixer.documentFormattingProvider&quot;: true,</div><div class="line">    &quot;php-cs-fixer.allowRisky&quot;: false</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p> 說明：</p>
 <ul>
-<li><code>&quot;php-cs-fixer.onsave&quot;: true,</code>: 存檔時即執行</li>
+<li><code>&quot;php-cs-fixer.onsave&quot;: true,</code>: true 為存檔時即執行。我個人習慣是設定成 false，在確定程式沒問題後才執行檢查。</li>
 <li><code>&quot;php-cs-fixer.rules&quot;: &quot;&quot;,</code>: 留空字串</li>
 <li><code>&quot;php-cs-fixer.config&quot;: &quot;.php_cs&quot;,</code>: 使用 project root path 下的 config file 最為 formating 基準</li>
 </ul>
