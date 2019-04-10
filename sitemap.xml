@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://codefun.tw/2019/2019041002-use-telnet-to-test-tcp-port.html</loc>
+    
+    <lastmod>2019-04-10T11:11:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://codefun.tw/2019/2019041001-haproxy-configuration-balance.html</loc>
     
     <lastmod>2019-04-10T07:47:29.000Z</lastmod>

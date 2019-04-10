@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://codefun.tw/"/>
-  <updated>2019-04-10T07:47:29.000Z</updated>
+  <updated>2019-04-10T11:11:56.000Z</updated>
   <id>http://codefun.tw/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 Telnet 測試 TCP Port</title>
+    <link href="http://codefun.tw/2019/2019041002-use-telnet-to-test-tcp-port.html"/>
+    <id>http://codefun.tw/2019/2019041002-use-telnet-to-test-tcp-port.html</id>
+    <published>2019-04-10T11:11:56.000Z</published>
+    <updated>2019-04-10T11:11:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>想知道遠端 port 是否由開通，使用 telnet 測試就對了！</p><a id="more"></a><h2 id="安裝-Telnet"><a href="#安裝-Telnet" class="headerlink" title="安裝 Telnet"></a>安裝 Telnet</h2><p>在 Mac 下使用 <code>Homebrew</code> 安裝</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install telnet</span><br></pre></td></tr></table></figure><h2 id="測試遠端-port"><a href="#測試遠端-port" class="headerlink" title="測試遠端 port"></a>測試遠端 port</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ telnet 172.28.7.100 80</span><br><span class="line"></span><br><span class="line">Trying 172.28.7.100...</span><br><span class="line">Connected to 172.28.7.100.</span><br><span class="line">Escape character is <span class="string">'^]'</span>.</span><br></pre></td></tr></table></figure><p>遠端連線成功，表示 80 port 已開啟。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ telnet 172.28.7.100 25</span><br><span class="line"></span><br><span class="line">Trying 172.28.7.100...</span><br><span class="line">telnet: connect to address 172.28.7.100: Connection refused</span><br><span class="line">telnet: Unable to connect to remote host</span><br></pre></td></tr></table></figure><p>遠端拒絕連線，表示 25 port 未開啟。</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul><li><a href="https://blog.gtwang.org/linux/troubleshooting-telnet/" target="_blank" rel="noopener">使用 Telnet 診斷各種伺服器與網路連線問題</a></li><li><a href="https://netbeez.net/blog/telnet-to-test-connectivity-to-tcp/" target="_blank" rel="noopener">How to use telnet to test connectivity to TCP ports</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;想知道遠端 port 是否由開通，使用 telnet 測試就對了！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="development" scheme="http://codefun.tw/categories/development/"/>
+    
+    
+      <category term="telnet" scheme="http://codefun.tw/tags/telnet/"/>
+    
+  </entry>
   
   <entry>
     <title>HAProxy 負載模式設定</title>
@@ -133,13 +155,13 @@
       <category term="editor" scheme="http://codefun.tw/categories/editor/"/>
     
     
-      <category term="coding style" scheme="http://codefun.tw/tags/coding-style/"/>
-    
       <category term="vscode" scheme="http://codefun.tw/tags/vscode/"/>
     
       <category term="extensions" scheme="http://codefun.tw/tags/extensions/"/>
     
       <category term="php cs fixer" scheme="http://codefun.tw/tags/php-cs-fixer/"/>
+    
+      <category term="coding style" scheme="http://codefun.tw/tags/coding-style/"/>
     
   </entry>
   
@@ -182,7 +204,7 @@
     
     </summary>
     
-      <category term="programing" scheme="http://codefun.tw/categories/programing/"/>
+      <category term="development" scheme="http://codefun.tw/categories/development/"/>
     
     
       <category term="coding style" scheme="http://codefun.tw/tags/coding-style/"/>
