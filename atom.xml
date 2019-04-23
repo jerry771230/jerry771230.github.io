@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://codefun.tw/"/>
-  <updated>2019-04-10T11:11:56.000Z</updated>
+  <updated>2019-04-23T04:19:59.000Z</updated>
   <id>http://codefun.tw/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何在 workspace 快速開啟 VS Code 進行編輯</title>
+    <link href="http://codefun.tw/2019/2019042301-open-vs-code-from-command-line.html"/>
+    <id>http://codefun.tw/2019/2019042301-open-vs-code-from-command-line.html</id>
+    <published>2019-04-23T04:19:59.000Z</published>
+    <updated>2019-04-23T04:19:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>一定要會的技巧 - 從 command line 直接開啟 VS Code!</p><a id="more"></a><h2 id="操作環境"><a href="#操作環境" class="headerlink" title="操作環境"></a>操作環境</h2><ol><li>macOS: 10.13.6 High Sierra</li><li>iTerm2</li></ol><h2 id="只要四個步驟"><a href="#只要四個步驟" class="headerlink" title="只要四個步驟"></a>只要四個步驟</h2><ol><li>開啟 VS Code，按下快速鍵 <code>command + shift + p</code></li><li>在跳出的對話框命令列後輸入或找到 <code>&gt;Shell Command: Install &#39;code&#39; command in PATH</code></li><li>等待安裝完成後，開啟 iTerm2</li><li>進入 workspace，然後在 command line 輸入 <code>code .</code> 就可以開始使用 VS Code 編輯整個工作目錄了 :)</li></ol><h2 id="參考資料-References"><a href="#參考資料-References" class="headerlink" title="參考資料  References"></a>參考資料  References</h2><ul><li><a href="https://code.visualstudio.com/docs/setup/mac" target="_blank" rel="noopener">Visual Studio Code on macOS</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一定要會的技巧 - 從 command line 直接開啟 VS Code!&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="editor" scheme="http://codefun.tw/categories/editor/"/>
+    
+    
+      <category term="vscode" scheme="http://codefun.tw/tags/vscode/"/>
+    
+  </entry>
   
   <entry>
     <title>使用 Telnet 測試 TCP Port</title>
@@ -157,11 +179,11 @@
     
       <category term="vscode" scheme="http://codefun.tw/tags/vscode/"/>
     
+      <category term="coding style" scheme="http://codefun.tw/tags/coding-style/"/>
+    
       <category term="extensions" scheme="http://codefun.tw/tags/extensions/"/>
     
       <category term="php cs fixer" scheme="http://codefun.tw/tags/php-cs-fixer/"/>
-    
-      <category term="coding style" scheme="http://codefun.tw/tags/coding-style/"/>
     
   </entry>
   

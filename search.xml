@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[如何在 workspace 快速開啟 VS Code 進行編輯]]></title>
+    <url>%2F2019%2F2019042301-open-vs-code-from-command-line.html</url>
+    <content type="text"><![CDATA[一定要會的技巧 - 從 command line 直接開啟 VS Code! 操作環境 macOS: 10.13.6 High Sierra iTerm2 只要四個步驟 開啟 VS Code，按下快速鍵 command + shift + p 在跳出的對話框命令列後輸入或找到 &gt;Shell Command: Install &#39;code&#39; command in PATH 等待安裝完成後，開啟 iTerm2 進入 workspace，然後在 command line 輸入 code . 就可以開始使用 VS Code 編輯整個工作目錄了 :) 參考資料 References Visual Studio Code on macOS]]></content>
+      <categories>
+        <category>editor</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[使用 Telnet 測試 TCP Port]]></title>
     <url>%2F2019%2F2019041002-use-telnet-to-test-tcp-port.html</url>
     <content type="text"><![CDATA[想知道遠端 port 是否由開通，使用 telnet 測試就對了！ 安裝 Telnet在 Mac 下使用 Homebrew 安裝 1$ brew install telnet 測試遠端 port12345$ telnet 172.28.7.100 80Trying 172.28.7.100...Connected to 172.28.7.100.Escape character is '^]'. 遠端連線成功，表示 80 port 已開啟。 12345$ telnet 172.28.7.100 25Trying 172.28.7.100...telnet: connect to address 172.28.7.100: Connection refusedtelnet: Unable to connect to remote host 遠端拒絕連線，表示 25 port 未開啟。 Reference 使用 Telnet 診斷各種伺服器與網路連線問題 How to use telnet to test connectivity to TCP ports]]></content>
@@ -68,9 +79,9 @@
       </categories>
       <tags>
         <tag>vscode</tag>
+        <tag>coding style</tag>
         <tag>extensions</tag>
         <tag>php cs fixer</tag>
-        <tag>coding style</tag>
       </tags>
   </entry>
   <entry>

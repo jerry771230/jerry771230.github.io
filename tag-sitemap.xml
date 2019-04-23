@@ -191,15 +191,15 @@
     </url>
 
     <url>
-        <loc>http://codefun.tw/tags/vscode/</loc>
+        <loc>http://codefun.tw/tags/extensions/</loc>
         <lastmod>2019-04-17T02:58:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://codefun.tw/tags/extensions/</loc>
-        <lastmod>2019-04-17T02:58:00.000Z</lastmod>
+        <loc>http://codefun.tw/tags/vscode/</loc>
+        <lastmod>2019-04-23T04:19:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
