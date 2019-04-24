@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[分隔 Laravel log file 以解決 Permission Deny 問題]]></title>
+    <url>%2F2019%2F2019042401-laravel-isolate-log-file.html</url>
+    <content type="text"><![CDATA[Laravel 理當會將發生的例外錯誤（Exception）寫到 storage/logs/laravel-yyyy-mm-dd.log，但查詢該檔案，卻看不到應有的錯誤內容！ 環境Docker 安裝的內容， Ubuntu 18.04 Nginx 1.14 php7.3-fpm 權限問題 Permission Deny123456$ ll storage/logs/-rw-r--r--. 1 www-data www-data 30283 Apr 16 23:55 laravel-2019-04-16.log-rw-r--r--. 1 www-data www-data 30079 Apr 17 23:55 laravel-2019-04-17.log-rw-r--r--. 1 root root 30283 Apr 18 23:55 laravel-2019-04-18.log-rw-r--r--. 1 root root 38283 Apr 19 23:55 laravel-2019-04-19.log 系統有 crontab 定時處理事務，在處理的同時會以 Log::info() 輸出，所以產生的 log 檔案，其 owner 會是 root。網站程式運行的 user 是 www-data，所以若發生程式的 Exception 就會因為 Permission Deny 而無法寫入， 解決方式成功的解法 Success在 bootstrap/app.php 檔案內加入以下程式碼，1234567891011// isolate artisan console log and laravel service log// https://stackoverflow.com/questions/27674597/laravel-daily-log-created-with-wrong-permissions$app-&gt;configureMonologUsing(function (Monolog\Logger $monolog) &#123; $filename = storage_path('logs/' . php_sapi_name() . '-' . posix_getpwuid(posix_geteuid())['name'] . '.log'); $monolog-&gt;pushHandler($handler = new Monolog\Handler\RotatingFileHandler($filename, 60)); $handler-&gt;setFilenameFormat('laravel-&#123;date&#125;-&#123;filename&#125;', 'Y-m-d'); $formatter = new LineFormatter(null, null, true, true); $formatter-&gt;includeStacktraces(); $handler-&gt;setFormatter($formatter);&#125;); 以 php artisan command 執行或是 crontab 所產生的 log file，其 owner 都會是 root，如果是網站運行時的 Exception 所建立的 log file，則 owner 會是 www-data，符合要的結果。 😄1234$ ll storage/logs/-rw-r--r--. 1 root root 2652 Apr 24 06:30 laravel-2019-04-24-cli-root.log-rw-r--r--. 1 www-data www-data 78B Apr 24 04:24 laravel-2019-04-24-fpm-fcgi-www-data.log 無法得到預期效果的處理方式 failed用 www-data 執行以 www-data user 運行 php artisan command？ 切換執行的 user 身份123$ su www-dataThis account is currently not available. 查看 www-data user123$ cat /etc/passwd | grep wwwwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin 因 /usr/sbin/nologin 的關係，所以無法切換 user，修改成123$ vim /etc/passwdwww-data:x:33:33:www-data:/var/www:/bin/bash 然後以 www-data 身份執行 php artisan 以產生 log file，會得到 owner 為 www-data 的 log file，123$ su www-data$ php artisan command:xxxx$ ll storage/logs/ BUT crontab 執行產生的 log file 仍然 root，Orz 修改 crontab1234$ crontab -e* * * * * /usr/bin/php /home/www/code/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1 修改成 1* * * * * www-data /usr/bin/php /home/www/code/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1 然後執行 1$ sudo service cron reload 結果 cron 無法運作，😳 可能需要這樣做（未驗證）為 www-data 建立自己的 crontab 排程，可參考 关于 Laravel 日志权限 下方留言12$ su www-data$ crontab -u www-data -e 放棄測試因環境是在 Docker 內，上述的步驟已經無法輕易以撰寫 shell script 達成要的結果，若需要人工介入修改，則不符合使用 Docker 無痛開發原則 XD。 Reference Laravel daily log created with wrong permissions Laravel 5.5 - Errors &amp; Logging - Configuration]]></content>
+      <categories>
+        <category>development</category>
+      </categories>
+      <tags>
+        <tag>laravel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何在 workspace 快速開啟 VS Code 進行編輯]]></title>
     <url>%2F2019%2F2019042301-open-vs-code-from-command-line.html</url>
     <content type="text"><![CDATA[一定要會的技巧 - 從 command line 直接開啟 VS Code! 操作環境 macOS: 10.13.6 High Sierra iTerm2 只要四個步驟 開啟 VS Code，按下快速鍵 command + shift + p 在跳出的對話框命令列後輸入或找到 &gt;Shell Command: Install &#39;code&#39; command in PATH 等待安裝完成後，開啟 iTerm2 進入 workspace，然後在 command line 輸入 code . 就可以開始使用 VS Code 編輯整個工作目錄了 :) 參考資料 References Visual Studio Code on macOS]]></content>
@@ -66,8 +77,8 @@
         <category>docker</category>
       </categories>
       <tags>
-        <tag>docker</tag>
         <tag>laravel</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
