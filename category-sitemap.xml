@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
     <url>
         <loc>http://codefun.tw</loc>
         <changefreq>daily</changefreq>
@@ -7,64 +8,22 @@
     </url>
 
     <url>
-        <loc>http://codefun.tw/categories/golang/</loc>
-        <lastmod>2017-04-26T01:58:10.000Z</lastmod>
+        <loc>http://codefun.tw/categories/python/</loc>
+        <lastmod>2019-04-26T09:20:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://codefun.tw/categories/nodejs/</loc>
-        <lastmod>2017-06-02T07:07:27.000Z</lastmod>
+        <loc>http://codefun.tw/categories/development/</loc>
+        <lastmod>2019-04-24T04:32:48.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://codefun.tw/categories/blog/</loc>
-        <lastmod>2017-08-18T02:51:11.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://codefun.tw/categories/marketing/</loc>
-        <lastmod>2017-08-18T04:20:55.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://codefun.tw/categories/linux/</loc>
-        <lastmod>2017-08-18T06:48:57.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://codefun.tw/categories/lemp/</loc>
-        <lastmod>2017-08-27T10:08:52.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://codefun.tw/categories/docker/</loc>
-        <lastmod>2017-11-07T07:10:08.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://codefun.tw/categories/macos/</loc>
-        <lastmod>2019-01-10T04:58:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://codefun.tw/categories/notes/</loc>
-        <lastmod>2019-04-10T03:01:00.000Z</lastmod>
+        <loc>http://codefun.tw/categories/editor/</loc>
+        <lastmod>2019-04-23T04:19:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -77,15 +36,64 @@
     </url>
 
     <url>
-        <loc>http://codefun.tw/categories/development/</loc>
-        <lastmod>2019-04-10T11:11:56.000Z</lastmod>
+        <loc>http://codefun.tw/categories/notes/</loc>
+        <lastmod>2019-04-10T03:01:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://codefun.tw/categories/editor/</loc>
-        <lastmod>2019-04-23T04:19:59.000Z</lastmod>
+        <loc>http://codefun.tw/categories/macos/</loc>
+        <lastmod>2019-01-10T04:58:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://codefun.tw/categories/docker/</loc>
+        <lastmod>2017-11-07T07:10:08.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://codefun.tw/categories/lemp/</loc>
+        <lastmod>2017-08-27T10:08:52.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://codefun.tw/categories/linux/</loc>
+        <lastmod>2017-08-18T06:48:57.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://codefun.tw/categories/marketing/</loc>
+        <lastmod>2017-08-18T04:20:55.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://codefun.tw/categories/blog/</loc>
+        <lastmod>2017-08-18T02:51:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://codefun.tw/categories/nodejs/</loc>
+        <lastmod>2017-06-02T07:07:27.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://codefun.tw/categories/golang/</loc>
+        <lastmod>2017-04-26T01:58:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
