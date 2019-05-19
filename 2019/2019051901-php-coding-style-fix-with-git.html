@@ -98,16 +98,18 @@
 
 
 
-  <meta name="description" content="知識不是力量 分享知識才是力量">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Codefun">
-<meta property="og:url" content="http://codefun.tw/tags/haproxy/index.html">
+  <meta name="description" content="在 VS Code 下，除了使用 extension - junstyle.php-cs-fixer 進行 PHP 的 Coding Style 修正 之外，也可以使用 Git hooks 的功能，在 commit 之前執行指定的 script，稱為 pre-commit，搭配 php-cs-fixer 就能自動化的對有差異的 PHP 檔案進行 Coding Style 的修正。">
+<meta name="keywords" content="coding style,php-cs-fixer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 Git pre-commit 自動修正 PHP 的 Coding Style">
+<meta property="og:url" content="http://codefun.tw/2019/2019051901-php-coding-style-fix-with-git.html">
 <meta property="og:site_name" content="Codefun">
-<meta property="og:description" content="知識不是力量 分享知識才是力量">
+<meta property="og:description" content="在 VS Code 下，除了使用 extension - junstyle.php-cs-fixer 進行 PHP 的 Coding Style 修正 之外，也可以使用 Git hooks 的功能，在 commit 之前執行指定的 script，稱為 pre-commit，搭配 php-cs-fixer 就能自動化的對有差異的 PHP 檔案進行 Coding Style 的修正。">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-19T04:09:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codefun">
-<meta name="twitter:description" content="知識不是力量 分享知識才是力量">
+<meta name="twitter:title" content="使用 Git pre-commit 自動修正 PHP 的 Coding Style">
+<meta name="twitter:description" content="在 VS Code 下，除了使用 extension - junstyle.php-cs-fixer 進行 PHP 的 Coding Style 修正 之外，也可以使用 Git hooks 的功能，在 commit 之前執行指定的 script，稱為 pre-commit，搭配 php-cs-fixer 就能自動化的對有差異的 PHP 檔案進行 Coding Style 的修正。">
 
 
 
@@ -117,7 +119,7 @@
 
   
   
-  <link rel="canonical" href="http://codefun.tw/tags/haproxy/">
+  <link rel="canonical" href="http://codefun.tw/2019/2019051901-php-coding-style-fix-with-git">
 
 
 
@@ -127,7 +129,7 @@
   };
 </script>
 
-  <title>Tag: haproxy | Codefun</title>
+  <title>使用 Git pre-commit 自動修正 PHP 的 Coding Style | Codefun</title>
   
   <script>
     window.fbAsyncInit = function() {
@@ -203,7 +205,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -292,7 +294,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -321,25 +323,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -386,57 +369,231 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>haproxy<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://codefun.tw/2019/2019051901-php-coding-style-fix-with-git.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jerry Huang">
+      <meta itemprop="description" content="知識不是力量 分享知識才是力量">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Codefun">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/2019041001-haproxy-configuration-balance.html" itemprop="url">
-            
-              <span itemprop="name">HAProxy 負載模式設定</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">使用 Git pre-commit 自動修正 PHP 的 Coding Style
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-10T15:47:29+08:00" content="2019-04-10">
-          04-10
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-19 12:09:38" itemprop="dateCreated datePublished" datetime="2019-05-19T12:09:38+08:00">2019-05-19</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/php/" itemprop="url" rel="index"><span itemprop="name">php</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2019/2019051901-php-coding-style-fix-with-git.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://codefun.tw/2019/2019051901-php-coding-style-fix-with-git.html" itemprop="commentCount">0</span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在 VS Code 下，除了<a href="2017/2017102302-vscode-extension-php-cs-fixer.html">使用 extension - <code>junstyle.php-cs-fixer</code> 進行 PHP 的 Coding Style 修正</a> 之外，也可以使用 <a href="https://githooks.com/" target="_blank" rel="noopener">Git hooks</a> 的功能，在 commit 之前執行指定的 script，稱為 <a href="https://github.com/git/git/blob/master/templates/hooks--pre-commit.sample" target="_blank" rel="noopener">pre-commit</a>，搭配 <a href="https://github.com/friendsofphp/php-cs-fixer" target="_blank" rel="noopener">php-cs-fixer</a> 就能自動化的對有差異的 PHP 檔案進行 Coding Style 的修正。</p>
+<a id="more"></a>
+<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><ol>
+<li>macOS 10.13.6 High Sierra</li>
+<li>PHP 7.3.5</li>
+</ol>
+<h2 id="開始設定-pre-commit"><a href="#開始設定-pre-commit" class="headerlink" title="開始設定 pre-commit"></a>開始設定 pre-commit</h2><h3 id="Step-1-檢查是否有-hooks-目錄"><a href="#Step-1-檢查是否有-hooks-目錄" class="headerlink" title="Step 1. 檢查是否有 hooks 目錄"></a>Step 1. 檢查是否有 hooks 目錄</h3><p>檢查 workspace 下的 <code>.git</code> 目錄是否有 <code>hooks</code> 子目錄，如下，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ ll ./.git</span><br><span class="line">total 64</span><br><span class="line">-rw-r--r--    1 jerryhuang  staff     8B May 17 18:02 COMMIT_EDITMSG</span><br><span class="line">-rw-r--r--    1 jerryhuang  staff     0B May 19 12:54 FETCH_HEAD</span><br><span class="line">-rw-r--r--    1 jerryhuang  staff    24B May 17 17:23 HEAD</span><br><span class="line">-rw-r--r--    1 jerryhuang  staff   371B May 17 17:30 config</span><br><span class="line">-rw-r--r--    1 jerryhuang  staff    73B May 17 17:30 description</span><br><span class="line">drwxr-xr-x   14 jerryhuang  staff   448B May 17 17:59 hooks</span><br><span class="line">-rw-r--r--    1 jerryhuang  staff    11K May 17 18:02 index</span><br><span class="line">drwxr-xr-x    3 jerryhuang  staff    96B May 17 17:30 info</span><br><span class="line">drwxr-xr-x    4 jerryhuang  staff   128B May  7 12:15 logs</span><br><span class="line">drwxr-xr-x  143 jerryhuang  staff   4.5K May 17 18:02 objects</span><br><span class="line">drwxr-xr-x    5 jerryhuang  staff   160B May  7 12:16 refs</span><br><span class="line">-rw-r--r--@   1 jerryhuang  staff   174B May 17 18:07 sourcetreeconfig</span><br></pre></td></tr></table></figure></p>
+<p>如果有 <code>hooks</code>，則跳過 Step 2。</p>
+<h3 id="Step-2-建立-hooks-目錄"><a href="#Step-2-建立-hooks-目錄" class="headerlink" title="Step 2. 建立 hooks 目錄"></a>Step 2. 建立 hooks 目錄</h3><p>同樣地在 workspace 目錄下，執行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure></p>
+<p>此時會重新建立 git 及其子目錄 hooks 與該目錄內的 sample 檔案。</p>
+<h3 id="Step-3-新增-pre-commit-檔案內容"><a href="#Step-3-新增-pre-commit-檔案內容" class="headerlink" title="Step 3. 新增 pre-commit 檔案內容"></a>Step 3. 新增 pre-commit 檔案內容</h3><p>在 workspace 下執行 <code>vim ./.git/hooks/pre-commit</code>，新增如下的檔案內容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">pass=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">files=$(git diff --cached --name-only --diff-filter=ACMR | grep -E <span class="string">'\.(php|phtml)$'</span>)</span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$files</span>"</span> != <span class="string">""</span> ]; <span class="keyword">then</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Run php syntax check before commit</span></span><br><span class="line">    <span class="keyword">while</span> <span class="built_in">read</span> -r file; <span class="keyword">do</span></span><br><span class="line">        php -l <span class="string">"<span class="variable">$file</span>"</span></span><br><span class="line">        <span class="keyword">if</span> [ $? -ne 0 ]; <span class="keyword">then</span></span><br><span class="line">            pass=<span class="literal">false</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">done</span> &lt;&lt;&lt; <span class="string">"<span class="variable">$files</span>"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Run php-cs-fixer validation before commit</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$files</span>"</span> | xargs ./vendor/bin/php-cs-fixer fix --diff --config .php_cs</span><br><span class="line">    <span class="keyword">if</span> [ $? -ne 0 ]; <span class="keyword">then</span></span><br><span class="line">        pass=<span class="literal">false</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Automatically add files that may have been fixed by php-cs-fixer</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$files</span>"</span> | xargs git add</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="variable">$pass</span>; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">exit</span> 0</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">""</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"PRE-COMMIT HOOK FAILED:"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Code style validation failed. Please fix errors and try committing again."</span></span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p>請留意 <code>echo &quot;$files&quot; | xargs ./vendor/bin/php-cs-fixer fix --diff --config .php_cs</code> 這段，</p>
+<ol>
+<li><code>./vendor/bin/php-cs-fixer</code>： 是使用 <code>composer require --dev friendsofphp/php-cs-fixer</code> 安裝在 project 內 vendor 目錄中的 php-cs-fixer 進行 Coding Style 修正。Global 安裝方式請參考 <a href="https://github.com/friendsofphp/php-cs-fixer" target="_blank" rel="noopener">FriendsOfPHP/PHP-CS-Fixer</a>。</li>
+<li><code>.php_cs</code>： 使用 <a href="2017/2017102302-vscode-extension-php-cs-fixer.html">在 vs code 使用 php cs fixer 進行 coding style 的格式修正</a> 一文內建立的檔案，或參考 <a href="https://github.com/friendsofphp/php-cs-fixer" target="_blank" rel="noopener">FriendsOfPHP/PHP-CS-Fixer</a> 內的 <code>.php_cs.dist</code> 再依據需求修改。</li>
+</ol>
+<h3 id="Step-4-修改-pre-commit-的權限"><a href="#Step-4-修改-pre-commit-的權限" class="headerlink" title="Step 4. 修改 pre-commit 的權限"></a>Step 4. 修改 pre-commit 的權限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod +x .git/hooks/pre-commit</span><br></pre></td></tr></table></figure>
+<p>必須修改 <code>pre-commit</code> 的權限，這樣才能在 commit 前正確執行寫 php-cs-fixer。</p>
+<p>完成以上設定後，每次在 commit 前，只要有產生差異的 PHP 檔案，就會自動進行 Coding Style 修正。</p>
+<h2 id="參考資料-References"><a href="#參考資料-References" class="headerlink" title="參考資料  References"></a>參考資料  References</h2><ul>
+<li><a href="https://victor.4devs.io/en/clean-code/automating-code-style-fixes-with-git-and-php-cs-fixer.html" target="_blank" rel="noopener">Automating Code Style Fixes with Git and PHP Coding Standards Fixer</a></li>
+</ul>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/coding-style/" rel="tag"># coding style</a>
+          
+            <a href="/tags/php-cs-fixer/" rel="tag"># php-cs-fixer</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/2019042601-install-anaconda-with-homebrew.html" rel="next" title="使用 Homebrew 安裝 anaconda">
+                <i class="fa fa-chevron-left"></i> 使用 Homebrew 安裝 anaconda
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div class="fb-comments" data-href="http://codefun.tw/2019/2019051901-php-coding-style-fix-with-git.html" data-numposts="10" data-width="100%" data-colorscheme="light">
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -456,8 +613,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -648,6 +814,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#環境"><span class="nav-number">1.</span> <span class="nav-text">環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#開始設定-pre-commit"><span class="nav-number">2.</span> <span class="nav-text">開始設定 pre-commit</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-檢查是否有-hooks-目錄"><span class="nav-number">2.1.</span> <span class="nav-text">Step 1. 檢查是否有 hooks 目錄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2-建立-hooks-目錄"><span class="nav-number">2.2.</span> <span class="nav-text">Step 2. 建立 hooks 目錄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-3-新增-pre-commit-檔案內容"><span class="nav-number">2.3.</span> <span class="nav-text">Step 3. 新增 pre-commit 檔案內容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-4-修改-pre-commit-的權限"><span class="nav-number">2.4.</span> <span class="nav-text">Step 4. 修改 pre-commit 的權限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料-References"><span class="nav-number">3.</span> <span class="nav-text">參考資料  References</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -783,6 +966,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -798,6 +985,8 @@
 
   
 
+
+  
 
 
   
