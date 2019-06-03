@@ -8,6 +8,20 @@
     </url>
 
     <url>
+        <loc>http://codefun.tw/categories/editor/</loc>
+        <lastmod>2019-06-03T00:58:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://codefun.tw/categories/php/</loc>
+        <lastmod>2019-05-19T04:09:38.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://codefun.tw/categories/python/</loc>
         <lastmod>2019-04-26T09:20:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,13 +31,6 @@
     <url>
         <loc>http://codefun.tw/categories/development/</loc>
         <lastmod>2019-04-24T04:32:48.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://codefun.tw/categories/editor/</loc>
-        <lastmod>2019-04-23T04:19:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
