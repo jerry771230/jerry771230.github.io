@@ -9,7 +9,23 @@
 
     <url>
         <loc>http://codefun.tw/2017/2017102301-vscode-workspace-recommended-extensions.html</loc>
-        <lastmod>2019-06-03T00:58:00.000Z</lastmod>
+        <lastmod>2020-06-24T01:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://codefun.tw/2017/2017102302-vscode-extension-php-cs-fixer.html</loc>
+        <lastmod>2019-08-07T01:26:30.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://codefun.tw/2019/2019062601-my-version-control-specification.html</loc>
+        <lastmod>2019-06-26T03:45:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -82,14 +98,6 @@
     <url>
         <loc>http://codefun.tw/2017/2017082901-editorconfig-settings.html</loc>
         <lastmod>2019-04-10T02:58:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://codefun.tw/2017/2017102302-vscode-extension-php-cs-fixer.html</loc>
-        <lastmod>2019-03-25T03:47:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
