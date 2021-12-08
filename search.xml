@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[被 curl 命令輸出的 "* Expire in 0 ms for 1 (transfer 0x7f85f6002000)" 洗版了]]></title>
+    <url>%2F2021%2F2021120801-curl-command-outputs-expire-in-x-ms-for-1.html</url>
+    <content type="text"><![CDATA[使用 curl 命令，被一堆 * Expire in 0 ms for 1 (transfer 0x7f85f6002000) 洗版很傻眼。。。 環境 Environment macOS: v10.14.6 iTerm2: Build 3.4.14 curl: v7.64.0 狀況終於受不了每次使用 curl 命令，畫面會出現非常多的 123456789101112* Expire in 2 ms for 1 (transfer 0x7f85f6002000)* Expire in 0 ms for 1 (transfer 0x7f85f6002000)* Expire in 0 ms for 1 (transfer 0x7f85f6002000)* Expire in 2 ms for 1 (transfer 0x7f85f6002000)* Expire in 0 ms for 1 (transfer 0x7f85f6002000)* Expire in 0 ms for 1 (transfer 0x7f85f6002000)* Expire in 2 ms for 1 (transfer 0x7f85f6002000)* Expire in 0 ms for 1 (transfer 0x7f85f6002000)* Expire in 0 ms for 1 (transfer 0x7f85f6002000)* Expire in 2 ms for 1 (transfer 0x7f85f6002000)* Expire in 0 ms for 1 (transfer 0x7f85f6002000)* Expire in 0 ms for 1 (transfer 0x7f85f6002000) 爬文看到有人跟我有一樣的困擾，看起來是某一版的 curl 才會出現這樣的 log output。解法就是升級 curl。 查看 curl 版本， 12345curl -Vcurl 7.64.0 (x86_64-apple-darwin13.4.0) libcurl/7.64.0 OpenSSL/1.1.1b zlib/1.2.11 libssh2/1.8.0Release-Date: 2019-02-06Protocols: dict file ftp ftps gopher http https imap imaps pop3 pop3s rtsp scp sftp smb smbs smtp smtps telnet tftpFeatures: AsynchDNS IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL libz TLS-SRP UnixSockets HTTPS-proxy 處理方式使用 homebrew 更新 1234brew upgrade curl==&gt; Upgrading curl 7.79.1_1 -&gt; 7.80.0_1 務必要執行以下 1echo 'export PATH="/usr/local/opt/curl/bin:$PATH"' &gt;&gt; ~/.zshrc 參考資料 References CURL error “Expire in 1 ms for 1 (transfer 0x…)”]]></content>
+      <categories>
+        <category>development</category>
+      </categories>
+      <tags>
+        <tag>curl</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[我的日常 git 操作]]></title>
     <url>%2F2019%2F2019062601-my-version-control-specification.html</url>
     <content type="text"><![CDATA[將日常的 git 操作記錄下來作為團隊的開發規範。 開發遵循 Git flow 務必在個人開發環境安裝 git flow 可依據個人習慣使用 command 或是 sourcetree 進行 git 各項操作 Git flow 的說明可參考 Git Flow 是什麼？為什麼需要這種東西？ 各項操作參照 git-flow cheatsheet 文章內的方式進行 工作規範Checkout 工作的 branch 一定從 develop 切（checkout）出 feature branch 每一 feature branch 只開發最小單位功能，以避免與 develop 產生過大的差異，導致 merge 的難度提高 Commit 第一行為必填的標題（Subject），需重點說明，建議少於 50 字元 空一行後可撰寫詳細描述（Body），為選填，僅摘要描述 Commit 寫法可參考 Write good git commit message 僅可能使用英文（Google translator 是好幫手 :thumbsup: ） Pull 及 Push 每次進行 pull/ push 前，先執行 fetch，以取得最新的 branches 的狀態，並依據當下情境進行更新 從 develop 進行 checkout 前，需 pull 取得最新狀態 每日下午 5 點將 feature branch push 到 remote 進行保存（買保險的概念 :smile: ） Pull Request feature branch 項目完成後，不可直接 merge 回 develop 請至 repository server 發出 pull request，請求其他人進行 code review Merge to develop Code review 完成後，由最後一位將 issue close，並將該 feature branch merge 到 develop Repository 備份可行方式如下： 每日排程備份 repository server 的資料 repository server 的資料存放在如 Gluster 的 file system]]></content>
