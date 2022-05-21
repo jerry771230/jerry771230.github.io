@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+  <meta name="google-site-verification" content="9MjjjAfbFmUf6_Qyjtd54x0imSx4ZtB_BRes0m0A_FM">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="在 vs code 中，使用 PSR1、PSR2 及 Symfony 的 Coding Style 進行格式修正。 安裝 在 command line 使用 homebrew 安裝 php cs fixer 1$ brew install php-cs-fixer">
+<meta name="keywords" content="vscode,extensions,php cs fixer,coding style">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 vs code 使用 php cs fixer 進行 coding style 的格式修正">
+<meta property="og:url" content="http://codefun.tw/2017/2017102302-vscode-extension-php-cs-fixer.html">
+<meta property="og:site_name" content="Codefun">
+<meta property="og:description" content="在 vs code 中，使用 PSR1、PSR2 及 Symfony 的 Coding Style 進行格式修正。 安裝 在 command line 使用 homebrew 安裝 php cs fixer 1$ brew install php-cs-fixer">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-07T01:26:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 vs code 使用 php cs fixer 進行 coding style 的格式修正">
+<meta name="twitter:description" content="在 vs code 中，使用 PSR1、PSR2 及 Symfony 的 Coding Style 進行格式修正。 安裝 在 command line 使用 homebrew 安裝 php cs fixer 1$ brew install php-cs-fixer">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Codefun" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://codefun.tw/2017/2017102302-vscode-extension-php-cs-fixer">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>在 vs code 使用 php cs fixer 進行 coding style 的格式修正 | Codefun</title>
+  
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId  : '',
+        xfbml  : true,
+        version: 'v2.10'
+      });
+    };
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+
+
+
+
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-85444701-2"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-85444701-2');
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Codefun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://codefun.tw/2017/2017102302-vscode-extension-php-cs-fixer.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jerry Huang">
+      <meta itemprop="description" content="知識不是力量 分享知識才是力量">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Codefun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">在 vs code 使用 php cs fixer 進行 coding style 的格式修正
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-10-23 20:17:00" itemprop="dateCreated datePublished" datetime="2017-10-23T20:17:00+08:00">2017-10-23</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-07 09:26:30" itemprop="dateModified" datetime="2019-08-07T09:26:30+08:00">2019-08-07</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/editor/" itemprop="url" rel="index"><span itemprop="name">editor</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2017/2017102302-vscode-extension-php-cs-fixer.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://codefun.tw/2017/2017102302-vscode-extension-php-cs-fixer.html" itemprop="commentCount">0</span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在 vs code 中，使用 PSR1、PSR2 及 Symfony 的 Coding Style 進行格式修正。</p>
+<h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><ol>
+<li><p>在 command line 使用 homebrew 安裝 php cs fixer</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install php-cs-fixer</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+</li>
+<li><p>在 vs code 安裝 extension - 由 junstyle 開發的 php cs fixer，extension_id <code>junstyle.php-cs-fixer</code></p>
+</li>
+<li>其他安裝方式可參考 <a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer#installation" target="_blank" rel="noopener">Install guide</a></li>
+</ol>
+<h2 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h2><ol>
+<li><p>快速鍵 <code>cmd + shift + p</code> 後輸入 <code>workspace settings</code> 貼上</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"php.suggest.basic"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"php.validate.executablePath"</span>: <span class="string">"php"</span>,</span><br><span class="line">  <span class="attr">"php-cs-fixer.executablePath"</span>: <span class="string">"php-cs-fixer"</span>,</span><br><span class="line">  "php-cs-fixer.executablePathWindows": "",   //eg: php-cs-fixer.bat</span><br><span class="line">  "php-cs-fixer.onsave": false,</span><br><span class="line">  "php-cs-fixer.rules": "",</span><br><span class="line">  "php-cs-fixer.config": ".php_cs",</span><br><span class="line">  "php-cs-fixer.allowRisky": false,</span><br><span class="line">  "php-cs-fixer.pathMode": "override",</span><br><span class="line">  "php-cs-fixer.exclude": [],</span><br><span class="line">  "php-cs-fixer.autoFixByBracket": true,</span><br><span class="line">  "php-cs-fixer.autoFixBySemicolon": false,</span><br><span class="line">  "php-cs-fixer.formatHtml": false,</span><br><span class="line">  "php-cs-fixer.documentFormattingProvider": true,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 說明：</p>
+<ul>
+<li><code>&quot;php-cs-fixer.onsave&quot;: true,</code>: true 為存檔時即執行。我個人習慣是設定成 false，在確定程式沒問題後才執行檢查，因此必須按右鍵，再從選單中點擊「Format Document」進行檢查。</li>
+<li><code>&quot;php-cs-fixer.rules&quot;: &quot;&quot;,</code>: 留空字串</li>
+<li><code>&quot;php-cs-fixer.config&quot;: &quot;.php_cs&quot;,</code>: 使用 project root path 下的 config file 最為 formating 基準</li>
+</ul>
+</li>
+<li><p>在 project root 新增檔案 <code>.php_cs</code>，內容如下</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">$header = <span class="string">&lt;&lt;&lt;'EOF'</span></span><br><span class="line"><span class="string">This file is part of PHP CS Fixer.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">(c) Fabien Potencier &lt;fabien@symfony.com&gt;</span></span><br><span class="line"><span class="string">    Dariusz Rumiński &lt;dariusz.ruminski@gmail.com&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">This source file is subject to the MIT license that is bundled</span></span><br><span class="line"><span class="string">with this source code in the file LICENSE.</span></span><br><span class="line"><span class="string">EOF;</span></span><br><span class="line"></span><br><span class="line">$finder = PhpCsFixer\Finder::create()</span><br><span class="line">    -&gt;exclude(<span class="string">'tests/Fixtures'</span>)</span><br><span class="line">    -&gt;in(<span class="keyword">__DIR__</span>)</span><br><span class="line">;</span><br><span class="line"></span><br><span class="line">$config = PhpCsFixer\Config::create()</span><br><span class="line">    -&gt;setRiskyAllowed(<span class="keyword">true</span>)</span><br><span class="line">    -&gt;setRules([</span><br><span class="line">        <span class="string">'@PHP56Migration'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'@PHPUnit60Migration:risky'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'@PSR1'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'@PSR2'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'@Symfony'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'@Symfony:risky'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'align_multiline_comment'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'array_indentation'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'array_syntax'</span> =&gt; [<span class="string">'syntax'</span> =&gt; <span class="string">'short'</span>],</span><br><span class="line">        <span class="string">'blank_line_before_statement'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'binary_operator_spaces'</span> =&gt; [</span><br><span class="line">            <span class="string">'align_double_arrow'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">            <span class="string">'align_equals'</span> =&gt; <span class="keyword">false</span>,</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">'combine_consecutive_issets'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'combine_consecutive_unsets'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'comment_to_phpdoc'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'compact_nullable_typehint'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'concat_space'</span> =&gt; [<span class="string">'spacing'</span> =&gt; <span class="string">'one'</span>],</span><br><span class="line">        <span class="string">'escape_implicit_backslashes'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'explicit_indirect_variable'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'explicit_string_variable'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'final_internal_class'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'fully_qualified_strict_types'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'function_to_constant'</span> =&gt; [<span class="string">'functions'</span> =&gt; [<span class="string">'get_class'</span>, <span class="string">'get_called_class'</span>, <span class="string">'php_sapi_name'</span>, <span class="string">'phpversion'</span>, <span class="string">'pi'</span>]],</span><br><span class="line">        <span class="comment">//'header_comment' =&gt; ['header' =&gt; $header],</span></span><br><span class="line">        <span class="string">'heredoc_to_nowdoc'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'increment_style'</span> =&gt; <span class="keyword">false</span>,</span><br><span class="line">        <span class="string">'list_syntax'</span> =&gt; [<span class="string">'syntax'</span> =&gt; <span class="string">'short'</span>],</span><br><span class="line">        <span class="string">'logical_operators'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'method_argument_space'</span> =&gt; [<span class="string">'on_multiline'</span> =&gt; <span class="string">'ensure_fully_multiline'</span>],</span><br><span class="line">        <span class="string">'method_chaining_indentation'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'multiline_comment_opening_closing'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_alternative_syntax'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_binary_string'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_extra_blank_lines'</span> =&gt; [<span class="string">'tokens'</span> =&gt; [<span class="string">'break'</span>, <span class="string">'continue'</span>, <span class="string">'extra'</span>, <span class="string">'return'</span>, <span class="string">'throw'</span>, <span class="string">'use'</span>, <span class="string">'parenthesis_brace_block'</span>, <span class="string">'square_brace_block'</span>, <span class="string">'curly_brace_block'</span>]],</span><br><span class="line">        <span class="string">'no_null_property_initialization'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_short_echo_tag'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_superfluous_elseif'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_unneeded_curly_braces'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_unneeded_final_method'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_unreachable_default_argument_value'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_unset_on_property'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_useless_else'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_useless_return'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'ordered_class_elements'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'ordered_imports'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_internal_class'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_ordered_covers'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_set_up_tear_down_visibility'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_strict'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_test_annotation'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_test_case_static_method_calls'</span> =&gt; [<span class="string">'call_type'</span> =&gt; <span class="string">'this'</span>],</span><br><span class="line">        <span class="string">'php_unit_test_class_requires_covers'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'phpdoc_add_missing_param_annotation'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'phpdoc_order'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'phpdoc_trim_consecutive_blank_line_separation'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'phpdoc_types_order'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'return_assignment'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'semicolon_after_instruction'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'single_line_comment_style'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'strict_comparison'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'strict_param'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'string_line_ending'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'ternary_operator_spaces'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'trim_array_spaces'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'unary_operator_spaces'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'yoda_style'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'whitespace_after_comma_in_array'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">    ])</span><br><span class="line">    -&gt;setFinder($finder)</span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"><span class="comment">// special handling of fabbot.io service if it's using too old PHP CS Fixer version</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">false</span> !== getenv(<span class="string">'FABBOT_IO'</span>)) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        PhpCsFixer\FixerFactory::create()</span><br><span class="line">            -&gt;registerBuiltInFixers()</span><br><span class="line">            -&gt;registerCustomFixers($config-&gt;getCustomFixers())</span><br><span class="line">            -&gt;useRuleSet(<span class="keyword">new</span> PhpCsFixer\RuleSet($config-&gt;getRules()));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (PhpCsFixer\ConfigurationException\InvalidConfigurationException $e) &#123;</span><br><span class="line">        $config-&gt;setRules([]);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (UnexpectedValueException $e) &#123;</span><br><span class="line">        $config-&gt;setRules([]);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (InvalidArgumentException $e) &#123;</span><br><span class="line">        $config-&gt;setRules([]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> $config;</span><br></pre></td></tr></table></figure>
+<p> 說明：</p>
+<ul>
+<li>加入 <code>&#39;@PSR1&#39; =&gt; true,</code> 及 <code>&#39;@Symfony&#39; =&gt; true,</code></li>
+</ul>
+</li>
+<li><p>重新啟動 vs code（建議使用 <code>cmd + Q</code>，再重新啟動）</p>
+</li>
+<li>編輯檔案後存檔，即自動執行 php-cs-fixer 進行 coding style 修正</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vscode/" rel="tag"># vscode</a>
+          
+            <a href="/tags/extensions/" rel="tag"># extensions</a>
+          
+            <a href="/tags/php-cs-fixer/" rel="tag"># php cs fixer</a>
+          
+            <a href="/tags/coding-style/" rel="tag"># coding style</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/2017102301-vscode-workspace-recommended-extensions.html" rel="next" title="管理或分享 vs code 的 workspace extensions">
+                <i class="fa fa-chevron-left"></i> 管理或分享 vs code 的 workspace extensions
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/2017110701-create-laravel-storage-symbolic-link-docker.html" rel="prev" title="docker-compose 開發環境，如何建立 storage 的 symbolic link？">
+                docker-compose 開發環境，如何建立 storage 的 symbolic link？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div class="fb-comments" data-href="http://codefun.tw/2017/2017102302-vscode-extension-php-cs-fixer.html" data-numposts="10" data-width="100%" data-colorscheme="light">
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="Jerry Huang">
+            
+              <p class="site-author-name" itemprop="name">Jerry Huang</p>
+              <div class="site-description motion-element" itemprop="description">知識不是力量 分享知識才是力量</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.linkedin.com/in/jerry771230" title="LinkedIn &rarr; https://www.linkedin.com/in/jerry771230" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>LinkedIn</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝"><span class="nav-number">1.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#設定"><span class="nav-number">2.</span> <span class="nav-text">設定</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2022</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jerry Huang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+      <div>
+        <div class="addthis_inline_share_toolbox">
+  <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59202e2d25ce1195" async="async"></script>
+</div>
+
+      </div>
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
