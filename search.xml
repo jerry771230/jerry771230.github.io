@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>OSX 執行 gvm pkgset use 發生錯誤</title>
-    <url>/2017/2017042601-osx-gvm-pkgset-use-error.html</url>
-    <content><![CDATA[<h2 id="第一次安裝-gvm-就踩到奇怪的雷"><a href="#第一次安裝-gvm-就踩到奇怪的雷" class="headerlink" title="第一次安裝 gvm 就踩到奇怪的雷"></a>第一次安裝 gvm 就踩到奇怪的雷</h2><p><a href="https://github.com/moovweb/gvm" target="_blank" rel="noopener">gvm</a> 是 <a href="https://golang.org/" target="_blank" rel="noopener">golang</a> 的版本管理工具（跟 nvm 很像），但是竟然在 OSX 下踩到奇怪的雷，<br>在 <code>~/.bash_profile</code> 內的 <code>export GREP_OPTIONS=&#39;--color=always&#39;</code> 會造成 <code>gvm use</code> 或 <code>gvm pkgset use</code> 無法正常運作。</p>
-<a id="more"></a>
-<h2 id="解決方式："><a href="#解決方式：" class="headerlink" title="解決方式："></a>解決方式：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ vim $HOME/.gvm/scripts/env/pkgset-use</span><br><span class="line">$ vim $HOME/.gvm/scripts/env/use</span><br></pre></td></tr></table></figure>
-<p>在 <code>$GREP_PATH</code> 後面加上 <code>--color=never</code>，也就是修改成 <code>$GREP_PATH --color=never</code></p>
+    <title>使用 git mv 解決 macOS 預設對檔案不分大小寫問題</title>
+    <url>/2018/2018030201-macos-correct-case-sentitive.html</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>macOS 的 Disk 預設對檔案是不分大小寫的，當程式部署到 linux 下，才會知道有大小寫錯誤問題。</p>
+ <a id="more"></a>
+<h2 id="使用-git-mv-指令進行修正"><a href="#使用-git-mv-指令進行修正" class="headerlink" title="使用 git mv 指令進行修正"></a>使用 <code>git mv</code> 指令進行修正</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># way 1</span><br><span class="line">$ git mv --force filename Filename</span><br><span class="line">$ git commit -m &quot;Set correct case for filename&quot;</span><br><span class="line"></span><br><span class="line"># way 2</span><br><span class="line">$ git mv filename tmp_filename</span><br><span class="line">$ git mv tmp_filename Filename</span><br><span class="line">$ git commit -m &quot;Set correct case for filename&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://coderwall.com/p/mgi8ja/case-sensitive-git-in-mac-os-x-like-a-pro" target="_blank" rel="noopener">Case-sensitive git in Mac OS X like a Pro</a> - 文章有提到，外接一個 disk，並且格式化成 “Mac OS Extended (Case-sensitive, Journaled)”，就不會有這樣的困擾。</li>
+</ul>
 ]]></content>
       <categories>
-        <category>golang</category>
+        <category>macos</category>
       </categories>
       <tags>
-        <tag>golang</tag>
-        <tag>gvm</tag>
+        <tag>git</tag>
+        <tag>macos</tag>
       </tags>
   </entry>
   <entry>
@@ -144,36 +146,19 @@
       </tags>
   </entry>
   <entry>
-    <title>如何使用 Google Hangouts 進行遠端多人會議</title>
-    <url>/2017/2017081802-google-hangouts-multi-person-meeting.html</url>
-    <content><![CDATA[<ol>
-<li><p>開啟 Google Chrome 瀏覽器並且登入 Google 帳號，然後在網址列搜尋 <code>Google Hangouts</code> 或直接開啟連結 <a href="https://hangouts.google.com/?hl=zh-TW" target="_blank" rel="noopener">https://hangouts.google.com/?hl=zh-TW</a> 。</p>
+    <title>OSX 執行 gvm pkgset use 發生錯誤</title>
+    <url>/2017/2017042601-osx-gvm-pkgset-use-error.html</url>
+    <content><![CDATA[<h2 id="第一次安裝-gvm-就踩到奇怪的雷"><a href="#第一次安裝-gvm-就踩到奇怪的雷" class="headerlink" title="第一次安裝 gvm 就踩到奇怪的雷"></a>第一次安裝 gvm 就踩到奇怪的雷</h2><p><a href="https://github.com/moovweb/gvm" target="_blank" rel="noopener">gvm</a> 是 <a href="https://golang.org/" target="_blank" rel="noopener">golang</a> 的版本管理工具（跟 nvm 很像），但是竟然在 OSX 下踩到奇怪的雷，<br>在 <code>~/.bash_profile</code> 內的 <code>export GREP_OPTIONS=&#39;--color=always&#39;</code> 會造成 <code>gvm use</code> 或 <code>gvm pkgset use</code> 無法正常運作。</p>
 <a id="more"></a>
-</li>
-<li><p>進入 <a href="https://hangouts.google.com/?hl=zh-TW" target="_blank" rel="noopener">https://hangouts.google.com/?hl=zh-TW</a> 頁面後點擊 <code>視訊通話</code>。<br><img src="https://lh3.googleusercontent.com/AlFUgzsOF6r7JUqpzjdfq5D1af5WpFffSDOuWE94uCZQjUDvay_gIb7Ab_01fsDXcuyLeiT7IT-Iohm0bFuN5rilRxYpbxvzKEm9jCXHsb9g8Qldxfc022gsid-IXbTBpyb-Fg285g=w1015-h598-no" alt="開啟視訊通話"></p>
-</li>
-<li><p>同意 Google Hangouts 取用攝影機及麥克風的權限，即可正式開啟會議。<br><img src="https://lh3.googleusercontent.com/komj3VnPhw7yi-KjjhBGMzh_FWEjp_rHLrB-fuF1cD2thBBGST1xnm0K_HwKmLAzsIqCS66qkK9D6oiM-QpggSjEmR0IppLB6NqsjcnpDXMK61iOx7OQ-6ob0Cev-AFrCX-Icc-b4A=w1026-h717-no" alt="同意取用攝影機及麥克風"></p>
-</li>
-<li><p>邀請進入會議的方式有二，一是透過 email 邀請，二是分享連結。<br><img src="https://lh3.googleusercontent.com/7funsf3-O_S6Pn7PDDOy8ufZfE4yLcnFdYshes6aVDhyyTzwMdA-F6JHoG4agLqYxWIwVVMx_IrhZXerDaFkWGac-sPETDDnxktLK8zuRZKziQfLJLtzvlIPlejRiaehZNs2zmt--w=w1097-h802-no" alt="邀請進入會議的方式"></p>
-</li>
-<li><p>要分享報告的內容給其他人時，可以點擊右上角。<br><img src="https://lh3.googleusercontent.com/2dApM7z6B2B4J5OUJmLsqeV0aDH4DgVAAleQJHWxga_6LaF_Cd_gK5o_TR3cgQfPwSK0Va6eS_AS_G88Pi7AW5_9eMiGBBAhniwnv3KG8KqANnZoXa_BaxnJ_Kz0Mx1WsmRB4AMbQA=w933-h705-no" alt="開啟螢幕分享"></p>
-</li>
-<li><p>然後點擊 <code>分享螢幕畫面</code><br><img src="https://lh3.googleusercontent.com/aj9yUUt70f5zdQ5X-InP-J_CJTD2SDb8EkTYU9B-6jf-Io7rsxAyZp1BzmPDvMO3VIykYCJ-rUxZQ7LLltmNkVtcXDJYy-84wgdFusiNJsvNt60fVrV_zJ4INBpZseRjxRtudYPvTQ=w1097-h802-no" alt="分享螢幕畫面"></p>
-</li>
-<li><p>再選擇要分享螢幕（Your Entire Screen）還是應用程式（Application Window）。<br><img src="https://lh3.googleusercontent.com/4l7x9qHKu-th4PQqFmaxzIB2Ri5tqYaIJNB0s_Ku3FgrhQcC43ch7E7JlMhT2AihQ3GY4bfYmem1zi3sqZeK1n0zFtxqZjvEsRN2cIN0MRQtM1xGQbQ0z4l6npF64mfzrIm4Dos12A=w617-h523-no" alt="分享整個螢幕畫面"><br><img src="https://lh3.googleusercontent.com/9EmKhj4VscJAmj9nL3GUGgOiYqoPs8iKlpEkzCH5gPECBEuvz9TSrvUlTamRs3u5Z4zza9UqLJMT0D6mgQxwcToRTdfin2pL6d2zdxnPKonmVIBQg_pNnaiHEvzWcoC7UJEDk51-XQ=w619-h523-no" alt="分享應用程式"></p>
-</li>
-<li><p>再點擊 <code>Share</code>，此時你的 Google Hangouts 畫面就會是要分享的內容。</p>
-</li>
-<li>要看其他人分享的螢幕，點擊主視窗下方的其他人的小視窗就可以進行切換。<br><img src="https://lh3.googleusercontent.com/sedtAm7wrJNBXCEaVVhg5PBIinaNEtYXNzzZL4rYf39v2-p6d3hDeYFzoXZk6s5ZOpGs_5I0R9LVDkQrBkXp_e59ZF6D6cWxqQuF-Bpp9xFV7r-AJPGdhKp73NeNy58SlMdXHy52ag=w1182-h673-no" alt="切換到他人分享的螢幕"></li>
-</ol>
-<p>以上截圖內容是在 MAC OS 下操作的畫面，其他 OS 可能會有出入。</p>
+<h2 id="解決方式："><a href="#解決方式：" class="headerlink" title="解決方式："></a>解決方式：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ vim $HOME/.gvm/scripts/env/pkgset-use</span><br><span class="line">$ vim $HOME/.gvm/scripts/env/use</span><br></pre></td></tr></table></figure>
+<p>在 <code>$GREP_PATH</code> 後面加上 <code>--color=never</code>，也就是修改成 <code>$GREP_PATH --color=never</code></p>
 ]]></content>
       <categories>
-        <category>notes</category>
+        <category>golang</category>
       </categories>
       <tags>
-        <tag>IM</tag>
-        <tag>Google Hangouts</tag>
+        <tag>golang</tag>
+        <tag>gvm</tag>
       </tags>
   </entry>
   <entry>
@@ -223,6 +208,39 @@
       <tags>
         <tag>marketing</tag>
         <tag>ad keyword</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何使用 Google Hangouts 進行遠端多人會議</title>
+    <url>/2017/2017081802-google-hangouts-multi-person-meeting.html</url>
+    <content><![CDATA[<ol>
+<li><p>開啟 Google Chrome 瀏覽器並且登入 Google 帳號，然後在網址列搜尋 <code>Google Hangouts</code> 或直接開啟連結 <a href="https://hangouts.google.com/?hl=zh-TW" target="_blank" rel="noopener">https://hangouts.google.com/?hl=zh-TW</a> 。</p>
+<a id="more"></a>
+</li>
+<li><p>進入 <a href="https://hangouts.google.com/?hl=zh-TW" target="_blank" rel="noopener">https://hangouts.google.com/?hl=zh-TW</a> 頁面後點擊 <code>視訊通話</code>。<br><img src="https://lh3.googleusercontent.com/AlFUgzsOF6r7JUqpzjdfq5D1af5WpFffSDOuWE94uCZQjUDvay_gIb7Ab_01fsDXcuyLeiT7IT-Iohm0bFuN5rilRxYpbxvzKEm9jCXHsb9g8Qldxfc022gsid-IXbTBpyb-Fg285g=w1015-h598-no" alt="開啟視訊通話"></p>
+</li>
+<li><p>同意 Google Hangouts 取用攝影機及麥克風的權限，即可正式開啟會議。<br><img src="https://lh3.googleusercontent.com/komj3VnPhw7yi-KjjhBGMzh_FWEjp_rHLrB-fuF1cD2thBBGST1xnm0K_HwKmLAzsIqCS66qkK9D6oiM-QpggSjEmR0IppLB6NqsjcnpDXMK61iOx7OQ-6ob0Cev-AFrCX-Icc-b4A=w1026-h717-no" alt="同意取用攝影機及麥克風"></p>
+</li>
+<li><p>邀請進入會議的方式有二，一是透過 email 邀請，二是分享連結。<br><img src="https://lh3.googleusercontent.com/7funsf3-O_S6Pn7PDDOy8ufZfE4yLcnFdYshes6aVDhyyTzwMdA-F6JHoG4agLqYxWIwVVMx_IrhZXerDaFkWGac-sPETDDnxktLK8zuRZKziQfLJLtzvlIPlejRiaehZNs2zmt--w=w1097-h802-no" alt="邀請進入會議的方式"></p>
+</li>
+<li><p>要分享報告的內容給其他人時，可以點擊右上角。<br><img src="https://lh3.googleusercontent.com/2dApM7z6B2B4J5OUJmLsqeV0aDH4DgVAAleQJHWxga_6LaF_Cd_gK5o_TR3cgQfPwSK0Va6eS_AS_G88Pi7AW5_9eMiGBBAhniwnv3KG8KqANnZoXa_BaxnJ_Kz0Mx1WsmRB4AMbQA=w933-h705-no" alt="開啟螢幕分享"></p>
+</li>
+<li><p>然後點擊 <code>分享螢幕畫面</code><br><img src="https://lh3.googleusercontent.com/aj9yUUt70f5zdQ5X-InP-J_CJTD2SDb8EkTYU9B-6jf-Io7rsxAyZp1BzmPDvMO3VIykYCJ-rUxZQ7LLltmNkVtcXDJYy-84wgdFusiNJsvNt60fVrV_zJ4INBpZseRjxRtudYPvTQ=w1097-h802-no" alt="分享螢幕畫面"></p>
+</li>
+<li><p>再選擇要分享螢幕（Your Entire Screen）還是應用程式（Application Window）。<br><img src="https://lh3.googleusercontent.com/4l7x9qHKu-th4PQqFmaxzIB2Ri5tqYaIJNB0s_Ku3FgrhQcC43ch7E7JlMhT2AihQ3GY4bfYmem1zi3sqZeK1n0zFtxqZjvEsRN2cIN0MRQtM1xGQbQ0z4l6npF64mfzrIm4Dos12A=w617-h523-no" alt="分享整個螢幕畫面"><br><img src="https://lh3.googleusercontent.com/9EmKhj4VscJAmj9nL3GUGgOiYqoPs8iKlpEkzCH5gPECBEuvz9TSrvUlTamRs3u5Z4zza9UqLJMT0D6mgQxwcToRTdfin2pL6d2zdxnPKonmVIBQg_pNnaiHEvzWcoC7UJEDk51-XQ=w619-h523-no" alt="分享應用程式"></p>
+</li>
+<li><p>再點擊 <code>Share</code>，此時你的 Google Hangouts 畫面就會是要分享的內容。</p>
+</li>
+<li>要看其他人分享的螢幕，點擊主視窗下方的其他人的小視窗就可以進行切換。<br><img src="https://lh3.googleusercontent.com/sedtAm7wrJNBXCEaVVhg5PBIinaNEtYXNzzZL4rYf39v2-p6d3hDeYFzoXZk6s5ZOpGs_5I0R9LVDkQrBkXp_e59ZF6D6cWxqQuF-Bpp9xFV7r-AJPGdhKp73NeNy58SlMdXHy52ag=w1182-h673-no" alt="切換到他人分享的螢幕"></li>
+</ol>
+<p>以上截圖內容是在 MAC OS 下操作的畫面，其他 OS 可能會有出入。</p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>IM</tag>
+        <tag>Google Hangouts</tag>
       </tags>
   </entry>
   <entry>
@@ -330,69 +348,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在 vs code 使用 php cs fixer 進行 coding style 的格式修正</title>
-    <url>/2017/2017102302-vscode-extension-php-cs-fixer.html</url>
-    <content><![CDATA[<p>在 vs code 中，使用 PSR1、PSR2 及 Symfony 的 Coding Style 進行格式修正。</p>
-<h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><ol>
-<li><p>在 command line 使用 homebrew 安裝 php cs fixer</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ brew install php-cs-fixer</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-</li>
-<li><p>在 vs code 安裝 extension - 由 junstyle 開發的 php cs fixer，extension_id <code>junstyle.php-cs-fixer</code></p>
-</li>
-<li>其他安裝方式可參考 <a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer#installation" target="_blank" rel="noopener">Install guide</a></li>
-</ol>
-<h2 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h2><ol>
-<li><p>快速鍵 <code>cmd + shift + p</code> 後輸入 <code>workspace settings</code> 貼上</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"php.suggest.basic"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"php.validate.executablePath"</span>: <span class="string">"php"</span>,</span><br><span class="line">  <span class="attr">"php-cs-fixer.executablePath"</span>: <span class="string">"php-cs-fixer"</span>,</span><br><span class="line">  <span class="attr">"php-cs-fixer.executablePathWindows"</span>: <span class="string">""</span>,   <span class="comment">//eg: php-cs-fixer.bat</span></span><br><span class="line">  <span class="attr">"php-cs-fixer.onsave"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"php-cs-fixer.rules"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"php-cs-fixer.config"</span>: <span class="string">".php_cs"</span>,</span><br><span class="line">  <span class="attr">"php-cs-fixer.allowRisky"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"php-cs-fixer.pathMode"</span>: <span class="string">"override"</span>,</span><br><span class="line">  <span class="attr">"php-cs-fixer.exclude"</span>: [],</span><br><span class="line">  <span class="attr">"php-cs-fixer.autoFixByBracket"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"php-cs-fixer.autoFixBySemicolon"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"php-cs-fixer.formatHtml"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"php-cs-fixer.documentFormattingProvider"</span>: <span class="literal">true</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 說明：</p>
-<ul>
-<li><code>&quot;php-cs-fixer.onsave&quot;: true,</code>: true 為存檔時即執行。我個人習慣是設定成 false，在確定程式沒問題後才執行檢查，因此必須按右鍵，再從選單中點擊「Format Document」進行檢查。</li>
-<li><code>&quot;php-cs-fixer.rules&quot;: &quot;&quot;,</code>: 留空字串</li>
-<li><code>&quot;php-cs-fixer.config&quot;: &quot;.php_cs&quot;,</code>: 使用 project root path 下的 config file 最為 formating 基準</li>
-</ul>
-</li>
-<li><p>在 project root 新增檔案 <code>.php_cs</code>，內容如下</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">$header = <span class="string">&lt;&lt;&lt;'EOF'</span></span><br><span class="line"><span class="string">This file is part of PHP CS Fixer.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">(c) Fabien Potencier &lt;fabien@symfony.com&gt;</span></span><br><span class="line"><span class="string">    Dariusz Rumiński &lt;dariusz.ruminski@gmail.com&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">This source file is subject to the MIT license that is bundled</span></span><br><span class="line"><span class="string">with this source code in the file LICENSE.</span></span><br><span class="line"><span class="string">EOF;</span></span><br><span class="line"></span><br><span class="line">$finder = PhpCsFixer\Finder::create()</span><br><span class="line">    -&gt;exclude(<span class="string">'tests/Fixtures'</span>)</span><br><span class="line">    -&gt;in(<span class="keyword">__DIR__</span>)</span><br><span class="line">;</span><br><span class="line"></span><br><span class="line">$config = PhpCsFixer\Config::create()</span><br><span class="line">    -&gt;setRiskyAllowed(<span class="keyword">true</span>)</span><br><span class="line">    -&gt;setRules([</span><br><span class="line">        <span class="string">'@PHP56Migration'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'@PHPUnit60Migration:risky'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'@PSR1'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'@PSR2'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'@Symfony'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'@Symfony:risky'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'align_multiline_comment'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'array_indentation'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'array_syntax'</span> =&gt; [<span class="string">'syntax'</span> =&gt; <span class="string">'short'</span>],</span><br><span class="line">        <span class="string">'blank_line_before_statement'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'binary_operator_spaces'</span> =&gt; [</span><br><span class="line">            <span class="string">'align_double_arrow'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">            <span class="string">'align_equals'</span> =&gt; <span class="keyword">false</span>,</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">'combine_consecutive_issets'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'combine_consecutive_unsets'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'comment_to_phpdoc'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'compact_nullable_typehint'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'concat_space'</span> =&gt; [<span class="string">'spacing'</span> =&gt; <span class="string">'one'</span>],</span><br><span class="line">        <span class="string">'escape_implicit_backslashes'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'explicit_indirect_variable'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'explicit_string_variable'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'final_internal_class'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'fully_qualified_strict_types'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'function_to_constant'</span> =&gt; [<span class="string">'functions'</span> =&gt; [<span class="string">'get_class'</span>, <span class="string">'get_called_class'</span>, <span class="string">'php_sapi_name'</span>, <span class="string">'phpversion'</span>, <span class="string">'pi'</span>]],</span><br><span class="line">        <span class="comment">//'header_comment' =&gt; ['header' =&gt; $header],</span></span><br><span class="line">        <span class="string">'heredoc_to_nowdoc'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'increment_style'</span> =&gt; <span class="keyword">false</span>,</span><br><span class="line">        <span class="string">'list_syntax'</span> =&gt; [<span class="string">'syntax'</span> =&gt; <span class="string">'short'</span>],</span><br><span class="line">        <span class="string">'logical_operators'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'method_argument_space'</span> =&gt; [<span class="string">'on_multiline'</span> =&gt; <span class="string">'ensure_fully_multiline'</span>],</span><br><span class="line">        <span class="string">'method_chaining_indentation'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'multiline_comment_opening_closing'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_alternative_syntax'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_binary_string'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_extra_blank_lines'</span> =&gt; [<span class="string">'tokens'</span> =&gt; [<span class="string">'break'</span>, <span class="string">'continue'</span>, <span class="string">'extra'</span>, <span class="string">'return'</span>, <span class="string">'throw'</span>, <span class="string">'use'</span>, <span class="string">'parenthesis_brace_block'</span>, <span class="string">'square_brace_block'</span>, <span class="string">'curly_brace_block'</span>]],</span><br><span class="line">        <span class="string">'no_null_property_initialization'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_short_echo_tag'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_superfluous_elseif'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_unneeded_curly_braces'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_unneeded_final_method'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_unreachable_default_argument_value'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_unset_on_property'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_useless_else'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_useless_return'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'ordered_class_elements'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'ordered_imports'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_internal_class'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_ordered_covers'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_set_up_tear_down_visibility'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_strict'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_test_annotation'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_test_case_static_method_calls'</span> =&gt; [<span class="string">'call_type'</span> =&gt; <span class="string">'this'</span>],</span><br><span class="line">        <span class="string">'php_unit_test_class_requires_covers'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'phpdoc_add_missing_param_annotation'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'phpdoc_order'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'phpdoc_trim_consecutive_blank_line_separation'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'phpdoc_types_order'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'return_assignment'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'semicolon_after_instruction'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'single_line_comment_style'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'strict_comparison'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'strict_param'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'string_line_ending'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'ternary_operator_spaces'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'trim_array_spaces'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'unary_operator_spaces'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'yoda_style'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'whitespace_after_comma_in_array'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">    ])</span><br><span class="line">    -&gt;setFinder($finder)</span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"><span class="comment">// special handling of fabbot.io service if it's using too old PHP CS Fixer version</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">false</span> !== getenv(<span class="string">'FABBOT_IO'</span>)) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        PhpCsFixer\FixerFactory::create()</span><br><span class="line">            -&gt;registerBuiltInFixers()</span><br><span class="line">            -&gt;registerCustomFixers($config-&gt;getCustomFixers())</span><br><span class="line">            -&gt;useRuleSet(<span class="keyword">new</span> PhpCsFixer\RuleSet($config-&gt;getRules()));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (PhpCsFixer\ConfigurationException\InvalidConfigurationException $e) &#123;</span><br><span class="line">        $config-&gt;setRules([]);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (UnexpectedValueException $e) &#123;</span><br><span class="line">        $config-&gt;setRules([]);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (InvalidArgumentException $e) &#123;</span><br><span class="line">        $config-&gt;setRules([]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> $config;</span><br></pre></td></tr></table></figure>
-<p> 說明：</p>
-<ul>
-<li>加入 <code>&#39;@PSR1&#39; =&gt; true,</code> 及 <code>&#39;@Symfony&#39; =&gt; true,</code></li>
-</ul>
-</li>
-<li><p>重新啟動 vs code（建議使用 <code>cmd + Q</code>，再重新啟動）</p>
-</li>
-<li>編輯檔案後存檔，即自動執行 php-cs-fixer 進行 coding style 修正</li>
-</ol>
-]]></content>
-      <categories>
-        <category>editor</category>
-      </categories>
-      <tags>
-        <tag>coding style</tag>
-        <tag>vscode</tag>
-        <tag>extensions</tag>
-        <tag>php cs fixer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用 git mv 解決 macOS 預設對檔案不分大小寫問題</title>
-    <url>/2018/2018030201-macos-correct-case-sentitive.html</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>macOS 的 Disk 預設對檔案是不分大小寫的，當程式部署到 linux 下，才會知道有大小寫錯誤問題。</p>
- <a id="more"></a>
-<h2 id="使用-git-mv-指令進行修正"><a href="#使用-git-mv-指令進行修正" class="headerlink" title="使用 git mv 指令進行修正"></a>使用 <code>git mv</code> 指令進行修正</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># way 1</span><br><span class="line">$ git mv --force filename Filename</span><br><span class="line">$ git commit -m &quot;Set correct case for filename&quot;</span><br><span class="line"></span><br><span class="line"># way 2</span><br><span class="line">$ git mv filename tmp_filename</span><br><span class="line">$ git mv tmp_filename Filename</span><br><span class="line">$ git commit -m &quot;Set correct case for filename&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li><a href="https://coderwall.com/p/mgi8ja/case-sensitive-git-in-mac-os-x-like-a-pro" target="_blank" rel="noopener">Case-sensitive git in Mac OS X like a Pro</a> - 文章有提到，外接一個 disk，並且格式化成 “Mac OS Extended (Case-sensitive, Journaled)”，就不會有這樣的困擾。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>macos</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-        <tag>macos</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>管理或分享 vs code 的 workspace extensions</title>
     <url>/2017/2017102301-vscode-workspace-recommended-extensions.html</url>
     <content><![CDATA[<p>多人開發使用 vs code 當成預設的 editor 時，透過分享 <code>Workspace Recommended Extensions</code> 的方式讓大家都使用同樣的 extension 達成開發或檢查的一致性。</p>
@@ -437,6 +392,51 @@
       <tags>
         <tag>vscode</tag>
         <tag>extensions</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在 vs code 使用 php cs fixer 進行 coding style 的格式修正</title>
+    <url>/2017/2017102302-vscode-extension-php-cs-fixer.html</url>
+    <content><![CDATA[<p>在 vs code 中，使用 PSR1、PSR2 及 Symfony 的 Coding Style 進行格式修正。</p>
+<h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><ol>
+<li><p>在 command line 使用 homebrew 安裝 php cs fixer</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ brew install php-cs-fixer</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+</li>
+<li><p>在 vs code 安裝 extension - 由 junstyle 開發的 php cs fixer，extension_id <code>junstyle.php-cs-fixer</code></p>
+</li>
+<li>其他安裝方式可參考 <a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer#installation" target="_blank" rel="noopener">Install guide</a></li>
+</ol>
+<h2 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h2><ol>
+<li><p>快速鍵 <code>cmd + shift + p</code> 後輸入 <code>workspace settings</code> 貼上</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"php.suggest.basic"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"php.validate.executablePath"</span>: <span class="string">"php"</span>,</span><br><span class="line">  <span class="attr">"php-cs-fixer.executablePath"</span>: <span class="string">"php-cs-fixer"</span>,</span><br><span class="line">  "php-cs-fixer.executablePathWindows": "",   //eg: php-cs-fixer.bat</span><br><span class="line">  "php-cs-fixer.onsave": false,</span><br><span class="line">  "php-cs-fixer.rules": "",</span><br><span class="line">  "php-cs-fixer.config": ".php_cs",</span><br><span class="line">  "php-cs-fixer.allowRisky": false,</span><br><span class="line">  "php-cs-fixer.pathMode": "override",</span><br><span class="line">  "php-cs-fixer.exclude": [],</span><br><span class="line">  "php-cs-fixer.autoFixByBracket": true,</span><br><span class="line">  "php-cs-fixer.autoFixBySemicolon": false,</span><br><span class="line">  "php-cs-fixer.formatHtml": false,</span><br><span class="line">  "php-cs-fixer.documentFormattingProvider": true,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 說明：</p>
+<ul>
+<li><code>&quot;php-cs-fixer.onsave&quot;: true,</code>: true 為存檔時即執行。我個人習慣是設定成 false，在確定程式沒問題後才執行檢查，因此必須按右鍵，再從選單中點擊「Format Document」進行檢查。</li>
+<li><code>&quot;php-cs-fixer.rules&quot;: &quot;&quot;,</code>: 留空字串</li>
+<li><code>&quot;php-cs-fixer.config&quot;: &quot;.php_cs&quot;,</code>: 使用 project root path 下的 config file 最為 formating 基準</li>
+</ul>
+</li>
+<li><p>在 project root 新增檔案 <code>.php_cs</code>，內容如下</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">$header = <span class="string">&lt;&lt;&lt;'EOF'</span></span><br><span class="line"><span class="string">This file is part of PHP CS Fixer.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">(c) Fabien Potencier &lt;fabien@symfony.com&gt;</span></span><br><span class="line"><span class="string">    Dariusz Rumiński &lt;dariusz.ruminski@gmail.com&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">This source file is subject to the MIT license that is bundled</span></span><br><span class="line"><span class="string">with this source code in the file LICENSE.</span></span><br><span class="line"><span class="string">EOF;</span></span><br><span class="line"></span><br><span class="line">$finder = PhpCsFixer\Finder::create()</span><br><span class="line">    -&gt;exclude(<span class="string">'tests/Fixtures'</span>)</span><br><span class="line">    -&gt;in(<span class="keyword">__DIR__</span>)</span><br><span class="line">;</span><br><span class="line"></span><br><span class="line">$config = PhpCsFixer\Config::create()</span><br><span class="line">    -&gt;setRiskyAllowed(<span class="keyword">true</span>)</span><br><span class="line">    -&gt;setRules([</span><br><span class="line">        <span class="string">'@PHP56Migration'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'@PHPUnit60Migration:risky'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'@PSR1'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'@PSR2'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'@Symfony'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'@Symfony:risky'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'align_multiline_comment'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'array_indentation'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'array_syntax'</span> =&gt; [<span class="string">'syntax'</span> =&gt; <span class="string">'short'</span>],</span><br><span class="line">        <span class="string">'blank_line_before_statement'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'binary_operator_spaces'</span> =&gt; [</span><br><span class="line">            <span class="string">'align_double_arrow'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">            <span class="string">'align_equals'</span> =&gt; <span class="keyword">false</span>,</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">'combine_consecutive_issets'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'combine_consecutive_unsets'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'comment_to_phpdoc'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'compact_nullable_typehint'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'concat_space'</span> =&gt; [<span class="string">'spacing'</span> =&gt; <span class="string">'one'</span>],</span><br><span class="line">        <span class="string">'escape_implicit_backslashes'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'explicit_indirect_variable'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'explicit_string_variable'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'final_internal_class'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'fully_qualified_strict_types'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'function_to_constant'</span> =&gt; [<span class="string">'functions'</span> =&gt; [<span class="string">'get_class'</span>, <span class="string">'get_called_class'</span>, <span class="string">'php_sapi_name'</span>, <span class="string">'phpversion'</span>, <span class="string">'pi'</span>]],</span><br><span class="line">        <span class="comment">//'header_comment' =&gt; ['header' =&gt; $header],</span></span><br><span class="line">        <span class="string">'heredoc_to_nowdoc'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'increment_style'</span> =&gt; <span class="keyword">false</span>,</span><br><span class="line">        <span class="string">'list_syntax'</span> =&gt; [<span class="string">'syntax'</span> =&gt; <span class="string">'short'</span>],</span><br><span class="line">        <span class="string">'logical_operators'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'method_argument_space'</span> =&gt; [<span class="string">'on_multiline'</span> =&gt; <span class="string">'ensure_fully_multiline'</span>],</span><br><span class="line">        <span class="string">'method_chaining_indentation'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'multiline_comment_opening_closing'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_alternative_syntax'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_binary_string'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_extra_blank_lines'</span> =&gt; [<span class="string">'tokens'</span> =&gt; [<span class="string">'break'</span>, <span class="string">'continue'</span>, <span class="string">'extra'</span>, <span class="string">'return'</span>, <span class="string">'throw'</span>, <span class="string">'use'</span>, <span class="string">'parenthesis_brace_block'</span>, <span class="string">'square_brace_block'</span>, <span class="string">'curly_brace_block'</span>]],</span><br><span class="line">        <span class="string">'no_null_property_initialization'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_short_echo_tag'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_superfluous_elseif'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_unneeded_curly_braces'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_unneeded_final_method'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_unreachable_default_argument_value'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_unset_on_property'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_useless_else'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'no_useless_return'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'ordered_class_elements'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'ordered_imports'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_internal_class'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_ordered_covers'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_set_up_tear_down_visibility'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_strict'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_test_annotation'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'php_unit_test_case_static_method_calls'</span> =&gt; [<span class="string">'call_type'</span> =&gt; <span class="string">'this'</span>],</span><br><span class="line">        <span class="string">'php_unit_test_class_requires_covers'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'phpdoc_add_missing_param_annotation'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'phpdoc_order'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'phpdoc_trim_consecutive_blank_line_separation'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'phpdoc_types_order'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'return_assignment'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'semicolon_after_instruction'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'single_line_comment_style'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'strict_comparison'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'strict_param'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'string_line_ending'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'ternary_operator_spaces'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'trim_array_spaces'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'unary_operator_spaces'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'yoda_style'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'whitespace_after_comma_in_array'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">    ])</span><br><span class="line">    -&gt;setFinder($finder)</span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"><span class="comment">// special handling of fabbot.io service if it's using too old PHP CS Fixer version</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">false</span> !== getenv(<span class="string">'FABBOT_IO'</span>)) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        PhpCsFixer\FixerFactory::create()</span><br><span class="line">            -&gt;registerBuiltInFixers()</span><br><span class="line">            -&gt;registerCustomFixers($config-&gt;getCustomFixers())</span><br><span class="line">            -&gt;useRuleSet(<span class="keyword">new</span> PhpCsFixer\RuleSet($config-&gt;getRules()));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (PhpCsFixer\ConfigurationException\InvalidConfigurationException $e) &#123;</span><br><span class="line">        $config-&gt;setRules([]);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (UnexpectedValueException $e) &#123;</span><br><span class="line">        $config-&gt;setRules([]);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (InvalidArgumentException $e) &#123;</span><br><span class="line">        $config-&gt;setRules([]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> $config;</span><br></pre></td></tr></table></figure>
+<p> 說明：</p>
+<ul>
+<li>加入 <code>&#39;@PSR1&#39; =&gt; true,</code> 及 <code>&#39;@Symfony&#39; =&gt; true,</code></li>
+</ul>
+</li>
+<li><p>重新啟動 vs code（建議使用 <code>cmd + Q</code>，再重新啟動）</p>
+</li>
+<li>編輯檔案後存檔，即自動執行 php-cs-fixer 進行 coding style 修正</li>
+</ol>
+]]></content>
+      <categories>
+        <category>editor</category>
+      </categories>
+      <tags>
+        <tag>coding style</tag>
+        <tag>vscode</tag>
+        <tag>extensions</tag>
+        <tag>php cs fixer</tag>
       </tags>
   </entry>
   <entry>
@@ -584,73 +584,6 @@
       </tags>
   </entry>
   <entry>
-    <title>分隔 Laravel log file 以解決 Permission Deny 問題</title>
-    <url>/2019/2019042401-laravel-isolate-log-file.html</url>
-    <content><![CDATA[<p>Laravel 理當會將發生的例外錯誤（Exception）寫到 <code>storage/logs/laravel-yyyy-mm-dd.log</code>，但查詢該檔案，卻看不到應有的錯誤內容！</p>
-<a id="more"></a>
-<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><p>Docker 安裝的內容，</p>
-<ol>
-<li>Ubuntu 18.04</li>
-<li>Nginx 1.14</li>
-<li>php7.3-fpm</li>
-</ol>
-<h2 id="權限問題-Permission-Deny"><a href="#權限問題-Permission-Deny" class="headerlink" title="權限問題 Permission Deny"></a>權限問題 Permission Deny</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ll storage/logs/</span><br><span class="line"></span><br><span class="line">-rw-r--r--. 1 www-data www-data  30283 Apr 16 23:55 laravel-2019-04-16.log</span><br><span class="line">-rw-r--r--. 1 www-data www-data  30079 Apr 17 23:55 laravel-2019-04-17.log</span><br><span class="line">-rw-r--r--. 1 root     root      30283 Apr 18 23:55 laravel-2019-04-18.log</span><br><span class="line">-rw-r--r--. 1 root     root      38283 Apr 19 23:55 laravel-2019-04-19.log</span><br></pre></td></tr></table></figure>
-<p>系統有 crontab 定時處理事務，在處理的同時會以 <code>Log::info()</code> 輸出，所以產生的 log 檔案，其 owner 會是 root。<br>網站程式運行的 user 是 <code>www-data</code>，所以若發生程式的 Exception 就會因為 Permission Deny 而無法寫入，</p>
-<h2 id="解決方式"><a href="#解決方式" class="headerlink" title="解決方式"></a>解決方式</h2><h3 id="成功的解法-Success"><a href="#成功的解法-Success" class="headerlink" title="成功的解法  Success"></a>成功的解法  Success</h3><p>在 <code>bootstrap/app.php</code> 檔案內加入以下程式碼，<br><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// isolate artisan console log and laravel service log</span></span><br><span class="line"><span class="comment">// https://stackoverflow.com/questions/27674597/laravel-daily-log-created-with-wrong-permissions</span></span><br><span class="line">$app-&gt;configureMonologUsing(<span class="function"><span class="keyword">function</span> <span class="params">(Monolog\Logger $monolog)</span> </span>&#123;</span><br><span class="line">    $filename = storage_path(<span class="string">'logs/'</span> . php_sapi_name() . <span class="string">'-'</span> . posix_getpwuid(posix_geteuid())[<span class="string">'name'</span>] . <span class="string">'.log'</span>);</span><br><span class="line">    $monolog-&gt;pushHandler($handler = <span class="keyword">new</span> Monolog\Handler\RotatingFileHandler($filename, <span class="number">60</span>));</span><br><span class="line">    $handler-&gt;setFilenameFormat(<span class="string">'laravel-&#123;date&#125;-&#123;filename&#125;'</span>, <span class="string">'Y-m-d'</span>);</span><br><span class="line">    $formatter = <span class="keyword">new</span> LineFormatter(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">true</span>, <span class="keyword">true</span>);</span><br><span class="line">    $formatter-&gt;includeStacktraces();</span><br><span class="line">    $handler-&gt;setFormatter($formatter);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>以 <code>php artisan command</code> 執行或是 crontab 所產生的 log file，其 owner 都會是 <code>root</code>，<br>如果是網站運行時的 Exception 所建立的 log file，則 owner 會是 <code>www-data</code>，符合要的結果。 😄<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ll storage/logs/</span><br><span class="line"></span><br><span class="line">-rw-r--r--. 1 root     root     2652 Apr 24 06:30 laravel-2019-04-24-cli-root.log</span><br><span class="line">-rw-r--r--. 1 www-data www-data  78B Apr 24 04:24 laravel-2019-04-24-fpm-fcgi-www-data.log</span><br></pre></td></tr></table></figure></p>
-<h3 id="無法得到預期效果的處理方式-failed"><a href="#無法得到預期效果的處理方式-failed" class="headerlink" title="無法得到預期效果的處理方式  failed"></a>無法得到預期效果的處理方式  failed</h3><h4 id="用-www-data-執行"><a href="#用-www-data-執行" class="headerlink" title="用 www-data 執行"></a>用 www-data 執行</h4><p>以 <code>www-data</code> user 運行 <code>php artisan command</code>？</p>
-<p>切換執行的 user 身份<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ su www-data</span><br><span class="line"></span><br><span class="line">This account is currently not available.</span><br></pre></td></tr></table></figure></p>
-<p>查看 <code>www-data</code> user<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /etc/passwd | grep www</span><br><span class="line"></span><br><span class="line">www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin</span><br></pre></td></tr></table></figure></p>
-<p>因 <code>/usr/sbin/nologin</code> 的關係，所以無法切換 user，<br>修改成<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim /etc/passwd</span><br><span class="line"></span><br><span class="line">www-data:x:33:33:www-data:/var/www:/bin/bash</span><br></pre></td></tr></table></figure></p>
-<p>然後以 <code>www-data</code> 身份執行 php artisan 以產生 log file，會得到 owner 為 <code>www-data</code> 的 log file，<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ su www-data</span><br><span class="line">$ php artisan <span class="built_in">command</span>:xxxx</span><br><span class="line">$ ll storage/logs/</span><br></pre></td></tr></table></figure></p>
-<p><strong>BUT</strong> crontab 執行產生的 log file 仍然 root，Orz</p>
-<h4 id="修改-crontab"><a href="#修改-crontab" class="headerlink" title="修改 crontab"></a>修改 crontab</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">$ crontab -e</span><br><span class="line"></span><br><span class="line">* * * * * /usr/bin/php /home/www/code/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
-<p>修改成</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">* * * * * www-data /usr/bin/php /home/www/code/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
-<p>然後執行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo service cron reload</span><br></pre></td></tr></table></figure>
-<p>結果 cron 無法運作，😳</p>
-<h5 id="可能需要這樣做（未驗證）"><a href="#可能需要這樣做（未驗證）" class="headerlink" title="可能需要這樣做（未驗證）"></a>可能需要這樣做（未驗證）</h5><p>為 <code>www-data</code> 建立自己的 crontab 排程，可參考 <a href="https://learnku.com/articles/6775/about-laravel-log-permissions" title="关于 Laravel 日志权限" target="_blank" rel="noopener">关于 Laravel 日志权限</a> 下方留言<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ su www-data</span><br><span class="line">$ crontab -u www-data -e</span><br></pre></td></tr></table></figure></p>
-<h4 id="放棄測試"><a href="#放棄測試" class="headerlink" title="放棄測試"></a>放棄測試</h4><p>因環境是在 Docker 內，上述的步驟已經無法輕易以撰寫 shell script 達成要的結果，若需要人工介入修改，則不符合使用 Docker 無痛開發原則 XD。</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li><a href="https://stackoverflow.com/questions/27674597/laravel-daily-log-created-with-wrong-permissions" target="_blank" rel="noopener">Laravel daily log created with wrong permissions</a></li>
-<li><a href="https://laravel.com/docs/5.5/errors#configuration" target="_blank" rel="noopener">Laravel 5.5 - Errors &amp; Logging - Configuration</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>development</category>
-      </categories>
-      <tags>
-        <tag>laravel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何在 workspace 快速開啟 VS Code 進行編輯</title>
-    <url>/2019/2019042301-open-vs-code-from-command-line.html</url>
-    <content><![CDATA[<p>一定要會的技巧 - 從 command line 直接開啟 VS Code!</p>
-<a id="more"></a>
-<h2 id="操作環境"><a href="#操作環境" class="headerlink" title="操作環境"></a>操作環境</h2><ol>
-<li>macOS: 10.13.6 High Sierra</li>
-<li>iTerm2</li>
-</ol>
-<h2 id="只要四個步驟"><a href="#只要四個步驟" class="headerlink" title="只要四個步驟"></a>只要四個步驟</h2><ol>
-<li>開啟 VS Code，按下快速鍵 <code>command + shift + p</code></li>
-<li>在跳出的對話框命令列後輸入或找到 <code>&gt;Shell Command: Install &#39;code&#39; command in PATH</code></li>
-<li>等待安裝完成後，開啟 iTerm2</li>
-<li>進入 workspace，然後在 command line 輸入 <code>code .</code> 就可以開始使用 VS Code 編輯整個工作目錄了 :)</li>
-</ol>
-<h2 id="參考資料-References"><a href="#參考資料-References" class="headerlink" title="參考資料  References"></a>參考資料  References</h2><ul>
-<li><a href="https://code.visualstudio.com/docs/setup/mac" target="_blank" rel="noopener">Visual Studio Code on macOS</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>editor</category>
-      </categories>
-      <tags>
-        <tag>vscode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用 Telnet 測試 TCP Port</title>
     <url>/2019/2019041002-use-telnet-to-test-tcp-port.html</url>
     <content><![CDATA[<p>想知道遠端 port 是否由開通，使用 telnet 測試就對了！</p>
@@ -696,6 +629,73 @@
       </tags>
   </entry>
   <entry>
+    <title>如何在 workspace 快速開啟 VS Code 進行編輯</title>
+    <url>/2019/2019042301-open-vs-code-from-command-line.html</url>
+    <content><![CDATA[<p>一定要會的技巧 - 從 command line 直接開啟 VS Code!</p>
+<a id="more"></a>
+<h2 id="操作環境"><a href="#操作環境" class="headerlink" title="操作環境"></a>操作環境</h2><ol>
+<li>macOS: 10.13.6 High Sierra</li>
+<li>iTerm2</li>
+</ol>
+<h2 id="只要四個步驟"><a href="#只要四個步驟" class="headerlink" title="只要四個步驟"></a>只要四個步驟</h2><ol>
+<li>開啟 VS Code，按下快速鍵 <code>command + shift + p</code></li>
+<li>在跳出的對話框命令列後輸入或找到 <code>&gt;Shell Command: Install &#39;code&#39; command in PATH</code></li>
+<li>等待安裝完成後，開啟 iTerm2</li>
+<li>進入 workspace，然後在 command line 輸入 <code>code .</code> 就可以開始使用 VS Code 編輯整個工作目錄了 :)</li>
+</ol>
+<h2 id="參考資料-References"><a href="#參考資料-References" class="headerlink" title="參考資料  References"></a>參考資料  References</h2><ul>
+<li><a href="https://code.visualstudio.com/docs/setup/mac" target="_blank" rel="noopener">Visual Studio Code on macOS</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>editor</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>分隔 Laravel log file 以解決 Permission Deny 問題</title>
+    <url>/2019/2019042401-laravel-isolate-log-file.html</url>
+    <content><![CDATA[<p>Laravel 理當會將發生的例外錯誤（Exception）寫到 <code>storage/logs/laravel-yyyy-mm-dd.log</code>，但查詢該檔案，卻看不到應有的錯誤內容！</p>
+<a id="more"></a>
+<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><p>Docker 安裝的內容，</p>
+<ol>
+<li>Ubuntu 18.04</li>
+<li>Nginx 1.14</li>
+<li>php7.3-fpm</li>
+</ol>
+<h2 id="權限問題-Permission-Deny"><a href="#權限問題-Permission-Deny" class="headerlink" title="權限問題 Permission Deny"></a>權限問題 Permission Deny</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ll storage/logs/</span><br><span class="line"></span><br><span class="line">-rw-r--r--. 1 www-data www-data  30283 Apr 16 23:55 laravel-2019-04-16.log</span><br><span class="line">-rw-r--r--. 1 www-data www-data  30079 Apr 17 23:55 laravel-2019-04-17.log</span><br><span class="line">-rw-r--r--. 1 root     root      30283 Apr 18 23:55 laravel-2019-04-18.log</span><br><span class="line">-rw-r--r--. 1 root     root      38283 Apr 19 23:55 laravel-2019-04-19.log</span><br></pre></td></tr></table></figure>
+<p>系統有 crontab 定時處理事務，在處理的同時會以 <code>Log::info()</code> 輸出，所以產生的 log 檔案，其 owner 會是 root。<br>網站程式運行的 user 是 <code>www-data</code>，所以若發生程式的 Exception 就會因為 Permission Deny 而無法寫入，</p>
+<h2 id="解決方式"><a href="#解決方式" class="headerlink" title="解決方式"></a>解決方式</h2><h3 id="成功的解法-Success"><a href="#成功的解法-Success" class="headerlink" title="成功的解法  Success"></a>成功的解法  Success</h3><p>在 <code>bootstrap/app.php</code> 檔案內加入以下程式碼，<br><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// isolate artisan console log and laravel service log</span></span><br><span class="line"><span class="comment">// https://stackoverflow.com/questions/27674597/laravel-daily-log-created-with-wrong-permissions</span></span><br><span class="line">$app-&gt;configureMonologUsing(<span class="function"><span class="keyword">function</span> <span class="params">(Monolog\Logger $monolog)</span> </span>&#123;</span><br><span class="line">    $filename = storage_path(<span class="string">'logs/'</span> . php_sapi_name() . <span class="string">'-'</span> . posix_getpwuid(posix_geteuid())[<span class="string">'name'</span>] . <span class="string">'.log'</span>);</span><br><span class="line">    $monolog-&gt;pushHandler($handler = <span class="keyword">new</span> Monolog\Handler\RotatingFileHandler($filename, <span class="number">60</span>));</span><br><span class="line">    $handler-&gt;setFilenameFormat(<span class="string">'laravel-&#123;date&#125;-&#123;filename&#125;'</span>, <span class="string">'Y-m-d'</span>);</span><br><span class="line">    $formatter = <span class="keyword">new</span> LineFormatter(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">true</span>, <span class="keyword">true</span>);</span><br><span class="line">    $formatter-&gt;includeStacktraces();</span><br><span class="line">    $handler-&gt;setFormatter($formatter);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>以 <code>php artisan command</code> 執行或是 crontab 所產生的 log file，其 owner 都會是 <code>root</code>，<br>如果是網站運行時的 Exception 所建立的 log file，則 owner 會是 <code>www-data</code>，符合要的結果。 😄<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ll storage/logs/</span><br><span class="line"></span><br><span class="line">-rw-r--r--. 1 root     root     2652 Apr 24 06:30 laravel-2019-04-24-cli-root.log</span><br><span class="line">-rw-r--r--. 1 www-data www-data  78B Apr 24 04:24 laravel-2019-04-24-fpm-fcgi-www-data.log</span><br></pre></td></tr></table></figure></p>
+<h3 id="無法得到預期效果的處理方式-failed"><a href="#無法得到預期效果的處理方式-failed" class="headerlink" title="無法得到預期效果的處理方式  failed"></a>無法得到預期效果的處理方式  failed</h3><h4 id="用-www-data-執行"><a href="#用-www-data-執行" class="headerlink" title="用 www-data 執行"></a>用 www-data 執行</h4><p>以 <code>www-data</code> user 運行 <code>php artisan command</code>？</p>
+<p>切換執行的 user 身份<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ su www-data</span><br><span class="line"></span><br><span class="line">This account is currently not available.</span><br></pre></td></tr></table></figure></p>
+<p>查看 <code>www-data</code> user<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /etc/passwd | grep www</span><br><span class="line"></span><br><span class="line">www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin</span><br></pre></td></tr></table></figure></p>
+<p>因 <code>/usr/sbin/nologin</code> 的關係，所以無法切換 user，<br>修改成<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim /etc/passwd</span><br><span class="line"></span><br><span class="line">www-data:x:33:33:www-data:/var/www:/bin/bash</span><br></pre></td></tr></table></figure></p>
+<p>然後以 <code>www-data</code> 身份執行 php artisan 以產生 log file，會得到 owner 為 <code>www-data</code> 的 log file，<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ su www-data</span><br><span class="line">$ php artisan <span class="built_in">command</span>:xxxx</span><br><span class="line">$ ll storage/logs/</span><br></pre></td></tr></table></figure></p>
+<p><strong>BUT</strong> crontab 執行產生的 log file 仍然 root，Orz</p>
+<h4 id="修改-crontab"><a href="#修改-crontab" class="headerlink" title="修改 crontab"></a>修改 crontab</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">$ crontab -e</span><br><span class="line"></span><br><span class="line">* * * * * /usr/bin/php /home/www/code/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+<p>修改成</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">* * * * * www-data /usr/bin/php /home/www/code/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+<p>然後執行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo service cron reload</span><br></pre></td></tr></table></figure>
+<p>結果 cron 無法運作，😳</p>
+<h5 id="可能需要這樣做（未驗證）"><a href="#可能需要這樣做（未驗證）" class="headerlink" title="可能需要這樣做（未驗證）"></a>可能需要這樣做（未驗證）</h5><p>為 <code>www-data</code> 建立自己的 crontab 排程，可參考 <a href="https://learnku.com/articles/6775/about-laravel-log-permissions" title="关于 Laravel 日志权限" target="_blank" rel="noopener">关于 Laravel 日志权限</a> 下方留言<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ su www-data</span><br><span class="line">$ crontab -u www-data -e</span><br></pre></td></tr></table></figure></p>
+<h4 id="放棄測試"><a href="#放棄測試" class="headerlink" title="放棄測試"></a>放棄測試</h4><p>因環境是在 Docker 內，上述的步驟已經無法輕易以撰寫 shell script 達成要的結果，若需要人工介入修改，則不符合使用 Docker 無痛開發原則 XD。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://stackoverflow.com/questions/27674597/laravel-daily-log-created-with-wrong-permissions" target="_blank" rel="noopener">Laravel daily log created with wrong permissions</a></li>
+<li><a href="https://laravel.com/docs/5.5/errors#configuration" target="_blank" rel="noopener">Laravel 5.5 - Errors &amp; Logging - Configuration</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>development</category>
+      </categories>
+      <tags>
+        <tag>laravel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用 Git pre-commit 自動修正 PHP 的 Coding Style</title>
     <url>/2019/2019051901-php-coding-style-fix-with-git.html</url>
     <content><![CDATA[<p>在 VS Code 下，除了<a href="2017/2017102302-vscode-extension-php-cs-fixer.html">使用 extension - <code>junstyle.php-cs-fixer</code> 進行 PHP 的 Coding Style 修正</a> 之外，也可以使用 <a href="https://githooks.com/" target="_blank" rel="noopener">Git hooks</a> 的功能，在 commit 之前執行指定的 script，稱為 <a href="https://github.com/git/git/blob/master/templates/hooks--pre-commit.sample" target="_blank" rel="noopener">pre-commit</a>，搭配 <a href="https://github.com/friendsofphp/php-cs-fixer" target="_blank" rel="noopener">php-cs-fixer</a> 就能自動化的對有差異的 PHP 檔案進行 Coding Style 的修正。</p>
@@ -728,6 +728,36 @@
       <tags>
         <tag>coding style</tag>
         <tag>php-cs-fixer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>被 curl 命令輸出的 &quot;* Expire in 0 ms for 1 (transfer 0x7f85f6002000)&quot; 洗版了</title>
+    <url>/2021/2021120801-curl-command-outputs-expire-in-x-ms-for-1.html</url>
+    <content><![CDATA[<p>使用 curl 命令，被一堆 <code>* Expire in 0 ms for 1 (transfer 0x7f85f6002000)</code> 洗版很傻眼。。。</p>
+<a id="more"></a>
+<h2 id="環境-Environment"><a href="#環境-Environment" class="headerlink" title="環境  Environment"></a>環境  Environment</h2><ul>
+<li>macOS: v10.14.6</li>
+<li>iTerm2: Build 3.4.14</li>
+<li>curl: v7.64.0</li>
+</ul>
+<h2 id="狀況"><a href="#狀況" class="headerlink" title="狀況"></a>狀況</h2><p>終於受不了每次使用 curl 命令，畫面會出現非常多的</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">* Expire <span class="keyword">in</span> 2 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 2 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 2 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 2 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br></pre></td></tr></table></figure>
+<p>爬文看到有人跟我有一樣的困擾，看起來是某一版的 curl 才會出現這樣的 log output。解法就是升級 curl。</p>
+<p>查看 curl 版本，</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -V</span><br><span class="line">curl 7.64.0 (x86_64-apple-darwin13.4.0) libcurl/7.64.0 OpenSSL/1.1.1b zlib/1.2.11 libssh2/1.8.0</span><br><span class="line">Release-Date: 2019-02-06</span><br><span class="line">Protocols: dict file ftp ftps gopher http https imap imaps pop3 pop3s rtsp scp sftp smb smbs smtp smtps telnet tftp</span><br><span class="line">Features: AsynchDNS IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL libz TLS-SRP UnixSockets HTTPS-proxy</span><br></pre></td></tr></table></figure>
+<h2 id="處理方式"><a href="#處理方式" class="headerlink" title="處理方式"></a>處理方式</h2><p>使用 homebrew 更新</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew upgrade curl</span><br><span class="line"></span><br><span class="line">==&gt; Upgrading curl</span><br><span class="line">  7.79.1_1 -&gt; 7.80.0_1</span><br></pre></td></tr></table></figure>
+<p>務必要執行以下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'export PATH="/usr/local/opt/curl/bin:$PATH"'</span> &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
+<h2 id="參考資料-References"><a href="#參考資料-References" class="headerlink" title="參考資料  References"></a>參考資料  References</h2><ul>
+<li><a href="https://stackoverflow.com/questions/63191648/curl-error-expire-in-1-ms-for-1-transfer-0x" target="_blank" rel="noopener">CURL error “Expire in 1 ms for 1 (transfer 0x…)”</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>development</category>
+      </categories>
+      <tags>
+        <tag>curl</tag>
       </tags>
   </entry>
   <entry>
@@ -778,36 +808,6 @@
       </tags>
   </entry>
   <entry>
-    <title>被 curl 命令輸出的 &quot;* Expire in 0 ms for 1 (transfer 0x7f85f6002000)&quot; 洗版了</title>
-    <url>/2021/2021120801-curl-command-outputs-expire-in-x-ms-for-1.html</url>
-    <content><![CDATA[<p>使用 curl 命令，被一堆 <code>* Expire in 0 ms for 1 (transfer 0x7f85f6002000)</code> 洗版很傻眼。。。</p>
-<a id="more"></a>
-<h2 id="環境-Environment"><a href="#環境-Environment" class="headerlink" title="環境  Environment"></a>環境  Environment</h2><ul>
-<li>macOS: v10.14.6</li>
-<li>iTerm2: Build 3.4.14</li>
-<li>curl: v7.64.0</li>
-</ul>
-<h2 id="狀況"><a href="#狀況" class="headerlink" title="狀況"></a>狀況</h2><p>終於受不了每次使用 curl 命令，畫面會出現非常多的</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">* Expire <span class="keyword">in</span> 2 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 2 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 2 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 2 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br><span class="line">* Expire <span class="keyword">in</span> 0 ms <span class="keyword">for</span> 1 (transfer 0x7f85f6002000)</span><br></pre></td></tr></table></figure>
-<p>爬文看到有人跟我有一樣的困擾，看起來是某一版的 curl 才會出現這樣的 log output。解法就是升級 curl。</p>
-<p>查看 curl 版本，</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -V</span><br><span class="line">curl 7.64.0 (x86_64-apple-darwin13.4.0) libcurl/7.64.0 OpenSSL/1.1.1b zlib/1.2.11 libssh2/1.8.0</span><br><span class="line">Release-Date: 2019-02-06</span><br><span class="line">Protocols: dict file ftp ftps gopher http https imap imaps pop3 pop3s rtsp scp sftp smb smbs smtp smtps telnet tftp</span><br><span class="line">Features: AsynchDNS IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL libz TLS-SRP UnixSockets HTTPS-proxy</span><br></pre></td></tr></table></figure>
-<h2 id="處理方式"><a href="#處理方式" class="headerlink" title="處理方式"></a>處理方式</h2><p>使用 homebrew 更新</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew upgrade curl</span><br><span class="line"></span><br><span class="line">==&gt; Upgrading curl</span><br><span class="line">  7.79.1_1 -&gt; 7.80.0_1</span><br></pre></td></tr></table></figure>
-<p>務必要執行以下</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'export PATH="/usr/local/opt/curl/bin:$PATH"'</span> &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
-<h2 id="參考資料-References"><a href="#參考資料-References" class="headerlink" title="參考資料  References"></a>參考資料  References</h2><ul>
-<li><a href="https://stackoverflow.com/questions/63191648/curl-error-expire-in-1-ms-for-1-transfer-0x" target="_blank" rel="noopener">CURL error “Expire in 1 ms for 1 (transfer 0x…)”</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>development</category>
-      </categories>
-      <tags>
-        <tag>curl</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Makefile 的另一個選擇 Taskfile</title>
     <url>/2022/20220521-taskfile-a-makefile-alternative.html</url>
     <content><![CDATA[<p>在 macOS 環境，除了使用 Makefile 之外，還有另一個選擇 Taskfile。</p>
@@ -819,7 +819,7 @@
 <h2 id="安裝-Taskfile"><a href="#安裝-Taskfile" class="headerlink" title="安裝 Taskfile"></a>安裝 Taskfile</h2><p>Use <code>brew</code> command to install <code>task</code></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brew install go-task/tap/go-task</span><br></pre></td></tr></table></figure>
 <h2 id="新增-Taskfile"><a href="#新增-Taskfile" class="headerlink" title="新增 Taskfile"></a>新增 Taskfile</h2><p>Create <code>Taskfile.yml</code> and insert the following,</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tasks:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Build</span> <span class="string">the</span> <span class="string">app</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">GOFLAGS=-mod=mod</span> <span class="string">go</span> <span class="string">build</span> <span class="string">-o</span> <span class="string">./bin/app</span> <span class="string">./internal/main.go</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">run:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Run</span> <span class="string">the</span> <span class="string">app</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">GOFLAGS=-mod=mod</span> <span class="string">go</span> <span class="string">run</span> <span class="string">./internal/main.go</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tasks:</span></span><br><span class="line"><span class="attr">  build:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Build</span> <span class="string">the</span> <span class="string">app</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">GOFLAGS=-mod=mod</span> <span class="string">go</span> <span class="string">build</span> <span class="bullet">-o</span> <span class="string">./bin/app</span> <span class="string">./internal/main.go</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  run:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Run</span> <span class="string">the</span> <span class="string">app</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">GOFLAGS=-mod=mod</span> <span class="string">go</span> <span class="string">run</span> <span class="string">./internal/main.go</span></span><br></pre></td></tr></table></figure>
 <p>Display the list of available tasks:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ task --list</span><br><span class="line">task: Available tasks <span class="keyword">for</span> this project:</span><br><span class="line">* build:  Build the app</span><br><span class="line">* run:   Run the app</span><br></pre></td></tr></table></figure>
 <h2 id="執行-Taskfile-command"><a href="#執行-Taskfile-command" class="headerlink" title="執行 Taskfile command"></a>執行 Taskfile command</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ task run</span><br><span class="line">task: [run] GOFLAGS=-mod=mod go run ./internal/main.go</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
@@ -859,9 +859,9 @@
 <p>備註：<br>在文件 <a href="https://code.visualstudio.com/remote/advancedcontainers/develop-remote-host" target="_blank" rel="noopener">Develop on a remote Docker host</a> 內有提到，VS code 可以使用 <code>SSH</code> 登入 container 進行開發。如果不需要 SSH 登入，其相關 packages 跟服務是都不需要的。</p>
 </blockquote>
 <p>Taskfile.yml 後續指令都是使用 <code>task</code> 來執行，</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tasks:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Build</span> <span class="string">"py2.7-dev"</span> <span class="string">image</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">docker</span> <span class="string">build</span> <span class="string">-t</span> <span class="string">py2.7-dev</span> <span class="string">.</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">down:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Remove</span> <span class="string">containers</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">docker-compose</span> <span class="string">down</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">up:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Run</span> <span class="string">containers</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">docker-compose</span> <span class="string">up</span> <span class="string">-d</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">exec:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Get</span> <span class="string">into</span> <span class="string">"py2.7"</span> <span class="string">container</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">docker</span> <span class="string">exec</span> <span class="string">-ti</span> <span class="string">py2.7</span> <span class="string">/bin/bash</span></span><br><span class="line">  <span class="attr">stop:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Stop</span> <span class="string">containers</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">docker-compose</span> <span class="string">stop</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">start:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Start</span> <span class="string">containers</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">docker-compose</span> <span class="string">start</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">restart:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Restart</span> <span class="string">containers</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">docker-compose</span> <span class="string">restart</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">login:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">SSH</span> <span class="string">to</span> <span class="string">"py2.7"</span> <span class="string">container</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">ssh</span> <span class="string">-p</span> <span class="number">2222</span> <span class="string">-t</span> <span class="string">root@127.0.0.1</span> <span class="string">'cd /srv ; bash'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tasks:</span></span><br><span class="line"><span class="attr">  build:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Build</span> <span class="string">"py2.7-dev"</span> <span class="string">image</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">docker</span> <span class="string">build</span> <span class="bullet">-t</span> <span class="string">py2.7-dev</span> <span class="string">.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  down:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Remove</span> <span class="string">containers</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">docker-compose</span> <span class="string">down</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  up:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Run</span> <span class="string">containers</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">docker-compose</span> <span class="string">up</span> <span class="bullet">-d</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  exec:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Get</span> <span class="string">into</span> <span class="string">"py2.7"</span> <span class="string">container</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">docker</span> <span class="string">exec</span> <span class="bullet">-ti</span> <span class="string">py2.7</span> <span class="string">/bin/bash</span></span><br><span class="line"><span class="attr">  stop:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Stop</span> <span class="string">containers</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">docker-compose</span> <span class="string">stop</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  start:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Start</span> <span class="string">containers</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">docker-compose</span> <span class="string">start</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  restart:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Restart</span> <span class="string">containers</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">docker-compose</span> <span class="string">restart</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  login:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">SSH</span> <span class="string">to</span> <span class="string">"py2.7"</span> <span class="string">container</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">ssh</span> <span class="bullet">-p</span> <span class="number">2222</span> <span class="bullet">-t</span> <span class="string">root@127.0.0.1</span> <span class="string">'cd /srv ; bash'</span></span><br></pre></td></tr></table></figure>
 <p>基礎的 Python 2.7 docker image 建立後，就可以使用 <code>docker-compose</code> 進行操作， <code>docker-compose.yml</code> 如下，</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3.7"</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">py:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">py2.7-dev:latest</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">py2.7</span></span><br><span class="line">    <span class="attr">tty:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"8787:8787"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"2222:22"</span></span><br><span class="line">    <span class="attr">working_dir:</span> <span class="string">/srv</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./code:/srv</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3.7"</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">  py:</span></span><br><span class="line"><span class="attr">    image:</span> <span class="string">py2.7-dev:latest</span></span><br><span class="line"><span class="attr">    container_name:</span> <span class="string">py2.7</span></span><br><span class="line"><span class="attr">    tty:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    ports:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">"8787:8787"</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">"2222:22"</span></span><br><span class="line"><span class="attr">    working_dir:</span> <span class="string">/srv</span></span><br><span class="line"><span class="attr">    volumes:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">./code:/srv</span></span><br></pre></td></tr></table></figure>
 <p>Python 2.7 專案需要安裝的 packages 就靠 <code>code\requirement.txt</code> 管理了，</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Flask</span><br><span class="line">flask_restful</span><br><span class="line">flask-httpauth==4.5.0</span><br><span class="line">zerorpc</span><br><span class="line">urllib3</span><br><span class="line">strgen</span><br><span class="line">requests</span><br><span class="line">psycopg2-binary</span><br><span class="line">flask_sqlalchemy</span><br><span class="line">bcrypt</span><br><span class="line">ping</span><br><span class="line">psutil</span><br><span class="line">pyjwt</span><br><span class="line">pyOpenSSL</span><br><span class="line">python-dateutil</span><br><span class="line">flask-migrate</span><br></pre></td></tr></table></figure>
 <h2 id="開始製作專案用-Python-2-7-docker-image"><a href="#開始製作專案用-Python-2-7-docker-image" class="headerlink" title="開始製作專案用 Python 2.7 docker image"></a>開始製作專案用 Python 2.7 docker image</h2><h3 id="1-建立-“py2-7-dev”-docker-image"><a href="#1-建立-“py2-7-dev”-docker-image" class="headerlink" title="1. 建立 “py2.7-dev” docker image"></a>1. 建立 “py2.7-dev” docker image</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">task build</span><br></pre></td></tr></table></figure>
@@ -899,7 +899,7 @@
 <h3 id="7-使用新的-image"><a href="#7-使用新的-image" class="headerlink" title="7. 使用新的 image"></a>7. 使用新的 image</h3><p>先移除運行中的 container，</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">task down</span><br></pre></td></tr></table></figure>
 <p>修改 <code>docker-compose.yml</code>，將 ‘services &gt; py &gt; image: py2.7-dev:latest’ 改成剛才建立的 ‘image: my-py2.7-dev:latest’。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">py:</span></span><br><span class="line">    <span class="comment"># image: py2.7-dev:latest</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">my-py2.7-dev:latest</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">  py:</span></span><br><span class="line">    <span class="comment"># image: py2.7-dev:latest</span></span><br><span class="line"><span class="attr">    image:</span> <span class="string">my-py2.7-dev:latest</span></span><br></pre></td></tr></table></figure>
 <p>再次運行 container，</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">task up</span><br></pre></td></tr></table></figure>
 <p>列出運行中的 container，</p>
