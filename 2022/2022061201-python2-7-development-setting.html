@@ -1,170 +1,53 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="en">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"codefun.tw","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
-
-
-
-
-
-
-  <meta name="google-site-verification" content="9MjjjAfbFmUf6_Qyjtd54x0imSx4ZtB_BRes0m0A_FM">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '7.1.0',
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="Python 軟體基金會（Python Software Foundation）已在 2020/01/1，正式終止對 Python 2.7 的支援。那要如何在本地環境，進行基於 Python 2.7 的專案維護或開發呢？第一個想到的就是使用自製的 docker image。爬文找到這篇 Setting Up a Python Remote Interpreter Using Docker ，可以用">
-<meta name="keywords" content="python">
+  <meta name="description" content="Python 軟體基金會（Python Software Foundation）已在 2020&#x2F;01&#x2F;1，正式終止對 Python 2.7 的支援。那要如何在本地環境，進行基於 Python 2.7 的專案維護或開發呢？第一個想到的就是使用自製的 docker image。爬文找到這篇 Setting Up a Python Remote Interpreter Using D">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 2.7 開發環境設置">
 <meta property="og:url" content="http://codefun.tw/2022/2022061201-python2-7-development-setting.html">
 <meta property="og:site_name" content="Codefun">
-<meta property="og:description" content="Python 軟體基金會（Python Software Foundation）已在 2020/01/1，正式終止對 Python 2.7 的支援。那要如何在本地環境，進行基於 Python 2.7 的專案維護或開發呢？第一個想到的就是使用自製的 docker image。爬文找到這篇 Setting Up a Python Remote Interpreter Using Docker ，可以用">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2022-06-12T10:40:46.000Z">
+<meta property="og:description" content="Python 軟體基金會（Python Software Foundation）已在 2020&#x2F;01&#x2F;1，正式終止對 Python 2.7 的支援。那要如何在本地環境，進行基於 Python 2.7 的專案維護或開發呢？第一個想到的就是使用自製的 docker image。爬文找到這篇 Setting Up a Python Remote Interpreter Using D">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-12T10:40:46.000Z">
+<meta property="article:modified_time" content="2022-06-12T10:40:46.000Z">
+<meta property="article:author" content="Jerry Huang">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python 2.7 開發環境設置">
-<meta name="twitter:description" content="Python 軟體基金會（Python Software Foundation）已在 2020/01/1，正式終止對 Python 2.7 的支援。那要如何在本地環境，進行基於 Python 2.7 的專案維護或開發呢？第一個想到的就是使用自製的 docker image。爬文找到這篇 Setting Up a Python Remote Interpreter Using Docker ，可以用">
+
+<link rel="canonical" href="http://codefun.tw/2022/2022061201-python2-7-development-setting.html">
 
 
-
-  <link rel="alternate" href="/atom.xml" title="Codefun" type="application/atom+xml">
-
-
-
-  
-  
-  <link rel="canonical" href="http://codefun.tw/2022/2022061201-python2-7-development-setting">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
 
   <title>Python 2.7 開發環境設置 | Codefun</title>
   
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId  : '',
-        xfbml  : true,
-        version: 'v2.10'
-      });
-    };
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {return;}
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
-
-
-
-
-
-  <script async src="//www.googletagmanager.com/gtag/js?id=UA-85444701-2"></script>
-  <script>
-    var host = window.location.hostname;
-    if (host !== "localhost" || !true) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-85444701-2');
-    }
-  </script>
-
-
-
 
 
 
@@ -173,7 +56,6 @@
 
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -182,9 +64,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -196,163 +77,66 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Codefun" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Codefun</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Codefun</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
 
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+  </ul>
 </nav>
 
-
-
-  
 
 
 
@@ -360,130 +144,63 @@
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://codefun.tw/2022/2022061201-python2-7-development-setting.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
       <meta itemprop="name" content="Jerry Huang">
       <meta itemprop="description" content="知識不是力量 分享知識才是力量">
-      <meta itemprop="image" content="/uploads/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Codefun">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Python 2.7 開發環境設置
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Python 2.7 開發環境設置
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2022-06-12 18:40:46" itemprop="dateCreated datePublished" datetime="2022-06-12T18:40:46+08:00">2022-06-12</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/development/" itemprop="url" rel="index"><span itemprop="name">development</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2022/2022061201-python2-7-development-setting.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://codefun.tw/2022/2022061201-python2-7-development-setting.html" itemprop="commentCount">0</span>
-                </a>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
-            
-          
-
-          
-          
-
-          
-
-          
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/development/" itemprop="url" rel="index"><span itemprop="name">development</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -491,17 +208,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
+        <p>Python 軟體基金會（Python Software Foundation）已在 2020&#x2F;01&#x2F;1，正式終止對 Python 2.7 的支援。那要如何在本地環境，進行基於 Python 2.7 的專案維護或開發呢？第一個想到的就是使用自製的 docker image。爬文找到這篇 <a target="_blank" rel="noopener" href="https://dev.to/alvarocavalcanti/setting-up-a-python-remote-interpreter-using-docker-1i24">Setting Up a Python Remote Interpreter Using Docker</a> ，可以用 VS code 跟 PyCharm 進行搭配 Python 2.7 的 docker image 進行開發👍。</p>
+<span id="more"></span>
 
-      
-        <p>Python 軟體基金會（Python Software Foundation）已在 2020/01/1，正式終止對 Python 2.7 的支援。那要如何在本地環境，進行基於 Python 2.7 的專案維護或開發呢？第一個想到的就是使用自製的 docker image。爬文找到這篇 <a href="https://dev.to/alvarocavalcanti/setting-up-a-python-remote-interpreter-using-docker-1i24" target="_blank" rel="noopener">Setting Up a Python Remote Interpreter Using Docker</a> ，可以用 VS code 跟 PyCharm 進行搭配 Python 2.7 的 docker image 進行開發👍。</p>
-<a id="more"></a>
 <h2 id="環境-Environment"><a href="#環境-Environment" class="headerlink" title="環境  Environment"></a>環境  Environment</h2><ul>
 <li>macOS 12.3.1</li>
 <li>Docker version 20.10.12, build e91ed57</li>
-<li>Task version: v3.12.0 (h1:viFy8kdDZ2iTcpTuxzzJCeKtTGt9U+5iXMVIpLjvIro=)</li>
+<li>Task version: v3.12.0 (h1:viFy8kdDZ2iTcpTuxzzJCeKtTGt9U+5iXMVIpLjvIro&#x3D;)</li>
 </ul>
-<h2 id="事情準備"><a href="#事情準備" class="headerlink" title="事情準備"></a>事情準備</h2><p>開始動手前，先準備好一下檔案。以下檔案都放在 Git repository： <a href="https://github.com/jerry771230/my-py2.7-dev" target="_blank" rel="noopener">jerry771230/my-py2.7-dev</a></p>
+<h2 id="事情準備"><a href="#事情準備" class="headerlink" title="事情準備"></a>事情準備</h2><p>開始動手前，先準備好一下檔案。以下檔案都放在 Git repository： <a target="_blank" rel="noopener" href="https://github.com/jerry771230/my-py2.7-dev">jerry771230&#x2F;my-py2.7-dev</a></p>
 <p>Dockerfile 內容，</p>
 <ol>
 <li>只安裝必要的 packages</li>
@@ -509,477 +224,267 @@
 <li>設定可以通過 SSH 以帳號密碼登入</li>
 <li>啟動 <code>ssh</code> 服務</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">FROM python:2.7-slim-buster</span><br><span class="line"></span><br><span class="line">RUN apt-get update &amp;&amp; \</span><br><span class="line">    apt-get install -y gcc file make libcurl4-openssl-dev libssl-dev openssh-server curl wget &amp;&amp; \</span><br><span class="line">    apt-get clean -y &amp;&amp; apt-get autoclean -y &amp;&amp; apt-get autoremove -y &amp;&amp; \</span><br><span class="line">    rm -rf /var/lib/apt/lists/* &amp;&amp; \</span><br><span class="line">    mkdir -p /srv</span><br><span class="line"></span><br><span class="line">RUN echo &apos;root:password&apos; | chpasswd</span><br><span class="line">RUN sed -i &apos;s/#PermitRootLogin prohibit-password/PermitRootLogin yes/&apos; /etc/ssh/sshd_config</span><br><span class="line">RUN sed &apos;s@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g&apos; -i /etc/pam.d/sshd</span><br><span class="line"># RUN mkdir /run/sshd</span><br><span class="line">RUN service ssh start</span><br><span class="line">EXPOSE 22</span><br><span class="line">EXPOSE 8787</span><br><span class="line">CMD [&quot;/usr/sbin/sshd&quot;, &quot;-D&quot;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">FROM python:2.7-slim-buster</span><br><span class="line"></span><br><span class="line">RUN apt-get update &amp;&amp; \</span><br><span class="line">    apt-get install -y gcc file make libcurl4-openssl-dev libssl-dev openssh-server curl wget &amp;&amp; \</span><br><span class="line">    apt-get clean -y &amp;&amp; apt-get autoclean -y &amp;&amp; apt-get autoremove -y &amp;&amp; \</span><br><span class="line">    rm -rf /var/lib/apt/lists/* &amp;&amp; \</span><br><span class="line">    mkdir -p /srv</span><br><span class="line"></span><br><span class="line">RUN echo &#x27;root:password&#x27; | chpasswd</span><br><span class="line">RUN sed -i &#x27;s/#PermitRootLogin prohibit-password/PermitRootLogin yes/&#x27; /etc/ssh/sshd_config</span><br><span class="line">RUN sed &#x27;s@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g&#x27; -i /etc/pam.d/sshd</span><br><span class="line"># RUN mkdir /run/sshd</span><br><span class="line">RUN service ssh start</span><br><span class="line">EXPOSE 22</span><br><span class="line">EXPOSE 8787</span><br><span class="line">CMD [&quot;/usr/sbin/sshd&quot;, &quot;-D&quot;]</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>備註：<br>在文件 <a href="https://code.visualstudio.com/remote/advancedcontainers/develop-remote-host" target="_blank" rel="noopener">Develop on a remote Docker host</a> 內有提到，VS code 可以使用 <code>SSH</code> 登入 container 進行開發。如果不需要 SSH 登入，其相關 packages 跟服務是都不需要的。</p>
+<p>備註：<br>在文件 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/remote/advancedcontainers/develop-remote-host">Develop on a remote Docker host</a> 內有提到，VS code 可以使用 <code>SSH</code> 登入 container 進行開發。如果不需要 SSH 登入，其相關 packages 跟服務是都不需要的。</p>
 </blockquote>
 <p>Taskfile.yml 後續指令都是使用 <code>task</code> 來執行，</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tasks:</span></span><br><span class="line"><span class="attr">  build:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Build</span> <span class="string">"py2.7-dev"</span> <span class="string">image</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">docker</span> <span class="string">build</span> <span class="bullet">-t</span> <span class="string">py2.7-dev</span> <span class="string">.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  down:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Remove</span> <span class="string">containers</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">docker-compose</span> <span class="string">down</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  up:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Run</span> <span class="string">containers</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">docker-compose</span> <span class="string">up</span> <span class="bullet">-d</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  exec:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Get</span> <span class="string">into</span> <span class="string">"py2.7"</span> <span class="string">container</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">docker</span> <span class="string">exec</span> <span class="bullet">-ti</span> <span class="string">py2.7</span> <span class="string">/bin/bash</span></span><br><span class="line"><span class="attr">  stop:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Stop</span> <span class="string">containers</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">docker-compose</span> <span class="string">stop</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  start:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Start</span> <span class="string">containers</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">docker-compose</span> <span class="string">start</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  restart:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">Restart</span> <span class="string">containers</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">docker-compose</span> <span class="string">restart</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  login:</span></span><br><span class="line"><span class="attr">    desc:</span> <span class="string">SSH</span> <span class="string">to</span> <span class="string">"py2.7"</span> <span class="string">container</span></span><br><span class="line"><span class="attr">    cmds:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">ssh</span> <span class="bullet">-p</span> <span class="number">2222</span> <span class="bullet">-t</span> <span class="string">root@127.0.0.1</span> <span class="string">'cd /srv ; bash'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tasks:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Build</span> <span class="string">&quot;py2.7-dev&quot;</span> <span class="string">image</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">docker</span> <span class="string">build</span> <span class="string">-t</span> <span class="string">py2.7-dev</span> <span class="string">.</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">down:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Remove</span> <span class="string">containers</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">docker-compose</span> <span class="string">down</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">up:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Run</span> <span class="string">containers</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">docker-compose</span> <span class="string">up</span> <span class="string">-d</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">exec:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Get</span> <span class="string">into</span> <span class="string">&quot;py2.7&quot;</span> <span class="string">container</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">docker</span> <span class="string">exec</span> <span class="string">-ti</span> <span class="string">py2.7</span> <span class="string">/bin/bash</span></span><br><span class="line">  <span class="attr">stop:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Stop</span> <span class="string">containers</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">docker-compose</span> <span class="string">stop</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">start:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Start</span> <span class="string">containers</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">docker-compose</span> <span class="string">start</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">restart:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">Restart</span> <span class="string">containers</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">docker-compose</span> <span class="string">restart</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">login:</span></span><br><span class="line">    <span class="attr">desc:</span> <span class="string">SSH</span> <span class="string">to</span> <span class="string">&quot;py2.7&quot;</span> <span class="string">container</span></span><br><span class="line">    <span class="attr">cmds:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">ssh</span> <span class="string">-p</span> <span class="number">2222</span> <span class="string">-t</span> <span class="string">root@127.0.0.1</span> <span class="string">&#x27;cd /srv ; bash&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <p>基礎的 Python 2.7 docker image 建立後，就可以使用 <code>docker-compose</code> 進行操作， <code>docker-compose.yml</code> 如下，</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3.7"</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">  py:</span></span><br><span class="line"><span class="attr">    image:</span> <span class="string">py2.7-dev:latest</span></span><br><span class="line"><span class="attr">    container_name:</span> <span class="string">py2.7</span></span><br><span class="line"><span class="attr">    tty:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    ports:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">"8787:8787"</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">"2222:22"</span></span><br><span class="line"><span class="attr">    working_dir:</span> <span class="string">/srv</span></span><br><span class="line"><span class="attr">    volumes:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">./code:/srv</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3.7&quot;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">py:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">py2.7-dev:latest</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">py2.7</span></span><br><span class="line">    <span class="attr">tty:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;8787:8787&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;2222:22&quot;</span></span><br><span class="line">    <span class="attr">working_dir:</span> <span class="string">/srv</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./code:/srv</span></span><br></pre></td></tr></table></figure>
+
 <p>Python 2.7 專案需要安裝的 packages 就靠 <code>code\requirement.txt</code> 管理了，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Flask</span><br><span class="line">flask_restful</span><br><span class="line">flask-httpauth==4.5.0</span><br><span class="line">zerorpc</span><br><span class="line">urllib3</span><br><span class="line">strgen</span><br><span class="line">requests</span><br><span class="line">psycopg2-binary</span><br><span class="line">flask_sqlalchemy</span><br><span class="line">bcrypt</span><br><span class="line">ping</span><br><span class="line">psutil</span><br><span class="line">pyjwt</span><br><span class="line">pyOpenSSL</span><br><span class="line">python-dateutil</span><br><span class="line">flask-migrate</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Flask</span><br><span class="line">flask_restful</span><br><span class="line">flask-httpauth==4.5.0</span><br><span class="line">zerorpc</span><br><span class="line">urllib3</span><br><span class="line">strgen</span><br><span class="line">requests</span><br><span class="line">psycopg2-binary</span><br><span class="line">flask_sqlalchemy</span><br><span class="line">bcrypt</span><br><span class="line">ping</span><br><span class="line">psutil</span><br><span class="line">pyjwt</span><br><span class="line">pyOpenSSL</span><br><span class="line">python-dateutil</span><br><span class="line">flask-migrate</span><br></pre></td></tr></table></figure>
+
 <h2 id="開始製作專案用-Python-2-7-docker-image"><a href="#開始製作專案用-Python-2-7-docker-image" class="headerlink" title="開始製作專案用 Python 2.7 docker image"></a>開始製作專案用 Python 2.7 docker image</h2><h3 id="1-建立-“py2-7-dev”-docker-image"><a href="#1-建立-“py2-7-dev”-docker-image" class="headerlink" title="1. 建立 “py2.7-dev” docker image"></a>1. 建立 “py2.7-dev” docker image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">task build</span><br></pre></td></tr></table></figure>
+
 <p>建立完成後, 列出 “py2.7-dev” docker image,</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker images | grep py2.7</span><br><span class="line"></span><br><span class="line">py2.7-dev         latest           10e84e2626e0   9 seconds ago   329MB</span><br></pre></td></tr></table></figure>
+
 <h3 id="2-運行-container"><a href="#2-運行-container" class="headerlink" title="2. 運行 container"></a>2. 運行 container</h3><p>使用剛才建立的 docker image <code>py2.7-dev:latest</code> 來運行 container</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">task up</span><br></pre></td></tr></table></figure>
+
 <p>顯示已運行的 containers</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line">CONTAINER ID   IMAGE              COMMAND               CREATED         STATUS         PORTS                                          NAMES</span><br><span class="line">f8dc4ba33f2e   py2.7-dev:latest   <span class="string">"/usr/sbin/sshd -D"</span>   5 seconds ago   Up 3 seconds   0.0.0.0:8787-&gt;8787/tcp, 0.0.0.0:2222-&gt;22/tcp   py2.7</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line">CONTAINER ID   IMAGE              COMMAND               CREATED         STATUS         PORTS                                          NAMES</span><br><span class="line">f8dc4ba33f2e   py2.7-dev:latest   <span class="string">&quot;/usr/sbin/sshd -D&quot;</span>   5 seconds ago   Up 3 seconds   0.0.0.0:8787-&gt;8787/tcp, 0.0.0.0:2222-&gt;22/tcp   py2.7</span><br></pre></td></tr></table></figure>
+
 <h3 id="3-SSH-to-container"><a href="#3-SSH-to-container" class="headerlink" title="3. SSH to container"></a>3. SSH to container</h3><p>使用 <code>SSH</code> 命令登入 “py2.7” container,</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">task login</span><br></pre></td></tr></table></figure>
+
 <p>此時需要輸入密碼才能登入。</p>
 <p>可以使用 <code>authorized_key</code> 進行 SSH 登入，這樣就可以免除輸入密碼。使用下方命令，將 key 複製到 container，</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -p 2222 root@127.0.0.1</span><br></pre></td></tr></table></figure>
+
 <p>完成後再次使用 <code>SSH</code> 命令登入，此時不需要密碼就可以登入 container 內。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">task login</span><br></pre></td></tr></table></figure>
+
 <h3 id="4-Docker-命令進入-container"><a href="#4-Docker-命令進入-container" class="headerlink" title="4. Docker 命令進入 container"></a>4. Docker 命令進入 container</h3><p>在沒有安裝及設定 <code>SSH</code> 前，使用 <code>docker exec</code> 可以直接進入 container。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">task <span class="built_in">exec</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>備註：<br>沒有特別需求時，使用 <code>docker exec</code> 比 <code>SSH</code> 方便，也不需要安裝 <code>SSH</code> 相關的 packages（佔空間）。</p>
 </blockquote>
 <h3 id="5-安裝-Python-專案需要的-packages"><a href="#5-安裝-Python-專案需要的-packages" class="headerlink" title="5. 安裝 Python 專案需要的 packages"></a>5. 安裝 Python 專案需要的 packages</h3><p>在進入 container 後，執行下列命令，</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /srv &amp;&amp;\</span><br><span class="line">pip install pip -U &amp;&amp;\</span><br><span class="line">pip install pycurl -U &amp;&amp;\</span><br><span class="line">pip install -r ./requirement.txt</span><br></pre></td></tr></table></figure>
+
 <p>完成後離開 container，</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="6-提交（Commit）修改到-image"><a href="#6-提交（Commit）修改到-image" class="headerlink" title="6. 提交（Commit）修改到 image"></a>6. 提交（Commit）修改到 image</h3><p>列出運行中的 container，</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line">CONTAINER ID   IMAGE              COMMAND               CREATED         STATUS         PORTS                                          NAMES</span><br><span class="line">f8dc4ba33f2e   py2.7-dev:latest   <span class="string">"/usr/sbin/sshd -D"</span>   2 minutes ago   Up 2 minutes   0.0.0.0:8787-&gt;8787/tcp, 0.0.0.0:2222-&gt;22/tcp   py2.7</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line">CONTAINER ID   IMAGE              COMMAND               CREATED         STATUS         PORTS                                          NAMES</span><br><span class="line">f8dc4ba33f2e   py2.7-dev:latest   <span class="string">&quot;/usr/sbin/sshd -D&quot;</span>   2 minutes ago   Up 2 minutes   0.0.0.0:8787-&gt;8787/tcp, 0.0.0.0:2222-&gt;22/tcp   py2.7</span><br></pre></td></tr></table></figure>
+
 <p>將 container NAMES 為 ‘py2.7’ 的 <code>CONTAINER ID</code> 複製起來。</p>
 <p>使用 <code>docker commit</code> 將修改內容建立成新的 docker image。以下是命令的語法，</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit [CONTAINER ID] [new_image_name]</span><br></pre></td></tr></table></figure>
+
 <p>執行下列命令，將建立新的 docker image 命名成 <code>my-py2.7-dev</code>，</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit f8dc4ba33f2e my-py2.7-dev</span><br></pre></td></tr></table></figure>
+
 <p>完成後，列出 docker images，可以看到 <code>my-py2.7-dev</code> image 的容量長大了不少 :)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker images | grep py2.7</span><br><span class="line"></span><br><span class="line">my-py2.7-dev      latest           cd7c2ab0d9b3   6 seconds ago    453MB</span><br><span class="line">py2.7-dev         latest           10e84e2626e0   16 minutes ago   329MB</span><br></pre></td></tr></table></figure>
+
 <h3 id="7-使用新的-image"><a href="#7-使用新的-image" class="headerlink" title="7. 使用新的 image"></a>7. 使用新的 image</h3><p>先移除運行中的 container，</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">task down</span><br></pre></td></tr></table></figure>
+
 <p>修改 <code>docker-compose.yml</code>，將 ‘services &gt; py &gt; image: py2.7-dev:latest’ 改成剛才建立的 ‘image: my-py2.7-dev:latest’。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">  py:</span></span><br><span class="line">    <span class="comment"># image: py2.7-dev:latest</span></span><br><span class="line"><span class="attr">    image:</span> <span class="string">my-py2.7-dev:latest</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">py:</span></span><br><span class="line">    <span class="comment"># image: py2.7-dev:latest</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">my-py2.7-dev:latest</span></span><br></pre></td></tr></table></figure>
+
 <p>再次運行 container，</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">task up</span><br></pre></td></tr></table></figure>
+
 <p>列出運行中的 container，</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line">CONTAINER ID   IMAGE                 COMMAND               CREATED              STATUS              PORTS                                          NAMES</span><br><span class="line">f462db97314f   my-py2.7-dev:latest   <span class="string">"/usr/sbin/sshd -D"</span>   About a minute ago   Up About a minute   0.0.0.0:8787-&gt;8787/tcp, 0.0.0.0:2222-&gt;22/tcp   py2.7</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line">CONTAINER ID   IMAGE                 COMMAND               CREATED              STATUS              PORTS                                          NAMES</span><br><span class="line">f462db97314f   my-py2.7-dev:latest   <span class="string">&quot;/usr/sbin/sshd -D&quot;</span>   About a minute ago   Up About a minute   0.0.0.0:8787-&gt;8787/tcp, 0.0.0.0:2222-&gt;22/tcp   py2.7</span><br></pre></td></tr></table></figure>
+
 <p>以上步驟完成後，就可以依賴 docker image - ‘my-py2.7-dev:latest’，來設定 VS code 或 PyCharm 以 docker container 進行 Python 2.7 的開發（希望如此 XD）。</p>
 <hr>
 <h2 id="其他好用的-docker-命令"><a href="#其他好用的-docker-命令" class="headerlink" title="其他好用的 docker 命令"></a>其他好用的 docker 命令</h2><p>Get IP Address of container</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect --format=<span class="string">'&#123;&#123;range .NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125;&#123;&#123;end&#125;&#125;'</span> py2.7</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect --format=<span class="string">&#x27;&#123;&#123;range .NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125;&#123;&#123;end&#125;&#125;&#x27;</span> py2.7</span><br></pre></td></tr></table></figure>
+
 <p>Use <code>docker</code> command to run container</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -td --name py2.7 \</span><br><span class="line">         -p <span class="string">"8787:8787"</span> \</span><br><span class="line">         -p <span class="string">"2222:22"</span> \</span><br><span class="line">         -v <span class="variable">$PWD</span>:/srv \</span><br><span class="line">         -w /srv \</span><br><span class="line">         my-py2.7-dev:latest</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -td --name py2.7 \</span><br><span class="line">         -p <span class="string">&quot;8787:8787&quot;</span> \</span><br><span class="line">         -p <span class="string">&quot;2222:22&quot;</span> \</span><br><span class="line">         -v <span class="variable">$PWD</span>:/srv \</span><br><span class="line">         -w /srv \</span><br><span class="line">         my-py2.7-dev:latest</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <h2 id="參考資料-References"><a href="#參考資料-References" class="headerlink" title="參考資料  References"></a>參考資料  References</h2><ul>
-<li><a href="https://www.python.org/doc/sunset-python-2/" target="_blank" rel="noopener">Sunsetting Python 2</a></li>
-<li><a href="https://www.cyberciti.biz/faq/use-ssh-copy-id-with-an-openssh-server-listing-on-a-different-port/" target="_blank" rel="noopener">Use ssh-copy-id with an OpenSSH Server Listening On a Different Port</a></li>
-<li><a href="https://www.ssh.com/academy/ssh/copy-id" target="_blank" rel="noopener">Ssh-copy-id for copying SSH keys to servers</a></li>
-<li><a href="https://phoenixnap.com/kb/how-to-commit-changes-to-docker-image" target="_blank" rel="noopener">How to Commit Changes to a Docker Image with Examples</a></li>
-<li><a href="https://dev.to/alvarocavalcanti/setting-up-a-python-remote-interpreter-using-docker-1i24" target="_blank" rel="noopener">Setting Up a Python Remote Interpreter Using Docker</a></li>
-<li><a href="https://code.visualstudio.com/remote/advancedcontainers/develop-remote-host" target="_blank" rel="noopener">Develop on a remote Docker host</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.python.org/doc/sunset-python-2/">Sunsetting Python 2</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cyberciti.biz/faq/use-ssh-copy-id-with-an-openssh-server-listing-on-a-different-port/">Use ssh-copy-id with an OpenSSH Server Listening On a Different Port</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.ssh.com/academy/ssh/copy-id">Ssh-copy-id for copying SSH keys to servers</a></li>
+<li><a target="_blank" rel="noopener" href="https://phoenixnap.com/kb/how-to-commit-changes-to-docker-image">How to Commit Changes to a Docker Image with Examples</a></li>
+<li><a target="_blank" rel="noopener" href="https://dev.to/alvarocavalcanti/setting-up-a-python-remote-interpreter-using-docker-1i24">Setting Up a Python Remote Interpreter Using Docker</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/remote/advancedcontainers/develop-remote-host">Develop on a remote Docker host</a></li>
 </ul>
 
-      
     </div>
 
     
+    
+    
+        
 
-    
-    
-    
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
 
-    
+    <div class="social-list">
 
-    
-      
-    
-    
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
 
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/python/" rel="tag"># python</a>
-          
+            <span class="label">RSS</span>
+          </a>
         </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2022/20220521-taskfile-a-makefile-alternative.html" rel="next" title="Makefile 的另一個選擇 Taskfile">
-                <i class="fa fa-chevron-left"></i> Makefile 的另一個選擇 Taskfile
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2022/2022061202-pycharm-interpreter-python2-7.html" rel="prev" title="PyCharm 設定 Interpreter - Python 2.7">
-                PyCharm 設定 Interpreter - Python 2.7 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </div>
   </div>
-  
-  
-  
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/20220521-taskfile-a-makefile-alternative.html" rel="prev" title="Makefile 的另一個選擇 Taskfile">
+      <i class="fa fa-chevron-left"></i> Makefile 的另一個選擇 Taskfile
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/2022061202-pycharm-interpreter-python2-7.html" rel="next" title="PyCharm 設定 Interpreter - Python 2.7">
+      PyCharm 設定 Interpreter - Python 2.7 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div class="fb-comments" data-href="http://codefun.tw/2022/2022061201-python2-7-development-setting.html" data-numposts="10" data-width="100%" data-colorscheme="light">
-      </div>
-    </div>
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="Jerry Huang">
-            
-              <p class="site-author-name" itemprop="name">Jerry Huang</p>
-              <div class="site-description motion-element" itemprop="description">知識不是力量 分享知識才是力量</div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">24</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">14</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">36</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://www.linkedin.com/in/jerry771230" title="LinkedIn &rarr; https://www.linkedin.com/in/jerry771230" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>LinkedIn</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#環境-Environment"><span class="nav-number">1.</span> <span class="nav-text">環境  Environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事情準備"><span class="nav-number">2.</span> <span class="nav-text">事情準備</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#開始製作專案用-Python-2-7-docker-image"><span class="nav-number">3.</span> <span class="nav-text">開始製作專案用 Python 2.7 docker image</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-建立-“py2-7-dev”-docker-image"><span class="nav-number">3.1.</span> <span class="nav-text">1. 建立 “py2.7-dev” docker image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-運行-container"><span class="nav-number">3.2.</span> <span class="nav-text">2. 運行 container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-SSH-to-container"><span class="nav-number">3.3.</span> <span class="nav-text">3. SSH to container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Docker-命令進入-container"><span class="nav-number">3.4.</span> <span class="nav-text">4. Docker 命令進入 container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-安裝-Python-專案需要的-packages"><span class="nav-number">3.5.</span> <span class="nav-text">5. 安裝 Python 專案需要的 packages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-提交（Commit）修改到-image"><span class="nav-number">3.6.</span> <span class="nav-text">6. 提交（Commit）修改到 image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-使用新的-image"><span class="nav-number">3.7.</span> <span class="nav-text">7. 使用新的 image</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他好用的-docker-命令"><span class="nav-number">4.</span> <span class="nav-text">其他好用的 docker 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料-References"><span class="nav-number">5.</span> <span class="nav-text">參考資料  References</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-  
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2022</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Jerry Huang</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-      <div>
-        <div class="addthis_inline_share_toolbox">
-  <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59202e2d25ce1195" async="async"></script>
-</div>
-
-      </div>
-    
-  </div>
-
-  
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%92%B0%E5%A2%83-Environment"><span class="nav-number">1.</span> <span class="nav-text">環境  Environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E6%83%85%E6%BA%96%E5%82%99"><span class="nav-number">2.</span> <span class="nav-text">事情準備</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%A7%8B%E8%A3%BD%E4%BD%9C%E5%B0%88%E6%A1%88%E7%94%A8-Python-2-7-docker-image"><span class="nav-number">3.</span> <span class="nav-text">開始製作專案用 Python 2.7 docker image</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%BB%BA%E7%AB%8B-%E2%80%9Cpy2-7-dev%E2%80%9D-docker-image"><span class="nav-number">3.1.</span> <span class="nav-text">1. 建立 “py2.7-dev” docker image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%81%8B%E8%A1%8C-container"><span class="nav-number">3.2.</span> <span class="nav-text">2. 運行 container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-SSH-to-container"><span class="nav-number">3.3.</span> <span class="nav-text">3. SSH to container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Docker-%E5%91%BD%E4%BB%A4%E9%80%B2%E5%85%A5-container"><span class="nav-number">3.4.</span> <span class="nav-text">4. Docker 命令進入 container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%AE%89%E8%A3%9D-Python-%E5%B0%88%E6%A1%88%E9%9C%80%E8%A6%81%E7%9A%84-packages"><span class="nav-number">3.5.</span> <span class="nav-text">5. 安裝 Python 專案需要的 packages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E6%8F%90%E4%BA%A4%EF%BC%88Commit%EF%BC%89%E4%BF%AE%E6%94%B9%E5%88%B0-image"><span class="nav-number">3.6.</span> <span class="nav-text">6. 提交（Commit）修改到 image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E4%BD%BF%E7%94%A8%E6%96%B0%E7%9A%84-image"><span class="nav-number">3.7.</span> <span class="nav-text">7. 使用新的 image</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%A5%BD%E7%94%A8%E7%9A%84-docker-%E5%91%BD%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">其他好用的 docker 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99-References"><span class="nav-number">5.</span> <span class="nav-text">參考資料  References</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jerry Huang"
+      src="/uploads/avatar.png">
+  <p class="site-author-name" itemprop="name">Jerry Huang</p>
+  <div class="site-description" itemprop="description">知識不是力量 分享知識才是力量</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/jerry771230" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;jerry771230" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jerry Huang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
 
 
 
@@ -988,423 +493,43 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      </div>
+    </footer>
+  </div>
 
   
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+<script src="/js/utils.js"></script>
 
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
+<script src="/js/motion.js"></script>
 
 
-  <script src="/js/utils.js?v=7.1.0"></script>
-
-  <script src="/js/motion.js?v=7.1.0"></script>
+<script src="/js/schemes/muse.js"></script>
 
 
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.0"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.0"></script>
-<script src="/js/post-details.js?v=7.1.0"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.0"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-
-  
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
+<script src="/js/next-boot.js"></script>
 
 
 
 
   
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
+
+
+
 
   
 
