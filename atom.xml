@@ -6,7 +6,7 @@
   <link href="http://codefun.tw/atom.xml" rel="self"/>
   
   <link href="http://codefun.tw/"/>
-  <updated>2022-06-12T14:40:43.000Z</updated>
+  <updated>2022-09-06T05:56:18.000Z</updated>
   <id>http://codefun.tw/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在 VS code 設定 go linter</title>
+    <link href="http://codefun.tw/2022/2022090601-golang-linter-in-vscode.html"/>
+    <id>http://codefun.tw/2022/2022090601-golang-linter-in-vscode.html</id>
+    <published>2022-09-06T05:56:18.000Z</published>
+    <updated>2022-09-06T05:56:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在 VS code 撰寫 <code>go</code> 程式的過程中，要檢查是否符合 coding style，以及提醒哪些變數或參數有定義卻沒使用，設定好 go linter 就沒有煩惱。</p><span id="more"></span><h2 id="1-環境-Environment"><a href="#1-環境-Environment" class="headerlink" title="1. 環境  Environment"></a>1. 環境  Environment</h2><ul><li>macOS 12.5.1</li><li>Visual Studio Code v1.71.0</li><li>go v1.18</li></ul><h2 id="2-開始設定-Configuration"><a href="#2-開始設定-Configuration" class="headerlink" title="2. 開始設定  Configuration"></a>2. 開始設定  Configuration</h2><h3 id="2-1-安裝-Extension"><a href="#2-1-安裝-Extension" class="headerlink" title="2.1. 安裝 Extension"></a>2.1. 安裝 Extension</h3><p>在 VS code 安裝 Extension: Go</p><p><img src="/uploads/2022/090501_01.extension_go.png" alt="extension go"></p><h3 id="2-2-安裝-Go-tools"><a href="#2-2-安裝-Go-tools" class="headerlink" title="2.2. 安裝 Go tools"></a>2.2. 安裝 Go tools</h3><p>按下 <code>cmd + shift + p</code> 開啟 Command Palette，並且輸入 <code>go install</code> 後選取 <code>Go: Install/Update Tools</code><br><img src="/uploads/2022/090501_02.go_install.png" alt="go install"></p><p>選取 <code>staticcheck</code> 及 <code>gopls</code> 後，按下 <code>OK</code> 即開始安裝。<br><img src="/uploads/2022/090501_03.install_tools.png" alt="install tools"></p><h3 id="2-3-設定參數"><a href="#2-3-設定參數" class="headerlink" title="2.3. 設定參數"></a>2.3. 設定參數</h3><blockquote><p>注意：完成下列的設定，一定要關閉 VS code 再重新開啟，才不會有怪怪的問題出現。</p></blockquote><p>按下 <code>cmd + shift + p</code> 開啟 Command Palette，並且輸入 <code>user</code> 後選取 <code>Preferences: Open User Settings (JSON)</code><br><img src="/uploads/2022/090501_04.user_settings.png" alt="open user settings"></p><p>在 <code>settings.json</code> 檔案內貼上</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &quot;go.lintFlags&quot;: [&quot;-checks&quot;, &quot;all&quot;],</span></span><br><span class="line"><span class="attr">&quot;gopls&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;analyses&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;ST1003&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;ST1016&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;ST1020&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;ST1021&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;ST1022&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;unusedparams&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;formatting.gofumpt&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;staticcheck&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">  <span class="comment">// &quot;ui.diagnostic.analyses&quot;: &#123;</span></span><br><span class="line">  <span class="comment">//   &quot;unusedparams&quot;: true</span></span><br><span class="line">  <span class="comment">// &#125;,</span></span><br><span class="line">  <span class="attr">&quot;ui.semanticTokens&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;ui.completion.usePlaceholders&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure><p>只要開啟 <code>.go</code> 檔案，就會連相同 package 的檔案一同檢查，可以看到 warning 如下圖，<br><img src="/uploads/2022/090501_05.warnings.png" alt="check results"></p><p>如果不想這麼自動的檢查，可以在 <code>settings.json</code> 改貼上，</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;go.lintFlags&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;-checks&quot;</span><span class="punctuation">,</span> <span class="string">&quot;all&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;gopls&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="comment">// &quot;analyses&quot;: &#123;</span></span><br><span class="line">  <span class="comment">//   &quot;ST1003&quot;: true,</span></span><br><span class="line">  <span class="comment">//   &quot;ST1016&quot;: true,</span></span><br><span class="line">  <span class="comment">//   &quot;ST1020&quot;: true,</span></span><br><span class="line">  <span class="comment">//   &quot;ST1021&quot;: true,</span></span><br><span class="line">  <span class="comment">//   &quot;ST1022&quot;: true,</span></span><br><span class="line">  <span class="comment">//   &quot;unusedparams&quot;: true</span></span><br><span class="line">  <span class="comment">// &#125;,</span></span><br><span class="line">  <span class="attr">&quot;formatting.gofumpt&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">  <span class="comment">// &quot;staticcheck&quot;: true,</span></span><br><span class="line">  <span class="attr">&quot;ui.diagnostic.analyses&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;unusedparams&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;ui.semanticTokens&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;ui.completion.usePlaceholders&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure><p>此時要檢查 <code>User Settings</code> 的 <code>Go: Lint Tool</code> 及 <code>Go: Lint Flags</code> 是否設定正確。<br><img src="/uploads/2022/090501_06.lint_tool_settings.png" alt="lint tool - staticcheck"></p><p>按下 <code>cmd + shift + p</code> 開啟 Command Palette，並且輸入 <code>lint</code> 後選取 <code>Go: Lint Current Package</code> （也可以選擇 <code>Go: Lint Workspace</code>）就可以看檢查的結果了<br><img src="/uploads/2022/090501_07.execute_lint.png" alt="lint tool - staticcheck"></p><p>真心推薦 <a href="https://www.jetbrains.com/go/">Goland</a>，不要做任何設定 ( ^.＜ )</p><h2 id="3-參考資料-References"><a href="#3-參考資料-References" class="headerlink" title="3. 參考資料  References"></a>3. 參考資料  References</h2><ul><li><a href="https://code.visualstudio.com/docs/languages/go">Go in Visual Studio Code</a></li><li><a href="https://qiita.com/yagi_eng/items/1c34f9691128c51846e7">【Go】デファクトなlinter staticcheckの設定方法</a></li><li><a href="https://scrapbox.io/kidaaam-92022284/go_staticcheck_%E3%81%AE%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E7%84%A1%E5%8A%B9%E3%81%AA%E9%A0%85%E7%9B%AE%E3%82%92%E4%B8%80%E9%83%A8%E6%9C%89%E5%8A%B9%E5%8C%96%E3%81%99%E3%82%8B">go staticcheck のデフォルト無効な項目を一部有効化する</a></li><li><a href="https://stackoverflow.com/questions/58018729/go-linter-in-vs-code-not-working-for-packages-across-multiple-files">Go linter in VS code not working for packages across multiple files?</a></li><li><a href="https://github.com/golang/vscode-go/discussions/1493">How to enable a check for staticcheck? #1493</a></li><li><a href="https://staticcheck.io/docs/checks#ST1020">STATICCHECK - Explanations for all checks in Staticcheck</a></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;在 VS code 撰寫 &lt;code&gt;go&lt;/code&gt; 程式的過程中，要檢查是否符合 coding style，以及提醒哪些變數或參數有定義卻沒使用，設定好 go linter 就沒有煩惱。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="development" scheme="http://codefun.tw/categories/development/"/>
+    
+    
+    <category term="vscode" scheme="http://codefun.tw/tags/vscode/"/>
+    
+    <category term="coding style" scheme="http://codefun.tw/tags/coding-style/"/>
+    
+    <category term="golang" scheme="http://codefun.tw/tags/golang/"/>
+    
+  </entry>
   
   <entry>
     <title>PyCharm 設定 Interpreter - Python 2.7</title>
@@ -443,33 +468,6 @@
     
     
     <category term="wget" scheme="http://codefun.tw/tags/wget/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>開發廣告系統（DSP）不能不知道的關鍵字！</title>
-    <link href="http://codefun.tw/2017/2017081803-cpc-cpa-ad-keywords.html"/>
-    <id>http://codefun.tw/2017/2017081803-cpc-cpa-ad-keywords.html</id>
-    <published>2017-08-18T04:20:55.000Z</published>
-    <updated>2017-08-18T04:20:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="關鍵字"><a href="#關鍵字" class="headerlink" title="關鍵字"></a>關鍵字</h2><ul><li>DSP: Demand Side Platform 網路廣告中的需求方平台，可以讓廣告主進行跨媒體的自動化廣告投放。J: 買廣告版位</li><li>SSP: Supply Side Platform 是網路媒體中的供應方平台。SSP 平台幫助網路媒體託管其廣告位和廣告交易，與網路交易平台對接，從而將他們的流量變現。J: 賣廣告版位</li><li>DMP: Data-Management Platform 是專門為廣告主、媒體等開發的廣告數據管理平台，主要分析、儲存用戶行為數據，並管理相關資料，為廣告主提供精準的用戶行為分析。</li></ul><span id="more"></span><ul><li>RTB: Real Time Billing</li><li>CPC: Cost Per Click 每次點擊計價</li><li>CPM: Cost Per Mille，或者Cost Per Thousand;Cost Per Impressions，每千次展示計價</li><li>CPA: Cost Per Action 以實際行動效果來計算成本</li><li>CPS: Cost Per Sales 每次有效銷售定價</li><li>CPV: Cost Per View 每次觀看成本</li><li>AD Exchange: 網路廣告交易平台，功能就是聯繫廣告的賣方（媒體、網站主）和買方（廣告主）。Ad Exchange 平台交易的公司包括有 Yahoo、Google、The Rubicon Project、OpenX、AppNexus 等</li><li>AD Network: 聯播網</li><li>ROI: Return On Investment 每投資一塊錢所得到回饋的百分比</li><li>ROAS: Return On AD Spending 廣告沒投入一塊錢可獲得的營收</li></ul><hr><h2 id="DSP-優點"><a href="#DSP-優點" class="headerlink" title="DSP 優點"></a>DSP 優點</h2><ul><li>精確的受眾定向</li><li>簡單好用的使用者界面</li><li>強大的 RTB 技術</li><li>購買流程更快更簡單</li><li>整合多種服務，持續精進一站化</li><li>實現跨平台統一管理</li></ul><hr><h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><ul><li><a href="https://goo.gl/BFs31A">關於RTB, DSP, DMP的一些小事及簡單認知</a></li><li><a href="https://www.bnext.com.tw/ext_rss/view/id/651447">行銷人必知！ DSP廣告平台迷思求解7大守則</a></li><li><a href="https://www.inside.com.tw/2016/07/01/what-is-dsp-ssp-dmp">【硬塞科技字典】什麼是 DSP 需求方平台&#x2F; SSP 供應方平台&#x2F; DMP 數據管理平台？</a></li><li><a href="https://www.inside.com.tw/2016/07/01/what-is-ad-exchange">【硬塞科技字典】什麼是 Ad Exchange？</a></li><li><a href="https://www.inside.com.tw/2014/05/30/every-local-advertiser-needs-rtb">什麼是 RTB 實時競價廣告？他將是未來趨勢！</a></li><li><a href="https://goo.gl/eG52L7">常見的網路廣告平台運作原理淺析</a></li><li><a href="https://goo.gl/FwuOx8">APP廣告、網路媒體常說到所謂的CPM、CPC、CPA、CPI到底是甚麼意思?</a></li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;關鍵字&quot;&gt;&lt;a href=&quot;#關鍵字&quot; class=&quot;headerlink&quot; title=&quot;關鍵字&quot;&gt;&lt;/a&gt;關鍵字&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;DSP: Demand Side Platform 網路廣告中的需求方平台，可以讓廣告主進行跨媒體的自動化廣告投放。J: 買廣告版位&lt;/li&gt;
-&lt;li&gt;SSP: Supply Side Platform 是網路媒體中的供應方平台。SSP 平台幫助網路媒體託管其廣告位和廣告交易，與網路交易平台對接，從而將他們的流量變現。J: 賣廣告版位&lt;/li&gt;
-&lt;li&gt;DMP: Data-Management Platform 是專門為廣告主、媒體等開發的廣告數據管理平台，主要分析、儲存用戶行為數據，並管理相關資料，為廣告主提供精準的用戶行為分析。&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="marketing" scheme="http://codefun.tw/categories/marketing/"/>
-    
-    
-    <category term="marketing" scheme="http://codefun.tw/tags/marketing/"/>
-    
-    <category term="ad keyword" scheme="http://codefun.tw/tags/ad-keyword/"/>
     
   </entry>
   
