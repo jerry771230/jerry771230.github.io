@@ -1213,4 +1213,64 @@
         <tag>golang</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Golang 檢查 IPv6 是否合法</title>
+    <url>/2022/20220102202-golang-ipv6-validation.html</url>
+    <content><![CDATA[<p>以前都用 regular expression 檢查 IPv4 是否合法，那 IPv6 難道也得這樣做？沒有更方便的處理方式嗎？</p>
+<span id="more"></span>
+
+<h2 id="1-環境-Environment"><a href="#1-環境-Environment" class="headerlink" title="1. 環境  Environment"></a>1. 環境  Environment</h2><ul>
+<li>macOS 12.5.1</li>
+<li>go v1.18</li>
+</ul>
+<h2 id="2-Regular-expression-檢查-IPv4"><a href="#2-Regular-expression-檢查-IPv4" class="headerlink" title="2. Regular expression 檢查 IPv4"></a>2. Regular expression 檢查 IPv4</h2><p>以前我是這樣用，</p>
+<figure class="highlight golang"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;regexp&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	t1 := MatchIPv4(<span class="string">&quot;10.40.210.253&quot;</span>)</span><br><span class="line">	f1 := MatchIPv4(<span class="string">&quot;1000.40.210.253&quot;</span>)</span><br><span class="line">	fmt.Println(t1)</span><br><span class="line">	fmt.Println(f1)</span><br><span class="line">	<span class="comment">// Output:</span></span><br><span class="line">	<span class="comment">// true</span></span><br><span class="line">	<span class="comment">// false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">MatchIPv4</span><span class="params">(s <span class="type">string</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">	re, _ := regexp.Compile(<span class="string">`^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.)&#123;3&#125;(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$`</span>)</span><br><span class="line">	<span class="keyword">return</span> re.MatchString(s)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-用-net-ParseIP-檢查"><a href="#3-用-net-ParseIP-檢查" class="headerlink" title="3. 用 net.ParseIP 檢查"></a>3. 用 <code>net.ParseIP</code> 檢查</h2><figure class="highlight golang"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;net&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	t1 := ValidIPv4(<span class="string">&quot;10.40.210.253&quot;</span>)</span><br><span class="line">	f1 := ValidIPv4(<span class="string">&quot;1000.40.210.253&quot;</span>)</span><br><span class="line">	t2 := ValidIPv6(<span class="string">&quot;2001:0db8:85a3:0000:0000:8a2e:0370:7334&quot;</span>)</span><br><span class="line">	f2 := ValidIPv6(<span class="string">&quot;2001:0db8:85a3:0000:0000:8a2e:0370:7334:3445&quot;</span>)</span><br><span class="line">	fmt.Println(t1)</span><br><span class="line">	fmt.Println(f1)</span><br><span class="line">	fmt.Println(t2)</span><br><span class="line">	fmt.Println(f2)</span><br><span class="line">	<span class="comment">// Output:</span></span><br><span class="line">	<span class="comment">// true</span></span><br><span class="line">	<span class="comment">// false</span></span><br><span class="line">	<span class="comment">// true</span></span><br><span class="line">	<span class="comment">// fasle</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ValidIPv4</span><span class="params">(ip <span class="type">string</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> net.ParseIP(ip).To4() != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ValidIPv6</span><span class="params">(ip <span class="type">string</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> net.ParseIP(ip).To16() != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Ref: <a href="https://golangbyexample.com/check-ip-address-is-ipv4-or-ipv6-go/">Check if an IP address is IPV4 or IPV6 in Go</a></p>
+]]></content>
+      <categories>
+        <category>development</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Golang 執行 IPv6 的 request</title>
+    <url>/2022/2022102201-golang-ipv6-local-address.html</url>
+    <content><![CDATA[<p>實驗設備只能以通過綁定了 IPv6 的 network interface <code>eth0.1002</code> 執行 curl 的請求，那在 golang 下要如何實作？</p>
+<span id="more"></span>
+
+<h2 id="1-環境-Environment"><a href="#1-環境-Environment" class="headerlink" title="1. 環境  Environment"></a>1. 環境  Environment</h2><ul>
+<li>macOS 12.5.1</li>
+<li>go v1.18</li>
+</ul>
+<h2 id="2-以-exec-Command-執行-curl"><a href="#2-以-exec-Command-執行-curl" class="headerlink" title="2. 以 exec.Command 執行 curl"></a>2. 以 <code>exec.Command</code> 執行 curl</h2><figure class="highlight golang"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;os/exec&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">// curl --interface eth0.1002 http://[fe80::8ee3:8eff:fe00:6974]/redfish/v1/Fabrics/NVMe-oF/Connections</span></span><br><span class="line">	curl := exec.Command(<span class="string">&quot;curl&quot;</span>, <span class="string">&quot;--interface&quot;</span>, <span class="string">&quot;eth0.1002&quot;</span>, <span class="string">&quot;http://[fe80::8ee3:8eff:fe00:6974]/redfish/v1/Fabrics/NVMe-oF/Connections&quot;</span>)</span><br><span class="line">	out, err := curl.Output()</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;error&quot;</span>, err)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		fmt.Println(<span class="type">string</span>(out))</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要留意 <code>exec.Command</code> 對應 curl 的參數時，是要分隔開來指定的，不可寫在同一個 string 裡。</p>
+<p>要將 response 結果輸出到檔案，可以用下列方式，</p>
+<figure class="highlight golang"><table><tr><td class="code"><pre><span class="line">curl := exec.Command(<span class="string">&quot;bash&quot;</span>, <span class="string">&quot;-c&quot;</span>, <span class="string">&quot;curl https://www.google.com &gt; file&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Ref: <a href="https://segmentfault.com/q/1010000039064861">Golang 中如何执行带参的 curl 命令？</a></p>
+<h2 id="3-以-net-http-執行"><a href="#3-以-net-http-執行" class="headerlink" title="3. 以 net/http 執行"></a>3. 以 <code>net/http</code> 執行</h2><p>完整的 IPv6 url 為</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://[fe80::8ee3:8eff:fe00:6974%25eth0.1002]/redfish/v1/Fabrics/NVMe-oF/Connections</span><br></pre></td></tr></table></figure>
+
+<p>請注意 <code>%25</code> 在 url decode 後會是 <code>%</code> 這個符號。</p>
+<figure class="highlight golang"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;io/ioutil&quot;</span></span><br><span class="line">	<span class="string">&quot;log&quot;</span></span><br><span class="line">	<span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">// http://[fe80::8ee3:8eff:fe00:6974%25eth0.1002]/redfish/v1/Fabrics/NVMe-oF/Connections</span></span><br><span class="line">	ipv6 := <span class="string">&quot;fe80::8ee3:8eff:fe00:6974&quot;</span></span><br><span class="line">	eth := <span class="string">&quot;eth0.1002&quot;</span></span><br><span class="line">	url := fmt.Sprintf(<span class="string">&quot;http://[%s%%25%s]/redfish/v1/Fabrics/NVMe-oF/Connections&quot;</span>, ipv6, eth)</span><br><span class="line"></span><br><span class="line">	response, err := http.Get(url)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Fatal(err)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">defer</span> response.Body.Close()</span><br><span class="line">	cnt, err := ioutil.ReadAll(response.Body)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Fatal(err)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Printf(<span class="string">&quot;status code: %d, content: %s&quot;</span>, response.StatusCode, <span class="type">string</span>(cnt))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Refs:</p>
+<ol>
+<li><a href="https://labs.ripe.net/author/philip_homburg/whats-the-deal-with-ipv6-link-local-addresses/">What’s the Deal with IPv6 Link-Local Addresses?</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Percent-encoding">Percent-encoding</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>development</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+      </tags>
+  </entry>
 </search>
