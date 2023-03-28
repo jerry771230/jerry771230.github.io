@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="Codefun">
 <meta property="og:description" content="使用 PyCharm Professional Edition 將專案的 interpreter 設定成前一篇 Python 2.7 開發環境設置自製的 docker image Python 2.7。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://codefun.tw/uploads/20220601_python_interpreter.png">
-<meta property="og:image" content="http://codefun.tw/uploads/20220601_assign_docker_image.png">
-<meta property="og:image" content="http://codefun.tw/uploads/20220601_interpreter_docker_image.png">
+<meta property="og:image" content="http://codefun.tw/uploads/2022/0601_python_interpreter.png">
+<meta property="og:image" content="http://codefun.tw/uploads/2022/0601_assign_docker_image.png">
+<meta property="og:image" content="http://codefun.tw/uploads/2022/0601_interpreter_docker_image.png">
 <meta property="article:published_time" content="2022-06-12T14:40:43.000Z">
 <meta property="article:modified_time" content="2022-06-12T14:40:43.000Z">
 <meta property="article:author" content="Jerry Huang">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="pycharm">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://codefun.tw/uploads/20220601_python_interpreter.png">
+<meta name="twitter:image" content="http://codefun.tw/uploads/2022/0601_python_interpreter.png">
 
 
 <link rel="canonical" href="http://codefun.tw/2022/2022061202-pycharm-interpreter-python2-7.html">
@@ -122,7 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%AB%E5%9C%A8%E5%89%8D%E9%9D%A2-Make-the-long-story-short"><span class="nav-number">1.</span> <span class="nav-text">寫在前面  Make the long story short</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%92%B0%E5%A2%83-Environment"><span class="nav-number">2.</span> <span class="nav-text">環境  Environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A%E6%AD%A5%E9%A9%9F-Steps"><span class="nav-number">3.</span> <span class="nav-text">設定步驟  Steps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99-References"><span class="nav-number">4.</span> <span class="nav-text">參考資料  References</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%AB%E5%9C%A8%E5%89%8D%E9%9D%A2-Make-the-long-story-short"><span class="nav-text">寫在前面  Make the long story short</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%92%B0%E5%A2%83-Environment"><span class="nav-text">環境  Environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A%E6%AD%A5%E9%A9%9F-Steps"><span class="nav-text">設定步驟  Steps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99-References"><span class="nav-text">參考資料  References</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,7 +146,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -237,14 +237,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span></span>
+      <span>893</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>NaN:aN</span>
+      <span>1 mins.</span>
     </span>
 </div>
 
@@ -264,9 +264,9 @@
 <li>macOS 12.3.1</li>
 <li>PyCharm 2022.1.2</li>
 </ul>
-<h2 id="設定步驟-Steps"><a href="#設定步驟-Steps" class="headerlink" title="設定步驟  Steps"></a>設定步驟  Steps</h2><p>開啟 Preference（<code>CMD + ,</code>）。點選 <strong>Project: &lt;project name&gt; &gt; Python Interpreter</strong> ，點擊 <code>Python Interpreter</code> 欄位後方的齒輪圖示，並按下 <code>Add</code> 會開啟新視窗，<br><img src="/uploads/20220601_python_interpreter.png" alt="python_interpreter"></p>
-<p>在新視窗中左列選取 <strong>Docker</strong> ，接著在視窗右列的 <code>Image name</code> 欄位，從下拉選項中選取 <code>my-py2.7-dev:latest</code> 後按下 <code>OK</code> 套用設定。<br><img src="/uploads/20220601_assign_docker_image.png" alt="assign_docker_image"></p>
-<p>回到原來的視窗中，檢查 <code>Python Interpreter</code> 欄位，按下 <code>OK</code> 套用設定。<br><img src="/uploads/20220601_interpreter_docker_image.png" alt="interpreter_docker_image"></p>
+<h2 id="設定步驟-Steps"><a href="#設定步驟-Steps" class="headerlink" title="設定步驟  Steps"></a>設定步驟  Steps</h2><p>開啟 Preference（<code>CMD + ,</code>）。點選 <strong>Project: &lt;project name&gt; &gt; Python Interpreter</strong> ，點擊 <code>Python Interpreter</code> 欄位後方的齒輪圖示，並按下 <code>Add</code> 會開啟新視窗，<br><img src="/uploads/2022/0601_python_interpreter.png" alt="python_interpreter"></p>
+<p>在新視窗中左列選取 <strong>Docker</strong> ，接著在視窗右列的 <code>Image name</code> 欄位，從下拉選項中選取 <code>my-py2.7-dev:latest</code> 後按下 <code>OK</code> 套用設定。<br><img src="/uploads/2022/0601_assign_docker_image.png" alt="assign_docker_image"></p>
+<p>回到原來的視窗中，檢查 <code>Python Interpreter</code> 欄位，按下 <code>OK</code> 套用設定。<br><img src="/uploads/2022/0601_interpreter_docker_image.png" alt="interpreter_docker_image"></p>
 <p>以上步驟即將專案的 interpreter 設定成自製的 docker image - <code>my-py2.7.dev</code>，<strong>是不是很簡單</strong> :)。</p>
 <h2 id="參考資料-References"><a href="#參考資料-References" class="headerlink" title="參考資料  References"></a>參考資料  References</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://www.jetbrains.com/help/pycharm/using-docker-as-a-remote-interpreter.html">Configure an interpreter using Docker</a></li>

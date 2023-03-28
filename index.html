@@ -126,7 +126,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -137,7 +137,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -180,7 +180,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://codefun.tw/2022/20220102202-golang-ipv6-validation.html">
+    <link itemprop="mainEntityOfPage" href="http://codefun.tw/2023/2023032501-postgresql-wal-files-disk-full.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -198,7 +198,106 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/20220102202-golang-ipv6-validation.html" class="post-title-link" itemprop="url">Golang 檢查 IPv6 是否合法</a>
+          <a href="/2023/2023032501-postgresql-wal-files-disk-full.html" class="post-title-link" itemprop="url">PostgreSQL WAL 檔案持續增加的問題排解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-03-25 11:26:32" itemprop="dateCreated datePublished" datetime="2023-03-25T11:26:32+08:00">2023-03-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/development/" itemprop="url" rel="index"><span itemprop="name">development</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>12k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>11 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>有一實驗設備的 API 服務無法使用，檢查發現 database 用的磁碟空間為 0，佔用空間的竟然是 <code>pg_wal</code> 資料夾裡的 WAL 檔案。因此需要分析在 PostgreSQL master-slave replication 的架構，master node 的 WAL 檔案為什麼會持續增加，導致磁碟空間不足，讓 database 無法正常服務。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/2023032501-postgresql-wal-files-disk-full.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://codefun.tw/2022/2022102202-golang-ipv6-validation.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jerry Huang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Codefun">
+      <meta itemprop="description" content="知識不是力量 分享知識才是力量">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Codefun">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/2022102202-golang-ipv6-validation.html" class="post-title-link" itemprop="url">Golang 檢查 IPv6 是否合法</a>
         </h2>
 
         <div class="post-meta-container">
@@ -248,7 +347,7 @@
           <p>以前都用 regular expression 檢查 IPv4 是否合法，那 IPv6 難道也得這樣做？沒有更方便的處理方式嗎？</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2022/20220102202-golang-ipv6-validation.html#more" rel="contents">
+              <a class="btn" href="/2022/2022102202-golang-ipv6-validation.html#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -524,14 +623,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span></span>
+      <span>893</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>NaN:aN</span>
+      <span>1 mins.</span>
     </span>
 </div>
 
@@ -546,105 +645,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/2022061202-pycharm-interpreter-python2-7.html#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://codefun.tw/2022/2022061201-python2-7-development-setting.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jerry Huang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Codefun">
-      <meta itemprop="description" content="知識不是力量 分享知識才是力量">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Codefun">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/2022061201-python2-7-development-setting.html" class="post-title-link" itemprop="url">Python 2.7 開發環境設置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-06-12 18:40:46" itemprop="dateCreated datePublished" datetime="2022-06-12T18:40:46+08:00">2022-06-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/development/" itemprop="url" rel="index"><span itemprop="name">development</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span></span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>NaN:aN</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Python 軟體基金會（Python Software Foundation）已在 2020&#x2F;01&#x2F;1，正式終止對 Python 2.7 的支援。那要如何在本地環境，進行基於 Python 2.7 的專案維護或開發呢？第一個想到的就是使用自製的 docker image。爬文找到這篇 <a target="_blank" rel="noopener" href="https://dev.to/alvarocavalcanti/setting-up-a-python-remote-interpreter-using-docker-1i24">Setting Up a Python Remote Interpreter Using Docker</a> ，可以用 VS code 跟 PyCharm 進行搭配 Python 2.7 的 docker image 進行開發👍。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/2022061201-python2-7-development-setting.html#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
