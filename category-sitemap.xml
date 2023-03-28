@@ -9,8 +9,15 @@
 
 
     <url>
+        <loc>http://codefun.tw/categories/database/</loc>
+        <lastmod>2023-03-25T03:26:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://codefun.tw/categories/development/</loc>
-        <lastmod>2022-09-06T05:56:18.000Z</lastmod>
+        <lastmod>2022-10-22T05:08:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
