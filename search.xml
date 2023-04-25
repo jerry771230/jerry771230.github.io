@@ -1483,18 +1483,18 @@
     <content><![CDATA[<p>實驗設備需要使用 VPN 連線到內網才能訪問，但 OpenVPN 一開啟後，全部的流量預設都會經由 VPN 傳輸，不僅速度慢還會遇到無法訪問的情況（內網只開放網站白名單）。因此只將需要的特定 IP Address 透過 VPN 傳輸，就不會影響平常使用的流量傳輸。</p>
 <span id="more"></span>
 
-<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><ul>
+<h2 id="1-環境"><a href="#1-環境" class="headerlink" title="1. 環境"></a>1. 環境</h2><ul>
 <li>macOS Monterey v12.6.3</li>
 <li>OpenVPN Connect v3.3.6</li>
 </ul>
-<h2 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h2><p>開啟 <code>.ovpn</code> 檔案，在檔案尾端加入，</p>
+<h2 id="2-設定"><a href="#2-設定" class="headerlink" title="2. 設定"></a>2. 設定</h2><p>開啟 <code>.ovpn</code> 檔案，在檔案尾端加入，</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 設定 OpenVPN 連線後，不會有任何網路請求通過 VPN 通道</span><br><span class="line">route-nopull</span><br><span class="line"></span><br><span class="line"># 設定某個網路區段優先走 VPN 通道，下面的例子是 192.168.1.1~192.168.1.255</span><br><span class="line">#route 192.168.1.0 255.255.255.0 vpn_gateway</span><br><span class="line"></span><br><span class="line">route 192.168.28.0 255.255.255.0 vpn_gateway</span><br><span class="line">route 192.168.29.0 255.255.255.0 vpn_gateway</span><br><span class="line">route 10.0.0.0 255.0.0.0 vpn_gateway</span><br><span class="line">route 172.29.87.0 255.255.255.0 vpn_gateway</span><br><span class="line">route 172.29.88.0 255.255.255.0 vpn_gateway</span><br><span class="line">route 172.31.0.0 255.255.0.0 vpn_gateway</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 所有網路訪問都走 VPN 通道，但是訪問某個網段則否</span><br><span class="line"># route 192.168.1.0 255.255.255.0 net_gateway</span><br></pre></td></tr></table></figure>
 
 <p>每次修改 <code>.ovpn</code> 檔案後，OpenVPN 必須重新 <code>Import Profile &gt; FILE</code>（指定檔案）後才會生效。</p>
-<h2 id="相關參數"><a href="#相關參數" class="headerlink" title="相關參數"></a>相關參數</h2><h3 id="route-nopull"><a href="#route-nopull" class="headerlink" title="route-nopull"></a>route-nopull</h3><p>OpenVPN 連線後，不會有任何網路請求通過 VPN 通道。</p>
-<h3 id="vpn-gateway"><a href="#vpn-gateway" class="headerlink" title="vpn_gateway"></a>vpn_gateway</h3><p>設定 <code>route-nopull</code>，增加 <code>vpn_gateway</code> 來讓指定的 IP Address 可以通過 VPN 通道。</p>
-<h3 id="net-gateway"><a href="#net-gateway" class="headerlink" title="net_gateway"></a>net_gateway</h3><p>與 <code>vpn_gateway</code> 相反。預設訪問請求都走 VPN 時，指定特定 IP 不通過 OpenVPN 出去。</p>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<h2 id="3-相關參數"><a href="#3-相關參數" class="headerlink" title="3. 相關參數"></a>3. 相關參數</h2><h3 id="3-1-route-nopull"><a href="#3-1-route-nopull" class="headerlink" title="3.1. route-nopull"></a>3.1. route-nopull</h3><p>OpenVPN 連線後，不會有任何網路請求通過 VPN 通道。</p>
+<h3 id="3-2-vpn-gateway"><a href="#3-2-vpn-gateway" class="headerlink" title="3.2. vpn_gateway"></a>3.2. vpn_gateway</h3><p>設定 <code>route-nopull</code>，增加 <code>vpn_gateway</code> 來讓指定的 IP Address 可以通過 VPN 通道。</p>
+<h3 id="3-3-net-gateway"><a href="#3-3-net-gateway" class="headerlink" title="3.3. net_gateway"></a>3.3. net_gateway</h3><p>與 <code>vpn_gateway</code> 相反。預設訪問請求都走 VPN 時，指定特定 IP 不通過 OpenVPN 出去。</p>
+<h2 id="4-References"><a href="#4-References" class="headerlink" title="4. References"></a>4. References</h2><ul>
 <li><a href="https://blog.desmondsylin.com/2020/12/01/OpenVPN-client-route/">自訂OpenVPN客戶端路由</a></li>
 <li><a href="https://blog.sakamoto.cat/she-ding-openvpn-lu-you-jiang-qi/">OpenVPN: 設定路由讓特定 IP Address 通過 VPN</a></li>
 </ul>
